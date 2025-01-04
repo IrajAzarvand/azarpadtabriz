@@ -29,65 +29,6 @@
                 <source src="http://dev.nikadevs.com/berserk-data/Placeholder_Video.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="row">
-            <div class="col-md-6 col-12">
-                <div class="progress__wrapper progress__minimal" data-brk-library="component__progress_bar">
-                    <div>
-                        <span
-                            class="font__family-open-sans font__size-13 font__weight-bold progress__bar-counter hide">90</span>
-                    </div>
-                    <div class="progress">
-                        <div data-valuemax="100" data-valuemin="0" data-valuenow="90" class="progress__bar">
-                            <span class="circle"></span>
-                        </div>
-                    </div>
-                    <h5 class="font__family-montserrat font__size-16 font__weight-bold progress__title">
-                        Hard Work
-                    </h5>
-                </div>
-                <div class="progress__wrapper progress__minimal" data-brk-library="component__progress_bar">
-                    <div>
-                        <span
-                            class="font__family-open-sans font__size-13 font__weight-bold progress__bar-counter hide">80</span>
-                    </div>
-                    <div class="progress">
-                        <div data-valuemax="100" data-valuemin="0" data-valuenow="80" class="progress__bar">
-                            <span class="circle"></span>
-                        </div>
-                    </div>
-                    <h5 class="font__family-montserrat font__size-16 font__weight-bold progress__title">
-                        Projects Delivery
-                    </h5>
-                </div>
-                <div class="progress__wrapper progress__minimal mb-35 mb-md-0"
-                    data-brk-library="component__progress_bar">
-                    <div>
-                        <span
-                            class="font__family-open-sans font__size-13 font__weight-bold progress__bar-counter hide">95</span>
-                    </div>
-                    <div class="progress">
-                        <div data-valuemax="100" data-valuemin="0" data-valuenow="95" class="progress__bar">
-                            <span class="circle"></span>
-                        </div>
-                    </div>
-                    <h5 class="font__family-montserrat font__size-16 font__weight-bold progress__title">
-                        Customers Love
-                    </h5>
-                </div>
-            </div>
-            <div class="col-md-6 col-12">
-                <h3
-                    class="font__family-montserrat font__size-24 font__weight-light line__height-34 mb-25 text-center text-md-left">
-                    Lorem ipsum dolor sit amet, consectetuer
-                    <br> adipiscing elit ligula eget dolor
-                </h3>
-                <p class="brk-dark-font-color font__size-15 line__height-24 mb-20 text-center text-md-left">
-                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-                    porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
-                    viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
-                    Quisque rutrum. Aenean imperdiet.
-                </p>
-            </div>
-        </div>
+
     </div>
 </section>

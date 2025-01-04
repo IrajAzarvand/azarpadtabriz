@@ -1,4 +1,4 @@
-<section class="position-relative z-index-2 overflow-hid" style="padding-top: 465px; margin-top: -400px">
+<section class="pt-15 pt-xs-50 z-index-3 position-relative">
     <span class="brk-svg-pattern-container brk-svg-pattern-container-1 brk-svg-pattern-container_top"
         data-brk-library="component__svg_pattern">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1922 149">
@@ -23,7 +23,7 @@
         </h2>
         <h2 class="title__heading-06 title__heading-main font__family-montserrat font__size-40 font__weight-ultralight"
             data-brk-library="component__title">
-            <span class="font__weight-light">Team Members</span>
+            <span class="font__weight-light">cataloge</span>
         </h2>
     </div>
     <div class="container-fluid">

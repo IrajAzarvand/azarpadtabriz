@@ -1,26 +1,5 @@
 <footer class="brk-footer position-relative" data-brk-library="component__footer,twitter_init">
-    <div class="brk-map" data-height="350" data-brk-library="component__map">
-        <div class="brk-map__opener-section brk-map__opener-section_classic">
-            <div class="brk-map__opener brk-map__opener_classic font__family-montserrat font__weight-semibold">
-                <div class="brk-map__second">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span class="brk-lightning-effect">Locate us on the map</span>
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </div>
-                <div class="brk-map__second">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span class="brk-lightning-effect">Close the map</span>
-                    <i class="fa fa-angle-up" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-        <div class="brk-map__section">
-            <div class="brk-map__canvas" data-address="412 Throop Ave, Brooklyn, NY 11221, USA" data-zoom="13"
-                data-type="roadmap" data-style="silver" data-lat="40.6898297" data-lng="-73.94250620000003"
-                data-info-window="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, distinctio, illum modi aspernatur fugiat iste!">
-            </div>
-        </div>
-    </div>
+
     <div class="brk-footer__wrapper pt-70 pt-md-90 border-bottom-3 brk-border-color-light brk-bg-center-cover"
         style="background-image: url(img/demo_freelance_portfolio/1920x554_1.jpg)">
         <div class="brk-abs-bg-overlay brk-base-gradient-29"></div>

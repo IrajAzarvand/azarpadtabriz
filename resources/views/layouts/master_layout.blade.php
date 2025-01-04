@@ -10,7 +10,7 @@
         <div class="brk-loader__loader"></div>
     </div>
 
-    {{-- <div class="brk-theme-options" data-brk-library="brk-customizer">
+    <div class="brk-theme-options" data-brk-library="brk-customizer">
         <div class="brk-theme-options__panel">
             <a href="#" class="panel-open brk-theme-options__panel-link"><i class="fal fa-cog"></i></a>
             <a href="https://1.envato.market/Bd5V9" target="_blank" class="brk-theme-options__panel-link"><i
@@ -610,7 +610,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
 
     <style>

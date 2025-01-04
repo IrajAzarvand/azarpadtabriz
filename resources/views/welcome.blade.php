@@ -21,10 +21,7 @@
 @include('main.gallery')
 
 
-@include('main.price_box')
-
-
-@include('main.team_members')
+@include('main.cataloge')
 
 
 @include('main.about_us_video')
