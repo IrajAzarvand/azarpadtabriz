@@ -3,19 +3,16 @@
 function SiteLang()
 {
     return [
-        'FA' => [
+        'fa' => [
             'name' => 'فارسی',
             'rtl' => 1,
         ],
-        'EN' => [
+        'en' => [
             'name' => 'انگلیسی',
             'rtl' => 0,
         ],
-        'RU' => [
-            'name' => 'روسی',
-            'rtl' => 0,
-        ],
-        'AR' => [
+
+        'ar' => [
             'name' => 'عربی',
             'rtl' => 1,
         ],
@@ -30,5 +27,5 @@ function SiteLang()
  */
 function DefaultLocale()
 {
-    return "FA";
+    return "fa";
 }

@@ -1,6 +1,6 @@
 {{-- used for main website pages --}}
 <!DOCTYPE html>
-<html lang="en" data-brk-skin="brk-blue.css">
+<html lang="en" data-brk-skin="brk-blue.css" @if (SiteLang()[app()->getLocale()]['rtl']) dir="rtl" @else dir="ltr" @endif>
 
 @include('layouts.main_header')
 
@@ -465,8 +465,8 @@
                                         <span></span>
                                         <i class="fal fa-check"></i>
                                     </div>
-                                    <div class="brk-theme-options__color-radio" data-skin="brk-green-1" title="green-1"
-                                        style="--oc: #00e0dd">
+                                    <div class="brk-theme-options__color-radio" data-skin="brk-green-1"
+                                        title="green-1" style="--oc: #00e0dd">
                                         <span></span>
                                         <i class="fal fa-check"></i>
                                     </div>
@@ -554,8 +554,8 @@
                     </a>
                     <div id="option_5" class="collapse" role="tabpanel" aria-labelledby="heading_option_5">
                         <div class="card-block">
-                            <div class="font__size-16 line__height-26 brk-dark-font-color mt-10">Direction</div>
-                            <div class="row pt-10">
+                            <div class="mt-10 font__size-16 line__height-26 brk-dark-font-color">Direction</div>
+                            <div class="pt-10 row">
                                 <a href="?dir=ltr" class="col-6" data-brk-direction="ltr">
                                     <div
                                         class="brk-theme-options__check brk-theme-options__check_45 brk-theme-options__check_title-on brk-theme-options__check_active">
@@ -572,7 +572,7 @@
                                 </a>
                             </div>
                             <div class="font__size-16 line__height-26 brk-dark-font-color mt-15">Corners Style</div>
-                            <div class="row pt-10">
+                            <div class="pt-10 row">
                                 <a href="#" class="col-6" data-brk-options-border="0">
                                     <div
                                         class="brk-theme-options__check brk-theme-options__check_45 brk-theme-options__check_title-on brk-theme-options__check_active">
@@ -589,7 +589,7 @@
                                 </a>
                             </div>
                             <div class="font__size-16 line__height-26 brk-dark-font-color mt-15">Layout</div>
-                            <div class="row pt-10">
+                            <div class="pt-10 row">
                                 <a href="#" class="col-6" data-brk-layout="wide">
                                     <div
                                         class="brk-theme-options__check brk-theme-options__check_45 brk-theme-options__check_title-on brk-theme-options__check_active">
