@@ -27,34 +27,70 @@
                      data-accordion="false">
                      <!-- Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library -->
-                     <li class="nav-item has-treeview menu-open">
-                         <a href="#" class="nav-link active">
+                     <li class="nav-item">
+                         <a href="{{ route('dashboard') }}" class="nav-link">
                              <i class="nav-icon fa fa-dashboard"></i>
                              <p>
-                                 داشبوردها
+                                 داشبورد
+                             </p>
+                         </a>
+                     </li>
+                     <li class="nav-item has-treeview">
+                         <a href="#" class="nav-link">
+                             <i class="nav-icon fa fa-book"></i>
+                             <p>
+                                 صفحات
                                  <i class="right fa fa-angle-left"></i>
                              </p>
                          </a>
                          <ul class="nav nav-treeview">
                              <li class="nav-item">
-                                 <a href="./index.html" class="nav-link">
-                                     <i class="fa fa-circle-o nav-icon"></i>
-                                     <p>داشبورد اول</p>
+                                 <a href="pages/charts/chartjs.html" class="nav-link">
+                                     <i class="fa fa-file nav-icon"></i>
+                                     <p>صفحه اصلی</p>
                                  </a>
                              </li>
                              <li class="nav-item">
-                                 <a href="./index2.html" class="nav-link active">
-                                     <i class="fa fa-circle-o nav-icon"></i>
-                                     <p>داشبورد دوم</p>
+                                 <a href="pages/charts/flot.html" class="nav-link">
+                                     <i class="fa fa-question nav-icon"></i>
+                                     <p>درباره ما</p>
                                  </a>
                              </li>
                              <li class="nav-item">
-                                 <a href="./index3.html" class="nav-link">
-                                     <i class="fa fa-circle-o nav-icon"></i>
-                                     <p>داشبورد سوم</p>
+                                 <a href="pages/charts/inline.html" class="nav-link">
+                                     <i class="fa fa-address-card-o nav-icon"></i>
+                                     <p>وبلاگ</p>
                                  </a>
                              </li>
+                             <li class="nav-item">
+                                 <a href="pages/charts/inline.html" class="nav-link">
+                                     <i class="fa fa-circle-o nav-icon"></i>
+                                     <p>کاربردها</p>
+                                 </a>
+                             </li>
+                             <li class="nav-item">
+                                 <a href="pages/charts/inline.html" class="nav-link">
+                                     <i class="fa fa-circle-o nav-icon"></i>
+                                     <p>تماس با ما</p>
+                                 </a>
+                             </li>
+
                          </ul>
+                     </li>
+                     <li class="nav-item">
+                         <a href="{{ route('dashboard') }}" class="nav-link">
+                             <i class="nav-icon fa fa-gear"></i>
+                             <p>
+                                 تنظیمات
+                             </p>
+                         </a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="{{ route('dashboard') }}" class="nav-link">
+                             <p>
+                                 ========
+                             </p>
+                         </a>
                      </li>
                      <li class="nav-item">
                          <a href="pages/widgets.html" class="nav-link">
