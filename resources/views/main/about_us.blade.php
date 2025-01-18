@@ -1,4 +1,4 @@
-<section class="position-relative brk-base-bg-13 pt-80 pt-lg-220 pb-40">
+<section class="pt-80 pb-40 position-relative brk-base-bg-13 pt-lg-220">
     <span class="brk-svg-pattern-container brk-svg-pattern-container-7-top brk-svg-pattern-container_top"
         data-brk-library="component__svg_pattern">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 144">
@@ -17,8 +17,8 @@
         <div class="row">
             <div class="col-12 col-lg-5">
                 <h2
-                    class="pt-50 font__family-montserrat font__size-56 font__weight-bold line__height-62 brk-color-base-dark mb-10">
-                    About Us</h2>
+                    class="mb-10 pt-50 font__family-montserrat font__size-56 font__weight-bold line__height-62 brk-color-base-dark">
+                    About Usss {{ app()->getLocale(), Session('locale') }}</h2>
                 <h3
                     class="mb-40 font__family-montserrat font__size-18 line__height-22 font__weight-semibold brk-color-base-dark letter-spacing-100">
                     a new begining for your team</h3>

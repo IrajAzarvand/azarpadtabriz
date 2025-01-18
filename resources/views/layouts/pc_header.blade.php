@@ -2,12 +2,12 @@
     class="brk-header brk-header_style-1 brk-header_skin-1 position-fixed d-lg-flex flex-column brk-header_color-dark"
     style="display: none;" data-logo-src="img/logo-dark-2.png" data-bg-mobile="img/brk-bg-mobile-menu.jpg"
     data-brk-library="component__header">
-    <div class="brk-header__top-bar order-lg-1 order-2 font__family-montserrat brk-header__top-bar_scroll"
+    <div class="order-2 brk-header__top-bar order-lg-1 font__family-montserrat brk-header__top-bar_scroll"
         style="height: 46px;">
         <div class="brk-header__title font__family-montserrat font__weight-bold">Contact Us</div>
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-lg-6 align-self-lg-stretch text-left">
+                <div class="text-left col-lg-6 align-self-lg-stretch">
                     <div class="brk-header__element brk-header__element_skin-2 brk-header__item">
                         <a href="tel:88002003040" class="brk-header__element--wrap">
                             <i class="fa fa-phone"></i>
@@ -21,12 +21,12 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 align-self-lg-stretch text-left text-lg-right">
+                <div class="text-left col-lg-6 align-self-lg-stretch text-lg-right">
                     <div class="brk-mini-cart brk-header__item">
                         <a href="cart.html" class="brk-mini-cart__open d-flex brk-mini-cart__open_skin-1">
                             <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                             <span
-                                class="brk-mini-cart__label font__family-montserrat font__weight-medium text-uppercase letter-spacing-60 font__size-10 opacity-80">My
+                                class="opacity-80 brk-mini-cart__label font__family-montserrat font__weight-medium text-uppercase letter-spacing-60 font__size-10">My
                                 cart</span>
                             <span class="brk-mini-cart__title">Shopping Cart</span>
                             <span
@@ -56,7 +56,8 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text"
+                                            value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -81,7 +82,8 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text"
+                                            value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -106,7 +108,8 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text"
+                                            value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -131,7 +134,8 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text"
+                                            value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -157,14 +161,14 @@
                         </a>
                     </div>
                     <div class="brk-lang brk-lang_interactive brk-header__item">
-                        <span class="brk-lang__selected">US <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                        <span class="brk-lang__selected">{{ Str::upper(app()->getLocale()) }} <i
+                                class="fa fa-caret-down" aria-hidden="true"></i></span>
                         <span class="brk-lang__open"><i class="fa fa-language"></i> Language <span
-                                class="brk-lang__active-lang text-white brk-bg-primary">US</span></span>
+                                class="text-white brk-lang__active-lang brk-bg-primary">{{ app()->getLocale() }}</span></span>
                         <ul class="brk-lang__option">
-                            <li><a href="#">UA</a></li>
-                            <li><a href="#">US</a></li>
-                            <li><a href="#">PL</a></li>
-                            <li><a href="#">ES</a></li>
+                            @foreach (SiteLang() as $locale => $rtl)
+                                <li><a href="{{ route('SetLocale', [$locale]) }}">{{ Str::upper($locale) }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="brk-header__element brk-header__element_skin-2 brk-header__item">
@@ -177,10 +181,10 @@
             </div>
         </div>
     </div>
-    <div class="brk-header__main-bar brk-header_border-top-dark order-lg-2 order-1" style="height: 72px;">
+    <div class="order-1 brk-header__main-bar brk-header_border-top-dark order-lg-2" style="height: 72px;">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-lg-3 align-self-lg-center d-none d-lg-flex ml-10">
+                <div class="ml-10 col-lg-3 align-self-lg-center d-none d-lg-flex">
                     <div class="brk-open-top-bar brk-header__item">
                         <div class="brk-open-top-bar__circle"></div>
                         <div class="brk-open-top-bar__circle"></div>
@@ -226,7 +230,7 @@
                                                             <div class="brk-nav__header font__family-montserrat">Check
                                                             </div>
                                                             <div
-                                                                class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                                class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                                 <ul class="brk-header-list font__family-montserrat">
                                                                     <li>
                                                                         <a href="/demo_agency_animation.html">
@@ -297,7 +301,7 @@
                                                             <div class="brk-nav__header font__family-montserrat">Out
                                                             </div>
                                                             <div
-                                                                class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                                class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                                 <ul class="brk-header-list font__family-montserrat">
                                                                     <li>
                                                                         <a href="/demo_construction.html">
@@ -365,7 +369,7 @@
                                                             <div class="brk-nav__header font__family-montserrat">Our
                                                             </div>
                                                             <div
-                                                                class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                                class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                                 <ul class="brk-header-list font__family-montserrat">
                                                                     <li>
                                                                         <a href="/demo_shop_clothes.html">
@@ -434,7 +438,7 @@
                                                             <div class="brk-nav__header font__family-montserrat">Demos
                                                             </div>
                                                             <div
-                                                                class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                                class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                                 <ul class="brk-header-list font__family-montserrat">
                                                                     <li>
                                                                         <a href="/demo_magazine.html">
@@ -512,9 +516,10 @@
                                                 <div class="brk-tab-item">
                                                     <div class="row no-gutters">
                                                         <div class="col-lg d-none d-lg-block">
-                                                            <div class="brk-nav__header font__family-montserrat">Preview
+                                                            <div class="brk-nav__header font__family-montserrat">
+                                                                Preview
                                                             </div>
-                                                            <div class="brk-element-base brk-header_border-right text-center lazyload"
+                                                            <div class="text-center brk-element-base brk-header_border-right lazyload"
                                                                 data-bg="img/662x295.jpg"
                                                                 style="height: calc(100% - 76px)">
                                                                 <div class="brk-element-base__before"></div>
@@ -539,7 +544,7 @@
                                                         <div class="col-lg">
                                                             <div class="brk-nav__header font__family-montserrat">Our
                                                             </div>
-                                                            <div class="brk-header_border-right pt-lg-20 pb-lg-60 pb-20"
+                                                            <div class="pb-20 brk-header_border-right pt-lg-20 pb-lg-60"
                                                                 style="height: calc(100% - 76px)">
                                                                 <ul class="brk-header-list font__family-montserrat">
                                                                     <li>
@@ -602,7 +607,7 @@
                                                         <div class="col-lg">
                                                             <div class="brk-nav__header font__family-montserrat">Home
                                                             </div>
-                                                            <div class="brk-header_border-right pt-lg-20 pb-lg-60 pb-20"
+                                                            <div class="pb-20 brk-header_border-right pt-lg-20 pb-lg-60"
                                                                 style="height: calc(100% - 76px)">
                                                                 <ul class="brk-header-list font__family-montserrat">
                                                                     <li>
@@ -671,7 +676,7 @@
                                                         <div class="col-lg">
                                                             <div class="brk-nav__header font__family-montserrat">Pages
                                                             </div>
-                                                            <div class="brk-header_border-right pt-lg-20 pb-lg-60 pb-20"
+                                                            <div class="pb-20 brk-header_border-right pt-lg-20 pb-lg-60"
                                                                 style="height: calc(100% - 76px)">
                                                                 <ul class="brk-header-list font__family-montserrat">
                                                                     <li>
@@ -751,10 +756,10 @@
                                                         <div class="col-lg-7">
                                                             <div class="pr-15 pr-lg-0 pl-15 pl-lg-15">
                                                                 <h2
-                                                                    class="font__family-montserrat text-uppercase font__size-24 mb-40 mt-30">
+                                                                    class="mb-40 font__family-montserrat text-uppercase font__size-24 mt-30">
                                                                     How Glossier Hacked Social
                                                                     Media</h2>
-                                                                <p class="brk-dark-font-color text-left mb-20">On a
+                                                                <p class="mb-20 text-left brk-dark-font-color">On a
                                                                     Thursday afternoon in late spring, 32-year-old
                                                                     Glossier founder and CEO Emily Weiss rides the
                                                                     elevator
@@ -773,7 +778,7 @@
                                                                     release
                                                                     touted online as having a "fuzzy doe-foot
                                                                     applicator."</p>
-                                                                <p class="brk-dark-font-color text-left mb-20">A former
+                                                                <p class="mb-20 text-left brk-dark-font-color">A former
                                                                     teen model, Weiss is beautiful but not
                                                                     intimidating, either by nature or by design
                                                                     (probably a little
@@ -814,7 +819,8 @@
                                         <ul class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
                                             <li class="dd-effect brk-nav__children brk-nav__drop-down-effect">
                                                 <a href="#">Headers Extra <i class="fas fa-angle-right"></i></a>
-                                                <ul class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
+                                                <ul
+                                                    class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
                                                     <li class="dd-effect"><a href="header-8.html">Header 8</a></li>
                                                     <li class="dd-effect"><a href="header-9.html">Header 9</a></li>
                                                     <li class="dd-effect"><a href="header-10.html">Header 10</a></li>
@@ -835,7 +841,8 @@
                                             <li class="dd-effect"><a href="header-5.html">Header 5</a></li>
                                             <li class="dd-effect"><a href="header-6.html">Header 6</a></li>
                                             <li class="dd-effect"><a href="header-7.html">Header 7</a></li>
-                                            <li class="dd-effect"><a href="header-7-popup.html">Header 7 Popup</a></li>
+                                            <li class="dd-effect"><a href="header-7-popup.html">Header 7 Popup</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="dd-effect brk-nav__children brk-nav__drop-down-effect">
@@ -1024,7 +1031,7 @@
                                             <div class="col-xl-2 col-lg-4">
                                                 <div class="brk-nav__header font__family-montserrat">ELEMENTS</div>
                                                 <div
-                                                    class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                    class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                     <ul class="brk-header-list font__family-montserrat">
                                                         <li class="dd-effect">
                                                             <a href="accordions.html">
@@ -1037,7 +1044,8 @@
                                                         <li class="dd-effect">
                                                             <a href="alerts.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                                    <i class="fa fa-university"
+                                                                        aria-hidden="true"></i>
                                                                 </span>
                                                                 Alerts
                                                             </a>
@@ -1097,12 +1105,13 @@
                                             <div class="col-xl-2 col-lg-4">
                                                 <div class="brk-nav__header font__family-montserrat">ELEMENTS</div>
                                                 <div
-                                                    class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                    class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                     <ul class="brk-header-list font__family-montserrat">
                                                         <li class="dd-effect">
                                                             <a href="countdown.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                                    <i class="fa fa-university"
+                                                                        aria-hidden="true"></i>
                                                                 </span>
                                                                 Countdown
                                                             </a>
@@ -1169,7 +1178,7 @@
                                             <div class="col-xl-2 col-lg-4">
                                                 <div class="brk-nav__header font__family-montserrat">ELEMENTS</div>
                                                 <div
-                                                    class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                    class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                     <ul class="brk-header-list font__family-montserrat">
                                                         <li class="dd-effect">
                                                             <a href="image-caption-parallax.html">
@@ -1191,7 +1200,8 @@
                                                         <li class="dd-effect">
                                                             <a href="image-map.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                                    <i class="fa fa-university"
+                                                                        aria-hidden="true"></i>
                                                                 </span>
                                                                 Image map
                                                             </a>
@@ -1252,7 +1262,7 @@
                                             <div class="col-xl-2 col-lg-4">
                                                 <div class="brk-nav__header font__family-montserrat">ELEMENTS</div>
                                                 <div
-                                                    class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                    class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                     <ul class="brk-header-list font__family-montserrat">
                                                         <li class="dd-effect">
                                                             <a href="parallax.html">
@@ -1282,7 +1292,8 @@
                                                         <li class="dd-effect">
                                                             <a href="progress-circles.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                                    <i class="fa fa-university"
+                                                                        aria-hidden="true"></i>
                                                                 </span>
                                                                 Progress circles
                                                             </a>
@@ -1333,7 +1344,7 @@
                                             <div class="col-xl-2 col-lg-4">
                                                 <div class="brk-nav__header font__family-montserrat">ELEMENTS</div>
                                                 <div
-                                                    class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                    class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                     <ul class="brk-header-list font__family-montserrat">
                                                         <li class="dd-effect">
                                                             <a href="sliders.html">
@@ -1395,7 +1406,8 @@
                                                         <li class="dd-effect">
                                                             <a href="team.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                                    <i class="fa fa-university"
+                                                                        aria-hidden="true"></i>
                                                                 </span>
                                                                 Team
                                                             </a>
@@ -1403,7 +1415,8 @@
                                                         <li class="dd-effect">
                                                             <a href="progress-bars.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                                    <i class="fa fa-university"
+                                                                        aria-hidden="true"></i>
                                                                 </span>
                                                                 Progress bars
                                                             </a>
@@ -1414,7 +1427,7 @@
                                             <div class="col-xl-2 col-lg-4">
                                                 <div class="brk-nav__header font__family-montserrat">ELEMENTS</div>
                                                 <div
-                                                    class="brk-header_border-right pt-lg-20 pb-lg-30 pb-10 brk-header_h-100">
+                                                    class="pb-10 brk-header_border-right pt-lg-20 pb-lg-30 brk-header_h-100">
                                                     <ul class="brk-header-list font__family-montserrat">
                                                         <li class="dd-effect">
                                                             <a href="team-member.html">
@@ -1427,7 +1440,8 @@
                                                         <li class="dd-effect">
                                                             <a href="testimonials.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                                    <i class="fa fa-university"
+                                                                        aria-hidden="true"></i>
                                                                 </span>
                                                                 Testimonials
                                                             </a>
@@ -1502,7 +1516,8 @@
                                 <span class="font__family-montserrat font__weight-bold font__size-18">Search</span>
                             </div>
                             <form class="brk-search__form" role="search" method="get" action="#">
-                                <input name="s" maxlength="50" type="search" value="" placeholder="Enter search text">
+                                <input name="s" maxlength="50" type="search" value=""
+                                    placeholder="Enter search text">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                             <span class="brk-search__close font__family-montserrat font__weight-medium">Close <i
@@ -1510,7 +1525,7 @@
                         </div>
                     </div>
                     <a href="#"
-                        class="btn btn-inside-out btn- brk-header__item brk-header__btn brk-header__btn_white btn-sm-1 brk-base-box-shadow border-radius-25 font__family-open-sans font__weight-bold m-0 pl-30 pr-30"
+                        class="m-0 btn btn-inside-out btn- brk-header__item brk-header__btn brk-header__btn_white btn-sm-1 brk-base-box-shadow border-radius-25 font__family-open-sans font__weight-bold pl-30 pr-30"
                         data-brk-library="component__button">
                         <span class="before">Buy now <span
                                 class="font__family-times-new-roman text-lowercase font__style-italic">for</span>
@@ -1532,7 +1547,7 @@
         <div class="brk-info-menu__bar">
             <button class="brk-info-menu__close"></button>
             <h3 class="brk-info-menu__header font__family-montserrat font__weight-bold font__size-21">More info</h3>
-            <div class="brk-categories mb-20" data-brk-library="component__widgets">
+            <div class="mb-20 brk-categories" data-brk-library="component__widgets">
                 <div class="brk-categories__list font__family-open-sans font__size-14 font__weight-normal">
                     <a href="#" class="brk-categories__item">
                         <span class="brk-categories__item-name">General</span>
@@ -1556,7 +1571,8 @@
                     </a>
                 </div>
             </div>
-            <h3 class="brk-info-menu__header font__family-montserrat font__weight-bold font__size-21">Our instagram</h3>
+            <h3 class="brk-info-menu__header font__family-montserrat font__weight-bold font__size-21">Our instagram
+            </h3>
             <div class="default-slider dots-base-skin dots-base-color slick-loading mt-15"
                 data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "dots": true, "autoplay": false, "autoplaySpeed": 4000}'
                 data-brk-library="slider__slick">
