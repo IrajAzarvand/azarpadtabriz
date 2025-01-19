@@ -24,7 +24,7 @@
                     a new begining for your team</h3>
                 <p class="brk-dark-font-color font__size-16 line__height-28 mb-50" style="max-width: 330px">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                    massa. Cum sociis natoque penatibus et magnis dis parturient montes.
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes. این یک متن فارسی است
                 </p>
 
 
