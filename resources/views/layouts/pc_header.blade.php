@@ -161,13 +161,13 @@
                         </a>
                     </div>
                     <div class="brk-lang brk-lang_interactive brk-header__item">
-                        <span class="brk-lang__selected">{{ Str::upper(app()->getLocale()) }} <i
+                        <span class="brk-lang__selected">{{ app()->getLocale() }} <i
                                 class="fa fa-caret-down" aria-hidden="true"></i></span>
                         <span class="brk-lang__open"><i class="fa fa-language"></i> Language <span
                                 class="text-white brk-lang__active-lang brk-bg-primary">{{ app()->getLocale() }}</span></span>
                         <ul class="brk-lang__option">
                             @foreach (SiteLang() as $locale => $rtl)
-                                <li><a href="{{ route('SetLocale', [$locale]) }}">{{ Str::upper($locale) }}</a></li>
+                                <li><a href="{{ route('SetLocale', [$locale]) }}">{{ $locale }}</a></li>
                             @endforeach
                         </ul>
                     </div>

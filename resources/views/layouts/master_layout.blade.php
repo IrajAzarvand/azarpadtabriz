@@ -1,6 +1,6 @@
 {{-- used for main website pages --}}
 <!DOCTYPE html>
-<html lang="FA" data-brk-skin="brk-blue.css" @if (SiteLang()[app()->getLocale()]['rtl']) dir="rtl" @else dir="ltr" @endif>
+<html lang="en" data-brk-skin="brk-blue.css" @if (SiteLang()[app()->getLocale()]['rtl']) dir="rtl" @else dir="ltr" @endif>
 
 @include('layouts.main_header')
 

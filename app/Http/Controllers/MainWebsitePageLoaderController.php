@@ -13,6 +13,7 @@ class MainWebsitePageLoaderController extends Controller
     //set website locale to user selected
     public function SetLocale(string $langsymbol)
     {
+
         $NeedDirection = ['index']; //pages that needs ?dir=... at the end of address bar
         $prev_url = url()->previous();
         $SpecialAddress = false; //pretend that the current address dont need ?dir for default
@@ -31,8 +32,11 @@ class MainWebsitePageLoaderController extends Controller
         $RawUrl = trim($TrimmedUrl, '?dir=ltr');
 
         Session::put('locale', $langsymbol);
+
         App::SetLocale($langsymbol);
+
         $SiteLang = SiteLang();
+
 
         if ($SpecialAddress) {
             if ($SiteLang[$langsymbol]['rtl']) {

@@ -18,7 +18,7 @@
             <div class="col-12 col-lg-5">
                 <h2
                     class="mb-10 pt-50 font__family-montserrat font__size-56 font__weight-bold line__height-62 brk-color-base-dark">
-                    About Usss {{ app()->getLocale(), Session('locale') }}</h2>
+                    About Us</h2>
                 <h3
                     class="mb-40 font__family-montserrat font__size-18 line__height-22 font__weight-semibold brk-color-base-dark letter-spacing-100">
                     a new begining for your team</h3>
