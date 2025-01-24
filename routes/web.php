@@ -1,20 +1,46 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardPageLoader;
 use App\Http\Controllers\MainWebsitePageLoaderController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+
+// });
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+//Dashboard Routes
+//=======================================================================
+Route::prefix('dashboard')->middleware('auth')->group(function () {
+
+
+    //Dashboard Index
+    Route::get('/', [DashboardPageLoader::class, 'dashboard'])->name('dashboard');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+    //Clear Cache
+    // Route::get('/cc', function () {
+    //     Artisan::call('route:clear');
+    //     Artisan::call('route:cache');
+    //     echo 'route cache done.';
+    //     // Artisan::call('config:clear');
+    //     // Artisan::call('config:cache');
+    //     // echo 'config cache done.';
+    //     Artisan::call('view:clear');
+    //     Artisan::call('view:cache');
+    //     echo 'view cache done.';
+    // })->name('ClearCache');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 });
-
-
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 //Change Website Language

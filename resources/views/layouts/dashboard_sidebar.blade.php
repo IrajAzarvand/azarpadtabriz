@@ -64,13 +64,13 @@
                              </li>
                              <li class="nav-item">
                                  <a href="pages/charts/inline.html" class="nav-link">
-                                     <i class="fa fa-circle-o nav-icon"></i>
+                                     <i class="fa fa-check-square-o nav-icon"></i>
                                      <p>کاربردها</p>
                                  </a>
                              </li>
                              <li class="nav-item">
                                  <a href="pages/charts/inline.html" class="nav-link">
-                                     <i class="fa fa-circle-o nav-icon"></i>
+                                     <i class="fa fa-volume-control-phone nav-icon"></i>
                                      <p>تماس با ما</p>
                                  </a>
                              </li>

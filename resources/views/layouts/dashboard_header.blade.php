@@ -3,7 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>پنل مدیریت | داشبورد دوم</title>
+    <title>داشبرد | کنترل پنل مدیریت</title>
+
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
