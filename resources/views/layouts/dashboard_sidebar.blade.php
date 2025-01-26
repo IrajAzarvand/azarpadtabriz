@@ -45,7 +45,7 @@
                          </a>
                          <ul class="nav nav-treeview">
                              <li class="nav-item">
-                                 <a href="pages/charts/chartjs.html" class="nav-link">
+                                 <a href="{{ route('pagesIndex') }}" class="nav-link">
                                      <i class="fa fa-file nav-icon"></i>
                                      <p>صفحه اصلی</p>
                                  </a>

@@ -26,6 +26,11 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/', [DashboardPageLoader::class, 'dashboard'])->name('dashboard');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+    //Pages / index
+    Route::get('/pages/index', [DashboardPageLoader::class, 'pagesIndex'])->name('pagesIndex');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
     //Clear Cache
     // Route::get('/cc', function () {
     //     Artisan::call('route:clear');
