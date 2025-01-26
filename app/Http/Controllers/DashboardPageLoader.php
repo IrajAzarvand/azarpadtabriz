@@ -8,7 +8,7 @@ class DashboardPageLoader extends Controller
 {
     public function dashboard()
     {
-        return view('PageElements.dashboard.Setting.index');
+        return view('dashboard');
     }
 
 }

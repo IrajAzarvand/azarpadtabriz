@@ -13,7 +13,7 @@
              <!-- Sidebar user panel (optional) -->
              <div class="pb-3 mt-3 mb-3 user-panel d-flex">
                  <div class="image">
-                     <img src="{{ asset('storage/dashboard_images/admin_img.png') }}" class="img-circle elevation-2"
+                     <img src="{{ asset('storage/dashboard_images/admin_img.jpg') }}" class="img-circle elevation-2"
                          alt="User Image">
                  </div>
                  <div class="info">
