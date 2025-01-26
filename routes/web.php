@@ -27,7 +27,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //Pages / index
-    Route::get('/pages/index', [DashboardPageLoader::class, 'pagesIndex'])->name('pagesIndex');
+    Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('pagesIndex');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 

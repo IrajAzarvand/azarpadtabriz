@@ -11,9 +11,9 @@ class DashboardPageLoader extends Controller
         return view('dashboard.index');
     }
 
-    public function pagesIndex()
+    public function indexPage()
     {
-        return view('dashboard.pagesIndex');
+        return view('dashboard.indexPage');
     }
 
 }
