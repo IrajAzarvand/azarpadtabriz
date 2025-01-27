@@ -1,4 +1,4 @@
-@extends('dashboard', ['Name' => 'داشبورد', 'Section' => 'صفحه اصلی'])
+@extends('dashboard')
 
 @section('contents')
     <!-- Info boxes -->

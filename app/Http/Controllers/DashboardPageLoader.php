@@ -8,44 +8,49 @@ class DashboardPageLoader extends Controller
 {
     public function dashboard()
     {
-        return view('dashboard.index');
+        $Name='داشبورد';
+        $Section='';
+        return view('dashboard.Page',compact('Name','Section'));
     }
 
     public function indexPage()
     {
-        return view('dashboard.indexPage');
+
+        $Name='صفحات';
+        $Section='صفحه اصلی';
+        return view('dashboard.Page',compact('Name','Section'));
     }
 
 
     public function aboutusPage()
     {
-        return view('dashboard.indexPage');
+        return view('dashboard.Page');
     }
 
     public function blogPage()
     {
-        return view('dashboard.indexPage');
+        return view('dashboard.Page');
     }
 
 
     public function usageGreenhousePage()
     {
-        return view('dashboard.indexPage');
+        return view('dashboard.Page');
     }
 
     public function usagePoultryFarmPage()
     {
-        return view('dashboard.indexPage');
+        return view('dashboard.Page');
     }
 
     public function usagePowerPlantPage()
     {
-        return view('dashboard.indexPage');
+        return view('dashboard.Page');
     }
 
     public function contactUsPage()
     {
-        return view('dashboard.indexPage');
+        return view('dashboard.Page');
     }
 
 }
