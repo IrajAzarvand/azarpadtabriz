@@ -5,18 +5,6 @@ use App\Http\Controllers\DashboardPageLoader;
 use App\Http\Controllers\MainWebsitePageLoaderController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-
-// });
-
-
 //Dashboard Routes
 //=======================================================================
 Route::prefix('dashboard')->middleware('auth')->group(function () {
@@ -26,8 +14,34 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/', [DashboardPageLoader::class, 'dashboard'])->name('dashboard');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-    //Pages / index
+    //=============Pages
+
+    //===== index
     Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('pagesIndex');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+    //===== about us
+    Route::get('/aboutusPage', [DashboardPageLoader::class, 'aboutusPage'])->name('aboutusPage');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+    //===== blog
+    Route::get('/blogPage', [DashboardPageLoader::class, 'blogPage'])->name('blogPage');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+    //===== usageGreenhouse
+    Route::get('/usageGreenhousePage', [DashboardPageLoader::class, 'usageGreenhousePage'])->name('usageGreenhousePage');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+    //===== usagePoultryFarms
+    Route::get('/usagePoultryFarmPage', [DashboardPageLoader::class, 'usagePoultryFarmPage'])->name('usagePoultryFarmPage');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+    //===== usagePowerPlant
+    Route::get('/usagePowerPlantPage', [DashboardPageLoader::class, 'usagePowerPlantPage'])->name('usagePowerPlantPage');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+    //===== contactUs
+    Route::get('/contactUsPage', [DashboardPageLoader::class, 'contactUsPage'])->name('contactUsPage');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
