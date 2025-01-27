@@ -38,7 +38,7 @@
                     </li>
 
                     <li
-                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['indexPage','aboutusPage','blogPage','usageGreenhousePage','usagePoultryFarmPage','usagePowerPlantPage','contactUsPage'])) {{'menu-open' }} @endif">
+                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['indexPage','aboutusPage','blogPage','usagePage','contactUsPage'])) {{'menu-open' }} @endif">
                         <a href=" #" class="nav-link">
                             <i class="nav-icon fa fa-book"></i>
                             <p>
@@ -55,26 +55,30 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/flot.html" class="nav-link">
+                                <a href="{{ route('aboutusPage') }}"
+                                    class="nav-link @if(last(request()->segments())== 'aboutusPage'){{ 'active' }} @endif">
                                     <i class="fa fa-question nav-icon"></i>
                                     <p>درباره ما</p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="pages/charts/inline.html" class="nav-link">
+                                <a href="{{ route('blogPage') }}"
+                                    class="nav-link @if(last(request()->segments())== 'blogPage'){{ 'active' }} @endif">
                                     <i class="fa fa-address-card-o nav-icon"></i>
                                     <p>وبلاگ</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/inline.html" class="nav-link">
+                                <a href="{{ route('usagePage') }}"
+                                    class="nav-link @if(last(request()->segments())== 'usagePage'){{ 'active' }} @endif">
                                     <i class="fa fa-check-square-o nav-icon"></i>
                                     <p>کاربردها</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/inline.html" class="nav-link">
+                                <a href="{{route('contactUsPage')}}"
+                                    class="nav-link  @if(last(request()->segments())== 'contactUsPage'){{ 'active' }} @endif">
                                     <i class="fa fa-volume-control-phone nav-icon"></i>
                                     <p>تماس با ما</p>
                                 </a>
@@ -82,16 +86,9 @@
 
                         </ul>
                     </li>
+
                     <li class="nav-item">
-                        <a href="{{ route('dashboard') }}" class="nav-link">
-                            <i class="nav-icon fa fa-gear"></i>
-                            <p>
-                                تنظیمات
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('dashboard') }}" class="nav-link">
+                        <a href="#" class="nav-link">
                             <p>
                                 ========
                             </p>
