@@ -17,7 +17,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     //=============Pages
 
     //===== index
-    Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('pagesIndex');
+    Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('indexPage');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== about us
