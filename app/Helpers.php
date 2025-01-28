@@ -38,6 +38,6 @@ function DefaultLocale()
  */
 function LogoPath()
 {
-    return asset('storage/Main_logo.png');
+    return asset('storage/Main_images/logo.png');
 
 }

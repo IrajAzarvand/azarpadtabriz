@@ -3,6 +3,6 @@
         <span></span>
     </div>
     <div class="brk-header-mobile__logo">
-        <a href="#"><img src="img/logo-dark-2.png" alt=""></a>
+        <a href="#"><img src="{{ LogoPath() }}" alt=""></a>
     </div>
 </div>

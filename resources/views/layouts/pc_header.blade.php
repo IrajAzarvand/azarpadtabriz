@@ -56,8 +56,7 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text"
-                                            value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -82,8 +81,7 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text"
-                                            value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -108,8 +106,7 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text"
-                                            value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -134,8 +131,7 @@
                                     </div>
                                     <div class="brk-quantity">
                                         <span class="brk-quantity__arrows minus"></span>
-                                        <input class="brk-quantity__value" name="quantity" type="text"
-                                            value="2">
+                                        <input class="brk-quantity__value" name="quantity" type="text" value="2">
                                         <span class="brk-quantity__arrows plus"></span>
                                     </div>
                                     <a href="#" class="brk-mini-cart__product--remove remove"><i
@@ -161,13 +157,14 @@
                         </a>
                     </div>
                     <div class="brk-lang brk-lang_interactive brk-header__item">
-                        <span class="brk-lang__selected">{{ app()->getLocale() }} <i
-                                class="fa fa-caret-down" aria-hidden="true"></i></span>
+                        <span class="brk-lang__selected">{{ app()->getLocale() }} <i class="fa fa-caret-down"
+                                aria-hidden="true"></i></span>
                         <span class="brk-lang__open"><i class="fa fa-language"></i> Language <span
-                                class="text-white brk-lang__active-lang brk-bg-primary">{{ app()->getLocale() }}</span></span>
+                                class="text-white brk-lang__active-lang brk-bg-primary">{{ app()->getLocale()
+                                }}</span></span>
                         <ul class="brk-lang__option">
                             @foreach (SiteLang() as $locale => $rtl)
-                                <li><a href="{{ route('SetLocale', [$locale]) }}">{{ $locale }}</a></li>
+                            <li><a href="{{ route('SetLocale', [$locale]) }}">{{ $locale }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -193,10 +190,10 @@
                     <a href="/" class="brk-header__logo brk-header__item @@modifier">
                         <img class="brk-header__logo-1 lazyload"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="img/logo-dark-1.png" alt="alt">
+                            data-src="{{ LogoPath() }}" alt="alt">
                         <img class="brk-header__logo-2 lazyload"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="img/logo-dark-1.png" alt="alt">
+                            data-src="{{ LogoPath() }}" alt="alt">
                     </a>
                 </div>
                 <div class="col-lg align-self-lg-stretch text-lg-center">
@@ -819,8 +816,7 @@
                                         <ul class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
                                             <li class="dd-effect brk-nav__children brk-nav__drop-down-effect">
                                                 <a href="#">Headers Extra <i class="fas fa-angle-right"></i></a>
-                                                <ul
-                                                    class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
+                                                <ul class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
                                                     <li class="dd-effect"><a href="header-8.html">Header 8</a></li>
                                                     <li class="dd-effect"><a href="header-9.html">Header 9</a></li>
                                                     <li class="dd-effect"><a href="header-10.html">Header 10</a></li>
@@ -1044,8 +1040,7 @@
                                                         <li class="dd-effect">
                                                             <a href="alerts.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university"
-                                                                        aria-hidden="true"></i>
+                                                                    <i class="fa fa-university" aria-hidden="true"></i>
                                                                 </span>
                                                                 Alerts
                                                             </a>
@@ -1110,8 +1105,7 @@
                                                         <li class="dd-effect">
                                                             <a href="countdown.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university"
-                                                                        aria-hidden="true"></i>
+                                                                    <i class="fa fa-university" aria-hidden="true"></i>
                                                                 </span>
                                                                 Countdown
                                                             </a>
@@ -1200,8 +1194,7 @@
                                                         <li class="dd-effect">
                                                             <a href="image-map.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university"
-                                                                        aria-hidden="true"></i>
+                                                                    <i class="fa fa-university" aria-hidden="true"></i>
                                                                 </span>
                                                                 Image map
                                                             </a>
@@ -1292,8 +1285,7 @@
                                                         <li class="dd-effect">
                                                             <a href="progress-circles.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university"
-                                                                        aria-hidden="true"></i>
+                                                                    <i class="fa fa-university" aria-hidden="true"></i>
                                                                 </span>
                                                                 Progress circles
                                                             </a>
@@ -1406,8 +1398,7 @@
                                                         <li class="dd-effect">
                                                             <a href="team.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university"
-                                                                        aria-hidden="true"></i>
+                                                                    <i class="fa fa-university" aria-hidden="true"></i>
                                                                 </span>
                                                                 Team
                                                             </a>
@@ -1415,8 +1406,7 @@
                                                         <li class="dd-effect">
                                                             <a href="progress-bars.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university"
-                                                                        aria-hidden="true"></i>
+                                                                    <i class="fa fa-university" aria-hidden="true"></i>
                                                                 </span>
                                                                 Progress bars
                                                             </a>
@@ -1440,8 +1430,7 @@
                                                         <li class="dd-effect">
                                                             <a href="testimonials.html">
                                                                 <span class="brk-header-list__icon">
-                                                                    <i class="fa fa-university"
-                                                                        aria-hidden="true"></i>
+                                                                    <i class="fa fa-university" aria-hidden="true"></i>
                                                                 </span>
                                                                 Testimonials
                                                             </a>
@@ -1516,8 +1505,7 @@
                                 <span class="font__family-montserrat font__weight-bold font__size-18">Search</span>
                             </div>
                             <form class="brk-search__form" role="search" method="get" action="#">
-                                <input name="s" maxlength="50" type="search" value=""
-                                    placeholder="Enter search text">
+                                <input name="s" maxlength="50" type="search" value="" placeholder="Enter search text">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                             <span class="brk-search__close font__family-montserrat font__weight-medium">Close <i
