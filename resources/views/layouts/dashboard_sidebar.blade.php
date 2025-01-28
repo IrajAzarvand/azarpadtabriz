@@ -37,6 +37,15 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="{{ route('MainWebsite') }}" class="nav-link">
+                            <i class="nav-icon fa fa-globe"></i>
+                            <p>
+                                مشاهده در وبسایت اصلی
+                            </p>
+                        </a>
+                    </li>
+
                     <li
                         class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['indexPage','aboutusPage','blogPage','usagePage','contactUsPage'])) {{'menu-open' }} @endif">
                         <a href=" #" class="nav-link">
