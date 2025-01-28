@@ -29,3 +29,15 @@ function DefaultLocale()
 {
     return "FA";
 }
+
+
+/**
+ * set logo file route to use in whole website
+ *
+ * @return string
+ */
+function LogoPath()
+{
+    return asset('storage/Main_logo.png');
+
+}
