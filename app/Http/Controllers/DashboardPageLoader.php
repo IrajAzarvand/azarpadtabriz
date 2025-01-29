@@ -24,33 +24,34 @@ class DashboardPageLoader extends Controller
 
     public function aboutusPage()
     {
-        return view('dashboard.Page');
+        $Name='صفحات';
+        $Section='درباره ما';
+        return view('dashboard.Page',compact('Name','Section'));
     }
 
     public function blogPage()
     {
-        return view('dashboard.Page');
+        $Name='صفحات';
+        $Section='وبلاگ';
+        return view('dashboard.Page',compact('Name','Section'));
     }
 
 
-    public function usageGreenhousePage()
+    public function usagePage()
     {
-        return view('dashboard.Page');
-    }
-
-    public function usagePoultryFarmPage()
-    {
-        return view('dashboard.Page');
-    }
-
-    public function usagePowerPlantPage()
-    {
-        return view('dashboard.Page');
+        //usageGreenhousePage گلخانه
+        //usagePoultryFarmPage مرغداری ها
+        //usagePowerPlantPage نیروگاه ها
+        $Name='صفحات';
+        $Section='کاربردها';
+        return view('dashboard.Page',compact('Name','Section'));
     }
 
     public function contactUsPage()
     {
-        return view('dashboard.Page');
+        $Name='صفحات';
+        $Section='تماس با ما';
+        return view('dashboard.Page',compact('Name','Section'));
     }
 
 }

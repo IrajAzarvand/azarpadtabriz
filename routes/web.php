@@ -17,7 +17,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     //=============Pages
 
     //===== index
-    Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('pagesIndex');
+    Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('indexPage');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== about us
@@ -29,15 +29,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== usageGreenhouse
-    Route::get('/usageGreenhousePage', [DashboardPageLoader::class, 'usageGreenhousePage'])->name('usageGreenhousePage');
-    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-    //===== usagePoultryFarms
-    Route::get('/usagePoultryFarmPage', [DashboardPageLoader::class, 'usagePoultryFarmPage'])->name('usagePoultryFarmPage');
-    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-    //===== usagePowerPlant
-    Route::get('/usagePowerPlantPage', [DashboardPageLoader::class, 'usagePowerPlantPage'])->name('usagePowerPlantPage');
+    Route::get('/usagePage', [DashboardPageLoader::class, 'usagePage'])->name('usagePage');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== contactUs

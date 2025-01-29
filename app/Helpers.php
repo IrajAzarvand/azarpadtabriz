@@ -50,4 +50,13 @@ function DefaultLocale()
 function siteName()
 {
     return 'آذر پد تبریز';
+/**
+ * set logo file route to use in whole website
+ *
+ * @return string
+ */
+function LogoPath()
+{
+    return asset('storage/Main_images/logo.png');
+
 }
