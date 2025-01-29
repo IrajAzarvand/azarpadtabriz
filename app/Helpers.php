@@ -30,18 +30,6 @@ function DefaultLocale()
     return "FA";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * set default locale to first item in locale file in config. => fa
  *
@@ -50,6 +38,7 @@ function DefaultLocale()
 function siteName()
 {
     return 'آذر پد تبریز';
+}
 /**
  * set logo file route to use in whole website
  *
