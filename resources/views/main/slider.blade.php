@@ -1,16 +1,17 @@
-<div id="rev_slider_9_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="demo_freelance_portfolio"
+<div id="rev_slider_9_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="{{ siteName() }}"
     data-source="gallery" style="background:transparent;padding:0px;">
     <div id="rev_slider_9_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.1">
         <ul>
             <li data-index="rs-21" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
                 data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500"
-                data-thumb="img/demo_freelance_portfolio/images/100x50_e8d28-brk_slide-1.jpg" data-rotate="0"
-                data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3=""
-                data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2=""
+                data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                 data-param10="" data-description="">
                 <img src="img/demo_freelance_portfolio/images/e8d28-brk_slide-1.jpg" alt=""
                     data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off"
                     class="rev-slidebg" data-no-retina>
+
+
                 <div class="tp-caption" id="slide-21-layer-2" data-x="['left','left','left','left']"
                     data-hoffset="['140','50','50','15']" data-y="['middle','middle','middle','middle']"
                     data-voffset="['50','50','0','0']" data-width="none" data-height="none" data-whitespace="nowrap"
@@ -18,9 +19,11 @@
                     data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                     data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                    style="z-index: 5;"><img src="img/demo_freelance_portfolio/images/99532-element_2.png" alt=""
+                    style="z-index: 5;"><img src="img/demo_freelance_portfolio/images/img2.png" alt=""
                         data-ww="['644px','400px','300px','200px']" data-hh="['644px','400','300','200px']"
                         data-no-retina> </div>
+
+
                 <div class="tp-caption" id="slide-21-layer-4" data-x="['right','right','right','right']"
                     data-hoffset="['15','15','15','15']" data-y="['middle','middle','middle','middle']"
                     data-voffset="['107','53','29','27']" data-fontsize="['72','44','34','28']"

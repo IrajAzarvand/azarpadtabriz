@@ -1,10 +1,13 @@
-<script defer="defer" src="js/scripts.min.js"></script>
-<script defer="defer" src="vendor/revslider/js/jquery.themepunch.tools.min.js"></script>
-<script defer="defer" src="vendor/revslider/js/jquery.themepunch.revolution.min.js"></script>
-<script defer="defer" src="vendor/revslider/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script defer="defer" src="vendor/revslider/js/extensions/revolution.extension.navigation.min.js"></script>
-<script defer="defer" src="vendor/revslider/js/extensions/revolution.extension.parallax.min.js"></script>
-<script defer="defer" src="vendor/revslider/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script defer="defer" src="{{ asset('js/scripts.min.js') }}"></script>
+<script defer="defer" src="{{ asset('vendor/revslider/js/jquery.themepunch.tools.min.js') }}"></script>
+<script defer="defer" src="{{ asset('vendor/revslider/js/jquery.themepunch.revolution.min.js') }}"></script>
+<script defer="defer" src="{{ asset('vendor/revslider/js/extensions/revolution.extension.layeranimation.min.js') }}">
+</script>
+<script defer="defer" src="{{ asset('vendor/revslider/js/extensions/revolution.extension.navigation.min.js') }}">
+</script>
+<script defer="defer" src="{{ asset('vendor/revslider/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+<script defer="defer" src="{{ asset('vendor/revslider/js/extensions/revolution.extension.slideanims.min.js') }}">
+</script>
 <script>
     var revapi9,
 			tpj;

@@ -29,3 +29,25 @@ function DefaultLocale()
 {
     return "FA";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * set default locale to first item in locale file in config. => fa
+ *
+ * @return array
+ */
+function siteName()
+{
+    return 'آذر پد تبریز';
+}
