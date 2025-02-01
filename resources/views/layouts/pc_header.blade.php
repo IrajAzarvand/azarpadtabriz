@@ -1,10 +1,11 @@
 <header
     class="brk-header brk-header_style-1 brk-header_skin-1 position-fixed d-lg-flex flex-column brk-header_color-dark"
-    style="display: none;" data-logo-src="img/logo-dark-2.png" data-bg-mobile="img/brk-bg-mobile-menu.jpg"
+    style="display: none;" data-logo-src="{{ LogoPath() }}" data-bg-mobile="{{ LogoPath() }}"
     data-brk-library="component__header">
     <div class="order-2 brk-header__top-bar order-lg-1 font__family-montserrat brk-header__top-bar_scroll"
         style="height: 46px;">
-        <div class="brk-header__title font__family-montserrat font__weight-bold">Contact Us</div>
+        <div class="brk-header__title font__family-montserrat font__weight-bold">{{
+            Dictionary()['ContactUs'][app()->getLocale()] }}</div>
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="text-left col-lg-6 align-self-lg-stretch">
