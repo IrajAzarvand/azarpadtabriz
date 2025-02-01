@@ -81,12 +81,6 @@ function Dictionary()
             'RU' => 'Продукты',
             'AR' => 'منتجات',
         ],
-        'NewProducts' => [
-            'FA' => 'جدیدترین محصولات',
-            'EN' => 'New Products',
-            'RU' => 'новые продукты',
-            'AR' => 'منتجات جديدة',
-        ],
         'ViewProduct' => [
             'FA' => 'مشاهده محصول',
             'EN' => 'View Product',
