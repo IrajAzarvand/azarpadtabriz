@@ -1,17 +1,7 @@
 <section class="pt-15 pt-xs-50 z-index-3 position-relative">
     <span class="brk-svg-pattern-container brk-svg-pattern-container-1 brk-svg-pattern-container_top"
         data-brk-library="component__svg_pattern">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1922 149">
-            <defs>
-                <path id="svg-pattern-id-5"
-                    d="M0 4050.12s200.64 67.84 459 61.88c371.06-8.57 855.17-71.9 984-71.9 252.85 0 422.43 53.4 477 77.06V4033H0z" />
-            </defs>
-            <g>
-                <g transform="translate(1 -4032)">
-                    <use fill="#fff" xlink:href="#svg-pattern-id-5" />
-                </g>
-            </g>
-        </svg>
+
     </span>
     <div class="pt-250 pb-250 brk-abs-overlay opacity-10 brk-bg-pattern">
         <span class="brk-abs-bg-overlay"></span>
