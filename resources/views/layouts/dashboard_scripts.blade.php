@@ -20,19 +20,6 @@
             },
             "info" : false,
         });
-    // $('#simple_paginate').DataTable({
-    //     "language": {
-    //         "paginate": {
-    //             "next": "بعدی",
-    //             "previous" : "قبلی"
-    //         }
-    //     },
-    //     "info" : false,
-    //     "paging": true,
-    //     "lengthChange": false,
-    //     "searching": false,
-    //     "ordering": true,
-    //     "autoWidth": false
-    // });
+
     });
 </script>

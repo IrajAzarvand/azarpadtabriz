@@ -20,12 +20,10 @@
                         <table id="simple_paginate" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th>موتور رندر</th>
-                                <th>مرورگر</th>
-                                <th>سیستم عامل</th>
-                                <th>ورژن</th>
-                                <th>امتیاز</th>
-                                <th>2امتیاز</th>
+                                <th style="width: 10%;">ردیف</th>
+                                <th style="width: 20%;">تصویر</th>
+                                <th style="width: 50%;">متن فارسی</th>
+                                <th style="width: 20%;">عملیات</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -36,8 +34,6 @@
                                 </td>
                                 <td>Win 95+</td>
                                 <td> 4</td>
-                                <td>X</td>
-                                <td>X</td>
                             </tr>
 
                             </tbody>
