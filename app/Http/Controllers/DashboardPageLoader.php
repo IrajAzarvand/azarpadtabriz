@@ -18,6 +18,10 @@ class DashboardPageLoader extends Controller
 
         $Name='صفحات';
         $Section='صفحه اصلی';
+
+//        read slider from db
+        $Sliders=[];
+
         return view('dashboard.Page',compact('Name','Section'));
     }
 
