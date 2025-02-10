@@ -35,7 +35,7 @@
     </div>
     <div class="card-body">
 
-        <div>
+            <form>
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header d-flex p-0">
@@ -49,8 +49,8 @@
                     <div class="tab-content">
                         @foreach (SiteLang() as $locale => $specs)
                             <div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $specs['name'] }}">
-                       <textarea class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
-                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $specs['name'] }}</textarea>
+                       <textarea @if ($specs['rtl']) dir="rtl" @else dir="ltr" @endif class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
+                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
                         @endforeach
                     </div>
@@ -60,14 +60,15 @@
             </div>
             <!-- ./card -->
 
-                <div class="custom-file col-6">
+                <div class="custom-file col-6 float-right">
                     <input type="file" class="custom-file-input" id="exampleInputFile">
                     <label class="custom-file-label" for="exampleInputFile">انتخاب فایل</label>
                 </div>
 
-
-        </div>
-
+            <div class="col-6 float-left">
+                <button type="submit" class="btn btn-primary">ارسال</button>
+            </div>
+            </form>
     </div>
     <!-- /.card-body -->
 </div>
