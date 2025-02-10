@@ -18,7 +18,7 @@ class DashboardPageLoader extends Controller
     {
 
         $Name='صفحات';
-        $Section='صفحه اصلی';
+        $Page='صفحه اصلی';
 
 //        read slider from db
         $Sliders = Slider::with('contents')->get();
@@ -27,22 +27,22 @@ class DashboardPageLoader extends Controller
             $SL[$item->id] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
         }
 
-        return view('dashboard.Page',compact('Name','Section', 'SL'));
+        return view('dashboard.Page',compact('Name','Page', 'SL'));
     }
 
 
     public function aboutusPage()
     {
         $Name='صفحات';
-        $Section='درباره ما';
-        return view('dashboard.Page',compact('Name','Section'));
+        $Page='درباره ما';
+        return view('dashboard.Page',compact('Name','Page'));
     }
 
     public function blogPage()
     {
         $Name='صفحات';
-        $Section='وبلاگ';
-        return view('dashboard.Page',compact('Name','Section'));
+        $Page='وبلاگ';
+        return view('dashboard.Page',compact('Name','Page'));
     }
 
 
@@ -52,15 +52,20 @@ class DashboardPageLoader extends Controller
         //usagePoultryFarmPage مرغداری ها
         //usagePowerPlantPage نیروگاه ها
         $Name='صفحات';
-        $Section='کاربردها';
-        return view('dashboard.Page',compact('Name','Section'));
+        $Page='کاربردها';
+        return view('dashboard.Page',compact('Name','Page'));
     }
 
     public function contactUsPage()
     {
         $Name='صفحات';
-        $Section='تماس با ما';
-        return view('dashboard.Page',compact('Name','Section'));
+        $Page='تماس با ما';
+        return view('dashboard.Page',compact('Name','Page'));
     }
 
+
+    public function dashboardSubmit(Request $request)
+    {
+        dd('dashboard page loader controller', $request);
+    }
 }

@@ -35,7 +35,10 @@
     </div>
     <div class="card-body">
 
-            <form>
+<form action="{{route('dashboardSubmit')}}">
+    <input name="Page" type="hidden" value="{{$Page}}">
+    <input name="Section" type="hidden" value="{{$Section}}">
+    <input name="Element" type="hidden" value="{{$Element}}">
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header d-flex p-0">
@@ -65,10 +68,11 @@
                     <label class="custom-file-label" for="exampleInputFile">انتخاب فایل</label>
                 </div>
 
-            <div class="col-6 float-left">
-                <button type="submit" class="btn btn-primary">ارسال</button>
-            </div>
-            </form>
+    <div class="col-6 float-left">
+        <button type="submit" class="btn btn-primary">ارسال</button>
+    </div>
+</form>
+
     </div>
     <!-- /.card-body -->
 </div>

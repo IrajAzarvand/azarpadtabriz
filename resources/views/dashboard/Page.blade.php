@@ -2,24 +2,29 @@
 
 @section('contents')
 
-@switch($Section)
+@switch($Page)
 @case('صفحه اصلی')
-<div class="row">
-    <!-- input form -->
-    @include('dashboard.InputForm')
-    <!-- /.input form -->
-    <div class="col-md-12">
 
-        <!-- general form elements -->
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">اسلایدرها</h3>
-            </div>
+    <div class="row">
 
-            <!-- /.card-header -->
+            <!-- input form -->
+            @include('dashboard.InputForm')
+            <!-- /.input form -->
 
 
-            <!-- form start -->
+
+        <div class="col-md-12">
+
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">اسلایدرها</h3>
+                </div>
+
+                <!-- /.card-header -->
+
+
+                <!-- form start -->
                 <form role="form">
                     <div class="card-body">
                         <table id="simple_paginate" class="table table-bordered table-striped">
@@ -47,16 +52,16 @@
                     </div>
                     <!-- /.card-body -->
 
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">ارسال</button>
-                </div>
-            </form>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.card -->
+
         </div>
-        <!-- /.card -->
 
     </div>
-
-</div>
 
 @break
 
