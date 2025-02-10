@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class DashboardPageLoader extends Controller
@@ -20,9 +21,13 @@ class DashboardPageLoader extends Controller
         $Section='صفحه اصلی';
 
 //        read slider from db
-        $Sliders=[];
+        $Sliders = Slider::with('contents')->get();
+        $SL = [];
+        foreach ($Sliders as $key => $item) {
+            $SL[$item->id] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
+        }
 
-        return view('dashboard.Page',compact('Name','Section'));
+        return view('dashboard.Page',compact('Name','Section', 'SL'));
     }
 
 

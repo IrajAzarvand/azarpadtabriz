@@ -14,4 +14,9 @@ class LocaleContents extends Model
         'element_title',
         'element_content',
     ];
+
+    public function slider(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Slider::class);
+    }
 }

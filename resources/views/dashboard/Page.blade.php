@@ -5,6 +5,9 @@
 @switch($Section)
 @case('صفحه اصلی')
 <div class="row">
+    <!-- input form -->
+    @include('dashboard.InputForm')
+    <!-- /.input form -->
     <div class="col-md-12">
 
         <!-- general form elements -->
@@ -14,6 +17,8 @@
             </div>
 
             <!-- /.card-header -->
+
+
             <!-- form start -->
                 <form role="form">
                     <div class="card-body">

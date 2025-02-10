@@ -18,4 +18,6 @@
     <!-- template rtl version -->
     <link rel="stylesheet" href="{{asset('dist/css/custom-style.css')}}">
 
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css')}}">
 </head>
