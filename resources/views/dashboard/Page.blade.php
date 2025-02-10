@@ -10,7 +10,7 @@
         <!-- general form elements -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">اسلایدر</h3>
+                <h3 class="card-title">اسلایدر (اندازه بهینه ۱۹۵۰*۱۳۰۰ حجم کمتر از ۱۰۰ کیلوبایت)</h3>
             </div>
 
             <!-- /.card-header -->
