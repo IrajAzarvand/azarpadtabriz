@@ -56,8 +56,16 @@
                     </div>
                     <!-- /.tab-content -->
                 </div><!-- /.card-body -->
+
             </div>
             <!-- ./card -->
+
+                <div class="custom-file col-6">
+                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                    <label class="custom-file-label" for="exampleInputFile">انتخاب فایل</label>
+                </div>
+
+
         </div>
 
     </div>
