@@ -37,6 +37,11 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
+    //===== trigger when submit button pressed in dashboard forms
+    Route::get('/dashboardSubmit', [DashboardPageLoader::class, 'dashboardSubmit'])->name('dashboardSubmit');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
     //Clear Cache
     // Route::get('/cc', function () {
     //     Artisan::call('route:clear');

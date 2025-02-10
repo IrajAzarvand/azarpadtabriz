@@ -37,8 +37,7 @@
 
 <form action="{{route('dashboardSubmit')}}">
     <input name="Page" type="hidden" value="{{$Page}}">
-    <input name="Section" type="hidden" value="{{$Section}}">
-    <input name="Element" type="hidden" value="{{$Element}}">
+    <input name="Section" type="hidden" value="اسلایدر داخل فرم">
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header d-flex p-0">
@@ -64,8 +63,8 @@
             <!-- ./card -->
 
                 <div class="custom-file col-6 float-right">
-                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                    <label class="custom-file-label" for="exampleInputFile">انتخاب فایل</label>
+                    <input type="file" class="custom-file-input" id="file">
+                    <label class="custom-file-label" for="file">انتخاب فایل</label>
                 </div>
 
     <div class="col-6 float-left">
