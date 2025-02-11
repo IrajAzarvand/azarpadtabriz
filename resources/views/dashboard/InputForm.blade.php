@@ -35,7 +35,7 @@
     </div>
     <div class="card-body">
 
-<form method="post" action="{{route($FormSubmitRoute)}}">
+<form method="post" action="{{route($FormSubmitRoute)}}" enctype="multipart/form-data">
     @csrf
             <!-- Custom Tabs -->
             <div class="card">
@@ -62,7 +62,7 @@
             <!-- ./card -->
 
                 <div class="custom-file col-6 float-right">
-                    <input type="file" name="file"  class="custom-file-input" id="file">
+                    <input type="file" name="file" id="file">
                     <label class="custom-file-label" for="file">انتخاب فایل</label>
                 </div>
 
