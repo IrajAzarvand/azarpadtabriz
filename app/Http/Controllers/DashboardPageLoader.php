@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Slider;
-use Illuminate\Http\Request;
+
 
 class DashboardPageLoader extends Controller
 {
-    public function dashboard()
+    public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='داشبورد';
-        $Section='';
-        return view('dashboard.Page',compact('Name','Section'));
+        $Page='';
+        return view('dashboard.Page',compact('Name','Page'));
     }
 
-    public function indexPage()
+    public function indexPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
 
         $Name='صفحات';
         $Page='صفحه اصلی';
+        $FormSubmitRoute='indexPageSliderSave';
 
 //        read slider from db
         $Sliders = Slider::with('contents')->get();
@@ -27,18 +28,18 @@ class DashboardPageLoader extends Controller
             $SL[$item->id] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
         }
 
-        return view('dashboard.Page',compact('Name','Page', 'SL'));
+        return view('dashboard.Page',compact('Name','Page', 'SL','FormSubmitRoute'));
     }
 
 
-    public function aboutusPage()
+    public function aboutusPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='صفحات';
         $Page='درباره ما';
         return view('dashboard.Page',compact('Name','Page'));
     }
 
-    public function blogPage()
+    public function blogPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='صفحات';
         $Page='وبلاگ';
@@ -46,7 +47,7 @@ class DashboardPageLoader extends Controller
     }
 
 
-    public function usagePage()
+    public function usagePage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         //usageGreenhousePage گلخانه
         //usagePoultryFarmPage مرغداری ها
@@ -56,16 +57,11 @@ class DashboardPageLoader extends Controller
         return view('dashboard.Page',compact('Name','Page'));
     }
 
-    public function contactUsPage()
+    public function contactUsPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='صفحات';
         $Page='تماس با ما';
         return view('dashboard.Page',compact('Name','Page'));
     }
 
-
-    public function dashboardSubmit(Request $request)
-    {
-        dd('dashboard page loader controller', $request);
-    }
 }

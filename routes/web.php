@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardPageLoader;
 use App\Http\Controllers\MainWebsitePageLoaderController;
@@ -18,6 +19,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     //===== index
     Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('indexPage');
+    Route::post('/indexPage/slider/save', [SliderController::class, 'store'])->name('indexPageSliderSave');
+
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== about us
@@ -37,9 +40,9 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
-    //===== trigger when submit button pressed in dashboard forms
-    Route::get('/dashboardSubmit', [DashboardPageLoader::class, 'dashboardSubmit'])->name('dashboardSubmit');
-    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+//    //===== trigger when submit button pressed in dashboard forms
+//    Route::get('/dashboardSubmit', [DashboardPageLoader::class, 'dashboardSubmit'])->name('dashboardSubmit');
+//    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
     //Clear Cache

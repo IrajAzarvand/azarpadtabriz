@@ -35,9 +35,8 @@
     </div>
     <div class="card-body">
 
-<form action="{{route('dashboardSubmit')}}">
-    <input name="Page" type="hidden" value="{{$Page}}">
-    <input name="Section" type="hidden" value="اسلایدر داخل فرم">
+<form method="post" action="{{route($FormSubmitRoute)}}">
+    @csrf
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header d-flex p-0">
@@ -51,7 +50,7 @@
                     <div class="tab-content">
                         @foreach (SiteLang() as $locale => $specs)
                             <div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $specs['name'] }}">
-                       <textarea @if ($specs['rtl']) dir="rtl" @else dir="ltr" @endif class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
+                       <textarea name="text_{{$locale}}" @if ($specs['rtl']) dir="rtl" @else dir="ltr" @endif class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
                                  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
                         @endforeach
@@ -63,7 +62,7 @@
             <!-- ./card -->
 
                 <div class="custom-file col-6 float-right">
-                    <input type="file" class="custom-file-input" id="file">
+                    <input type="file" name="file"  class="custom-file-input" id="file">
                     <label class="custom-file-label" for="file">انتخاب فایل</label>
                 </div>
 
