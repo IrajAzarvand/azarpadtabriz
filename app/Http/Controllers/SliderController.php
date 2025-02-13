@@ -30,25 +30,26 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
+dd(LastItem('LocaleContents','slider','slider','element_id'));
         $uploaded = $request->file('file');
 
         $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
 //
         $Contents = [];
 //        // add new slider texts to locale contents
-        foreach (SiteLang() as $locale => $specs) {
-            $Contents = LocaleContents::firstOrNew(
-                [
-                    'page' => 'sliders',
-                    'section' => 'sliders',
-                    'element_title' => 'PtypeText',
-                    'element_id' => $NewPtype->id,
-                    'locale' => $locale,
-                    'element_content' => $request->input('content_' . $locale),
-                ]
-            );
-            $Contents->save();
-        }
+//        foreach (SiteLang() as $locale => $specs) {
+//            $Contents = LocaleContents::firstOrNew(
+//                [
+//                    'page' => 'index',
+//                    'section' => 'slider',
+//                    'element_title' => 'PtypeText',
+//                    'element_id' => ,
+//                    'locale' => $locale,
+//                    'element_content' => $request->input('content_' . $locale),
+//                ]
+//            );
+//            $Contents->save();
+//        }
 //
         return redirect()->back();
         dd($request, $uploaded);

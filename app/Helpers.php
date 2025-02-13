@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\LocaleContents;
 function SiteLang()
 {
     return [
@@ -50,6 +51,19 @@ function LogoPath()
 
 }
 
+
+//get latest item form a given table, and other options
+function LastItem($table, string $page='', string $section='', string $column='', string $title='')
+{
+    $Contents = [];
+dd($table::all());
+    $Contents = $table::where([
+        'page' => $page,
+        'section' => $section,
+        'element_title' => $title,
+    ])->count($column)->get();
+    return $Contents;
+}
 
 //common words used in whole website
 // usage:
