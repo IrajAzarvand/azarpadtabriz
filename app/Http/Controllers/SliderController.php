@@ -30,7 +30,15 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-dd(LastItem('LocaleContents','slider','slider','element_id'));
+
+//        $Contents = [];
+//        $contents=LocaleContents::all();
+//        $Contents = LocaleContents::where([
+//            'page' => 'index',
+//            'section' => 'slider',
+//            'element_title' => '',
+//        ])->count($column)->get();
+
         $uploaded = $request->file('file');
 
         $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
@@ -52,7 +60,7 @@ dd(LastItem('LocaleContents','slider','slider','element_id'));
 //        }
 //
         return redirect()->back();
-        dd($request, $uploaded);
+
     }
 
     /**
@@ -86,4 +94,5 @@ dd(LastItem('LocaleContents','slider','slider','element_id'));
     {
         //
     }
+
 }
