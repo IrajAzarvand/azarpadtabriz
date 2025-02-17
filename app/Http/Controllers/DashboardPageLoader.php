@@ -25,9 +25,9 @@ class DashboardPageLoader extends Controller
         $Sliders = Slider::with('contents')->get();
         $SL = [];
         foreach ($Sliders as $key => $item) {
-            $Sl[$item->id] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
+            $SL[$item->id] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
         }
-        asort($Sl);
+
         return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'SL'));
     }
 
