@@ -1,3 +1,4 @@
+
 @extends('dashboard')
 
 @section('contents')
@@ -37,15 +38,17 @@
                             </tr>
                             </thead>
                             <tbody>
+
+                            @foreach($SL as $id=>$slider_text)
                             <tr>
-                                <td>Trident</td>
+                                <td>{{$id}}</td>
                                 <td>Internet
                                     Explorer 4.0
                                 </td>
-                                <td>Win 95+</td>
+                                <td>{{$slider_text}}</td>
                                 <td> 4</td>
                             </tr>
-
+                            @endforeach
                             </tbody>
 
                         </table>
