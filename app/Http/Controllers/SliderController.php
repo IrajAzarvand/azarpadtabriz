@@ -39,25 +39,28 @@ class SliderController extends Controller
 //            'element_title' => '',
 //        ])->count($column)->get();
 
+//        save file to slider folder and add row to DB
         $uploaded = $request->file('file');
-
         $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
-//
+        $new_slider=Slider::create(['slider_image' => $uploaded->getClientOriginalName()]);
+//        $new_slider->save();
+
+
         $Contents = [];
-//        // add new slider texts to locale contents
-//        foreach (SiteLang() as $locale => $specs) {
-//            $Contents = LocaleContents::firstOrNew(
-//                [
-//                    'page' => 'index',
-//                    'section' => 'slider',
-//                    'element_title' => 'PtypeText',
-//                    'element_id' => ,
-//                    'locale' => $locale,
-//                    'element_content' => $request->input('content_' . $locale),
-//                ]
-//            );
-//            $Contents->save();
-//        }
+        // add new slider texts to locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $Contents = LocaleContents::firstOrNew(
+                [
+                    'page' => 'index',
+                    'section' => 'slider',
+                    'element_title' => 'SliderText',
+                    'element_id' => $new_slider->id,
+                    'locale' => $locale,
+                    'element_content' => $request->input('content_' . $locale),
+                ]
+            );
+            $Contents->save();
+        }
 //
         return redirect()->back();
 

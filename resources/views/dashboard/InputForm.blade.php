@@ -50,7 +50,7 @@
                     <div class="tab-content">
                         @foreach (SiteLang() as $locale => $specs)
                             <div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $specs['name'] }}">
-                       <textarea name="text_{{$locale}}" @if ($specs['rtl']) dir="rtl" @else dir="ltr" @endif class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
+                       <textarea name="content_{{$locale}}" @if ($specs['rtl']) dir="rtl" @else dir="ltr" @endif class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
                                  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
                         @endforeach
