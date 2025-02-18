@@ -37,7 +37,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('MainWebsite') }}" class="nav-link">
+                        <a href="{{ route('MainWebsite') }}" target="_blank" class="nav-link">
                             <i class="nav-icon fa fa-globe"></i>
                             <p>
                                 مشاهده در وبسایت اصلی

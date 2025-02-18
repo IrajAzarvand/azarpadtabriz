@@ -31,22 +31,27 @@
                         <table id="simple_paginate" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th style="width: 10%;">ردیف</th>
-                                <th style="width: 20%;">تصویر</th>
-                                <th style="width: 50%;">متن فارسی</th>
+                                <th style="width: 5%;">ردیف</th>
+                                <th style="width: 25%;">تصویر</th>
+                                <th style="width:50%;">متن فارسی</th>
                                 <th style="width: 20%;">عملیات</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            @foreach($SL as $id=>$slider_text)
+                            @foreach($SL as $id=>$item)
                             <tr>
                                 <td>{{$id}}</td>
-                                <td>Internet
-                                    Explorer 4.0
+                                <td><img width="40%"  src="{{$item['image']}}">
                                 </td>
-                                <td>{{$slider_text}}</td>
-                                <td> 4</td>
+                                <td>{{$item['content']}}</td>
+                                <td>     <!-- General tools such as edit or delete-->
+                                    <div class="tools">
+
+                                        <a href="#"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
+                                        <a href="{{route('removeSlider')}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+
+                                    </div></td>
                             </tr>
                             @endforeach
                             </tbody>

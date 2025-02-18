@@ -31,14 +31,6 @@ class SliderController extends Controller
     public function store(Request $request)
     {
 
-//        $Contents = [];
-//        $contents=LocaleContents::all();
-//        $Contents = LocaleContents::where([
-//            'page' => 'index',
-//            'section' => 'slider',
-//            'element_title' => '',
-//        ])->count($column)->get();
-
 //        save file to slider folder and add row to DB
         $uploaded = $request->file('file');
         $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
@@ -61,7 +53,7 @@ class SliderController extends Controller
             );
             $Contents->save();
         }
-//
+
         return redirect()->back();
 
     }
@@ -95,7 +87,7 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        dd($slider);
     }
 
 }
