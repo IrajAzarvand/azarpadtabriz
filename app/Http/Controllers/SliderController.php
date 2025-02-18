@@ -6,9 +6,12 @@ use App\Models\LocaleContents;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use mysql_xdevapi\Exception;
 
 class SliderController extends Controller
 {
+    public $slider_file_path='storage/Main_images/Sliders/';
+
     /**
      * Display a listing of the resource.
      */
@@ -85,9 +88,19 @@ class SliderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Slider $slider)
+    public function destroy(int $slider)
     {
-        dd($slider);
+        $selected_slider=Slider::with('contents')->find($slider);
+        try {
+
+            unlink($this->slider_file_path . $selected_slider->slider_image);
+        }
+        catch (\Throwable $e)
+        {
+            $selected_slider->contents()->delete();
+            $selected_slider->delete();
+        }
+       return redirect()->back();
     }
 
 }
