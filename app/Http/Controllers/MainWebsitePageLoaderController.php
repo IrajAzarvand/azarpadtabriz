@@ -59,22 +59,15 @@ class MainWebsitePageLoaderController extends Controller
 //        Slider Section
         $sliders=Slider::with('contents')->get();
 
-        foreach ($sliders as $key => $Item) {
-            foreach ($Item as $Prod) {
-                $NP[$key]['id'] = $Prod->id;
-                $NP[$key]['image'] = asset($this->ProductsImageFolder .  $Prod->id . '/sample.jpg');
-                $NP_Ptype = Ptype::where('id', $Prod->ptype_id)->with('contents')->first();
-
-
-                foreach (SiteLang() as $locale => $specs) {
-                    $NP[$key]['FullText' . $locale] = $Prod->contents->where('locale', $locale)->where('element_title', 'ProductIntro')->pluck('element_content')[0];
-                    $NP[$key]['ShortText' . $locale] = array_values(array_filter(preg_split("/[()]/", $NP[$key]['FullText' . $locale])))[1];
-                    $NP[$key]['Ptype' . $locale] = $NP_Ptype->contents()->where('locale', $locale)->pluck('element_content')[0];
+//        dd($sliders);
+        foreach ($sliders as $slider) {
+            foreach (SiteLang() as $locale => $specs) {
+                    $SL[$slider->id][$locale] = $slider->contents->where('locale', $locale)->where('element_id', $slider->id)->pluck('element_content')[0];
                 }
-            }
+                    $SL[$slider->id]['img']=$this->slider_path.$slider->slider_image;
         }
-        dd($sliders);
-        return view('welcome');
+
+        return view('welcome', compact('SL'));
     }
 
 

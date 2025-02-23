@@ -1513,15 +1513,6 @@
                                     class="fas fa-times"></i></span>
                         </div>
                     </div>
-                    <a href="#"
-                        class="m-0 btn btn-inside-out btn- brk-header__item brk-header__btn brk-header__btn_white btn-sm-1 brk-base-box-shadow border-radius-25 font__family-open-sans font__weight-bold pl-30 pr-30"
-                        data-brk-library="component__button">
-                        <span class="before">Buy now <span
-                                class="font__family-times-new-roman text-lowercase font__style-italic">for</span>
-                            39$</span><span class="text">Click Me</span><span class="after">Buy now <span
-                                class="font__family-times-new-roman text-lowercase font__style-italic">for</span>
-                            39$</span>
-                    </a>
                     <div class="brk-info-menu-open brk-info-menu-open_skin-2 brk-header__item">
                         <span class="brk-lines">
                             <span class="brk-center-line"></span>
