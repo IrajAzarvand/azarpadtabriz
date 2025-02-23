@@ -59,7 +59,7 @@ class MainWebsitePageLoaderController extends Controller
 //        Slider Section
         $sliders=Slider::with('contents')->get();
 
-//        dd($sliders);
+        $SL=[];
         foreach ($sliders as $slider) {
             foreach (SiteLang() as $locale => $specs) {
                     $SL[$slider->id][$locale] = $slider->contents->where('locale', $locale)->where('element_id', $slider->id)->pluck('element_content')[0];

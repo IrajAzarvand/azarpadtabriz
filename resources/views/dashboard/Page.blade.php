@@ -48,8 +48,9 @@
                                 <td>     <!-- General tools such as edit or delete-->
                                     <div class="tools">
 
-                                        <a href="#"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
+                                        <a href="#"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default"><i class="fa fa-pencil"></i></button></a>
                                         <a href="{{route('removeSlider',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+
 
                                     </div></td>
                             </tr>
