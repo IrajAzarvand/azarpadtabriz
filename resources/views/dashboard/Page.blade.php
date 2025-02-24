@@ -48,7 +48,7 @@
                                 <td>     <!-- General tools such as edit or delete-->
                                     <div class="tools">
 
-                                        <a href="#"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default"><i class="fa fa-pencil"></i></button></a>
+                                        <a href="{{route('editSelectedItem',['ویرایش آیتم','index','slider',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
                                         <a href="{{route('removeSlider',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
@@ -74,7 +74,44 @@
 
 @break
 
+
+
+    {{--    =====================================================--}}
+
+    {{--    =====================================================--}}
+@case('ویرایش آیتم')
+{{-- for use when edit button pressed in a page elements table--}}
+    <div class="row">
+
+        <!-- input form -->
+        @include('dashboard.InputForm')
+        <!-- /.input form -->
+
+
+
+        <div class="col-md-12">
+
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">ویرایش اسلایدر {{$selectedItemId}}</h3>
+                </div>
+
+                <!-- /.card-header -->
+
+            </div>
+            <!-- /.card -->
+
+        </div>
+
+    </div>
+
+    @break
+
+{{--    =====================================================================--}}
+{{--    =====================================================================--}}
 @default
+{{--    for use in dashboard main page--}}
 <div class="row">
     <div class="col-md-12">
 

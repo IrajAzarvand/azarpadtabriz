@@ -1,6 +1,6 @@
 
 <div id="rev_slider_12_1_wrapper" class="rev_slider_wrapper fullscreen-container"
-    data-alias="{{ siteName() }} data-source=" gallery" style="background:transparent;padding:0px;">
+    data-alias="{{ siteName() }}" data-source="gallery" style="background:transparent;padding:0;">
     <div id="rev_slider_12_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.1">
         <ul>
             @foreach($SL as $id=>$slider)

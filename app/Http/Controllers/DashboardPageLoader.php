@@ -69,4 +69,14 @@ class DashboardPageLoader extends Controller
         return view('dashboard.Page',compact('Name','Page'));
     }
 
+
+ public function editItem(string $selectedPage, string $p, string $selectedSection, int $selectedItemId): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+
+        $Name='صفحات';
+        $Page='ویرایش آیتم';
+        $FormSubmitRoute='indexPageSliderSave';
+        return view('dashboard.Page',compact('Name','Page','p','selectedSection','selectedItemId','FormSubmitRoute'));
+    }
+
 }

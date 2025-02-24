@@ -22,6 +22,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::post('/indexPage/slider/save', [SliderController::class, 'store'])->name('indexPageSliderSave');
     Route::get('/indexPage/slider/{id}/delete', [SliderController::class, 'destroy'])->name('removeSlider');
 
+
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== about us
@@ -40,9 +41,14 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/contactUsPage', [DashboardPageLoader::class, 'contactUsPage'])->name('contactUsPage');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+    //===== edit an item in dashboard
+    Route::get('/{page}/{p}/{section}/{item}/edit', [DashboardPageLoader::class, 'editItem'])->name('editSelectedItem');
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 
 //    //===== trigger when submit button pressed in dashboard forms
-//    Route::get('/dashboardSubmit', [DashboardPageLoader::class, 'dashboardSubmit'])->name('dashboardSubmit');
+//    Route::get('/dashboardSubmit', [DashboardPageLoader::class, 'dashboardSubmit'
+//)->name('dashboardSubmit');
 //    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 

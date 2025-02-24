@@ -45,7 +45,7 @@
     </div>
     <!-- ./wrapper -->
 
-    @include('dashboard.EditModal')
+{{--    @include('dashboard.EditModal')--}}
 
     @include('layouts.dashboard_scripts')
 </body>
