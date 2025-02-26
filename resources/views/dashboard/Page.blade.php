@@ -87,14 +87,14 @@
         @include('dashboard.InputForm')
         <!-- /.input form -->
 
-
-
         <div class="col-md-12">
 
             <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">ویرایش اسلایدر {{$selectedItemId}}</h3>
+                </div><div class="card-body">
+                    <img src="{{$selectedItem['itemImage']}}">
                 </div>
 
                 <!-- /.card-header -->

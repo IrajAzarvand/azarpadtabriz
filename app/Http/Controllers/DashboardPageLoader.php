@@ -72,11 +72,31 @@ class DashboardPageLoader extends Controller
 
  public function editItem(string $selectedPage, string $p, string $selectedSection, int $selectedItemId): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
-
+//dd($selectedPage, $selectedSection, $selectedItemId, $p);
         $Name='صفحات';
         $Page='ویرایش آیتم';
+//        should be fixed
         $FormSubmitRoute='indexPageSliderSave';
-        return view('dashboard.Page',compact('Name','Page','p','selectedSection','selectedItemId','FormSubmitRoute'));
+
+
+        $selectedItem=[];
+        switch ($p) {
+//            depends on the page that user is currently visiting
+            case 'index':
+                $selectedSlider=Slider::where('id',$selectedItemId)->with('contents')->first();
+                $selectedItem['itemImage']=asset($this->slider_file_path. $selectedSlider->slider_image);
+                foreach (SiteLang() as $locale => $specs) {
+                    $selectedItem[$locale] = $selectedSlider->contents->where('locale', $locale)->pluck('element_content')[0];
+                }
+
+                break;
+
+                case 'aboutus':
+                    echo 'hi';
+                    break;
+        }
+
+        return view('dashboard.Page',compact('Name','Page','p','selectedSection','selectedItemId','FormSubmitRoute','selectedItem'));
     }
 
 }
