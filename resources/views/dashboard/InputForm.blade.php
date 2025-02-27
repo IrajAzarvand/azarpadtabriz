@@ -4,9 +4,11 @@
     </div>
     <div class="card-body">
 
-@isset($selectedItemId) <h1>we have something to edit here {{$selectedItemId}}</h1>@endisset
-<form method="post" action="{{route($FormSubmitRoute)}}" enctype="multipart/form-data">
+<form method="post" action="{{route($FormSubmitRoute)}}"   enctype="multipart/form-data">
     @csrf
+    @isset($selectedItemId)
+    <input type="hidden" name="editedItemId" value="{{$selectedItemId}}" >
+    @endisset
             <!-- Custom Tabs -->
             <div class="card">
                 <div class="card-header d-flex p-0">
@@ -21,7 +23,7 @@
                         @foreach (SiteLang() as $locale => $specs)
                             <div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $specs['name'] }}">
                        <textarea name="content_{{$locale}}" @if ($specs['rtl']) dir="rtl" @else dir="ltr" @endif class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
-                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{}}</textarea>
+                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">@isset($selectedItem[$locale]) {{ $selectedItem[$locale] }}@endisset</textarea>
                             </div>
                         @endforeach
                     </div>
@@ -37,7 +39,7 @@
                 </div>
 
     <div class="col-6 float-left">
-        <button type="submit" class="btn btn-primary">ارسال</button>
+        <button type="submit" class="btn btn-primary">@isset($selectedItemId) ویرایش @else  ذخیره @endisset</button>
     </div>
 </form>
 

@@ -76,7 +76,6 @@ class DashboardPageLoader extends Controller
         $Name='صفحات';
         $Page='ویرایش آیتم';
 //        should be fixed
-        $FormSubmitRoute='indexPageSliderSave';
 
 
         $selectedItem=[];
@@ -95,6 +94,9 @@ class DashboardPageLoader extends Controller
                     echo 'hi';
                     break;
         }
+
+     $FormSubmitRoute='indexPageSliderUpdate';
+
 
         return view('dashboard.Page',compact('Name','Page','p','selectedSection','selectedItemId','FormSubmitRoute','selectedItem'));
     }

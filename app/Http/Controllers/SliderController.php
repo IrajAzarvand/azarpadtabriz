@@ -82,7 +82,16 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        //
+//        dd('now here', $request);
+        $selectedItem=Slider::with('contents')->find($request->input('editedItemId'));
+
+        // Edit slider texts in locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $content = $selectedItem->contents()->where('locale', $locale)->get()[0];
+            $content->element_content = $request->input('content_' . $locale);
+            $content->save();
+        }
+        return redirect()->route('indexPage');
     }
 
     /**

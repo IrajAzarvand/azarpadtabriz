@@ -20,6 +20,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     //===== index
     Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('indexPage');
     Route::post('/indexPage/slider/save', [SliderController::class, 'store'])->name('indexPageSliderSave');
+    Route::post('/indexPage/slider/update', [SliderController::class, 'update'])->name('indexPageSliderUpdate');
     Route::get('/indexPage/slider/{id}/delete', [SliderController::class, 'destroy'])->name('removeSlider');
 
 
