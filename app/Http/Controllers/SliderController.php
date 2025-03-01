@@ -91,6 +91,16 @@ class SliderController extends Controller
             $content->element_content = $request->input('content_' . $locale);
             $content->save();
         }
+
+        //replace slider file if user select another one
+        $uploaded = $request->file('file');
+        if($uploaded){
+            $this->destroy($request->input('editedItemId'));
+            $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
+            $selectedItem->slider_image = $uploaded->getClientOriginalName();
+            $selectedItem->save();
+        }
+
         return redirect()->route('indexPage');
     }
 
