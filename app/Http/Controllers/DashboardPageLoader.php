@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\aboutUs;
 use App\Models\Slider;
 
 
@@ -41,7 +42,18 @@ class DashboardPageLoader extends Controller
     {
         $Name='صفحات';
         $Page='درباره ما';
-        return view('dashboard.Page',compact('Name','Page'));
+        $FormSubmitRoute='indexPageAboutUsSave';
+        $selectedItem=[];
+        $currtentItem=aboutUs::with('contents')->find(1);
+        if($currtentItem){
+            foreach (SiteLang() as $locale => $specs) {
+                $selectedItem[$locale] = $currtentItem->contents->where('locale', $locale)->where('element_id', $currtentItem->id)->pluck('element_content')[0];
+
+            }
+
+
+        }
+        return view('dashboard.Page',compact('Name','Page','selectedItem','FormSubmitRoute'));
     }
 
     public function blogPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application

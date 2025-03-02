@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardPageLoader;
@@ -28,6 +29,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     //===== about us
     Route::get('/aboutusPage', [DashboardPageLoader::class, 'aboutusPage'])->name('aboutusPage');
+    Route::post('/indexPage/aboutus/save', [AboutUsController::class, 'store'])->name('indexPageAboutUsSave');
+
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== blog

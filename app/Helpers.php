@@ -52,6 +52,25 @@ function LogoPath()
 }
 
 
+//set dynamic title for input form in dashboard section
+
+function inputformTitle($page)
+{
+    $title='';
+    switch ($page) {
+        case 'صفحه اصلی':
+            $title= 'افزودن اسلایدر جدید (اندازه بهینه 1300 × 1950 حجم کمتر از ۱۰۰ کیلوبایت)';
+            break;
+
+            case 'درباره ما':
+                $title=  'درباره ما (اندازه بهینه 580 × 729 حجم کمتر از ۱۰۰ کیلوبایت)';
+                break;
+    }
+    return $title;
+
+}
+
+
 //common words used in whole website
 // usage:
 // {{ Dictionary()['NewProducts'][app()->getLocale()] }}

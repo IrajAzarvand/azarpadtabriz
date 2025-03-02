@@ -19,4 +19,10 @@ class LocaleContents extends Model
     {
         return $this->belongsTo(Slider::class);
     }
+
+
+    public function aboutUs(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(aboutUs::class);
+    }
 }

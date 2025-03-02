@@ -1,6 +1,6 @@
 <div class="col-12 card card-success">
     <div class="card-header">
-        <h3 class="card-title"> افزودن اسلایدر جدید (اندازه بهینه ۱۹۵۰*۱۳۰۰ حجم کمتر از ۱۰۰ کیلوبایت)</h3>
+        <h3 class="card-title">{{inputformTitle($Page)}}</h3>
     </div>
     <div class="card-body">
 
