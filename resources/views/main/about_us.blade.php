@@ -18,20 +18,17 @@
             <div class="col-12 col-lg-5">
                 <h2
                     class="mb-10 pt-50 font__family-montserrat font__size-56 font__weight-bold line__height-62 brk-color-base-dark">
-                    About Us</h2>
-                <h3
-                    class="mb-40 font__family-montserrat font__size-18 line__height-22 font__weight-semibold brk-color-base-dark letter-spacing-100">
-                    a new begining for your team</h3>
+                    {{ Dictionary()['AboutUs'][app()->getLocale()] }}</h2>
+
                 <p class="brk-dark-font-color font__size-16 line__height-28 mb-50" style="max-width: 330px">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                    massa. Cum sociis natoque penatibus et magnis dis parturient montes. این یک متن فارسی است
+                    {{ $about_us[app()->getLocale()] }}
                 </p>
 
 
             </div>
             <div class="col-12 col-lg-7">
                 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                    data-src="img/demo_saas/670x519_1.png" alt="" class="lazyload">
+                    data-src="{{$about_us['img']}}" alt="" class="lazyload">
             </div>
         </div>
     </div>

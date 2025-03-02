@@ -86,13 +86,11 @@ function Dictionary()
         'language' => [
             'FA' => 'زبان',
             'EN' => 'Language',
-            'RU' => 'Язык',
             'AR' => 'لغة',
         ],
         'AboutUs' => [
             'FA' => 'درباره ما',
             'EN' => 'About Us',
-            'RU' => 'о нас',
             'AR' => 'معلومات عنا',
         ],
         'Products' => [

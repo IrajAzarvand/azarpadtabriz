@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\aboutUs;
 use App\Models\Slider;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -12,6 +15,7 @@ class MainWebsitePageLoaderController extends Controller
 {
 
     public $slider_path='storage/Main_images/Sliders/';
+    public $aboutus_path='storage/Main_images/AboutUs/';
     //set website locale to user selected
     public function SetLocale(string $langsymbol)
     {
@@ -56,7 +60,7 @@ class MainWebsitePageLoaderController extends Controller
     //Main Website
     public function IndexPage()
     {
-//        Slider Section
+//  ============================================      Slider Section
         $sliders=Slider::with('contents')->get();
 
         $SL=[];
@@ -67,7 +71,29 @@ class MainWebsitePageLoaderController extends Controller
                     $SL[$slider->id]['img']=$this->slider_path.$slider->slider_image;
         }
 
-        return view('welcome', compact('SL'));
+//  ============================================      About Us Section
+
+
+        try {
+
+
+            $aboutus = aboutUs::with('contents')->get()[0];
+            if ($aboutus) {
+                foreach (SiteLang() as $locale => $specs) {
+                    $about_us[$locale] = $aboutus->contents->where('locale', $locale)->where('element_id', $aboutus->id)->pluck('element_content')[0];
+                }
+            }
+            $filename = File::allFiles($this->aboutus_path)[0]->getFilename();
+            $about_us['img'] = $this->aboutus_path . $filename;
+        }
+        catch (\Exception $exception){
+            foreach (SiteLang() as $locale => $specs) {
+                $about_us[$locale] = '';
+                $about_us['img'] = '';
+            }
+        }
+
+        return view('welcome', compact('SL','about_us'));
     }
 
 
