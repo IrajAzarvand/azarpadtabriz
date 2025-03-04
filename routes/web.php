@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ProductSampleController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardPageLoader;
@@ -18,18 +19,26 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     //=============Pages
 
-    //===== index
-    Route::get('/indexPage', [DashboardPageLoader::class, 'indexPage'])->name('indexPage');
+    //======================= index
+    //===== slider
+    Route::get('/indexPage/slider', [DashboardPageLoader::class, 'indexPageSlider'])->name('indexPageSlider');
     Route::post('/indexPage/slider/save', [SliderController::class, 'store'])->name('indexPageSliderSave');
     Route::post('/indexPage/slider/update', [SliderController::class, 'update'])->name('indexPageSliderUpdate');
     Route::get('/indexPage/slider/{id}/delete', [SliderController::class, 'destroy'])->name('removeSlider');
+    //===== aboutus
+    Route::get('/indexPage/AboutUs', [DashboardPageLoader::class, 'indexPageAboutUs'])->name('indexPageAboutUs');
+    Route::post('/indexPage/AboutUs/save', [AboutUsController::class, 'store'])->name('indexPageAboutUsSave');
+    //===== product samples
+    Route::get('/indexPage/productSamples', [DashboardPageLoader::class, 'productSamplesPage'])->name('productSamplesPage');
+    Route::post('/indexPage/productSamples/save', [ProductSampleController::class, 'store'])->name('indexPageProductSamplesSave');
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== about us
-    Route::get('/aboutusPage', [DashboardPageLoader::class, 'aboutusPage'])->name('aboutusPage');
-    Route::post('/indexPage/aboutus/save', [AboutUsController::class, 'store'])->name('indexPageAboutUsSave');
+
+    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\ProductSample;
 use App\Models\Slider;
 
 
@@ -16,11 +17,10 @@ class DashboardPageLoader extends Controller
         return view('dashboard.Page',compact('Name','Page'));
     }
 
-    public function indexPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    public function indexPageSlider(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
-
         $Name='صفحات';
-        $Page='صفحه اصلی';
+        $Page='اسلایدر';
         $FormSubmitRoute='indexPageSliderSave';
 
 //        read slider from db
@@ -32,13 +32,12 @@ class DashboardPageLoader extends Controller
             $SL[$item->id]['image'] =asset($this->slider_file_path. $item->slider_image);
 
         }
-//dd($SL);
 
         return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'SL'));
     }
 
 
-    public function aboutusPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    public function indexPageAboutUs(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='صفحات';
         $Page='درباره ما';
@@ -55,6 +54,26 @@ class DashboardPageLoader extends Controller
         }
         return view('dashboard.Page',compact('Name','Page','selectedItem','FormSubmitRoute'));
     }
+
+    public function productSamplesPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $Name='صفحات';
+        $Page='نمونه محصولات';
+        $FormSubmitRoute='indexPageProductSamplesSave';
+
+        //        read product samples from db
+        $ProductSamples = ProductSample::with('contents')->get();
+        $PS = [];
+
+        foreach ($ProductSamples as $key => $item) {
+            $PS[$item->id]['content'] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
+            $PS[$item->id]['image'] =asset($this->slider_file_path. $item->slider_image);
+
+        }
+
+        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute','PS'));
+    }
+
 
     public function blogPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
@@ -91,23 +110,23 @@ class DashboardPageLoader extends Controller
 
 
         $selectedItem=[];
-        switch ($p) {
+        switch ($selectedSection) {
 //            depends on the page that user is currently visiting
-            case 'index':
+            case 'slider':
                 $selectedSlider=Slider::where('id',$selectedItemId)->with('contents')->first();
                 $selectedItem['itemImage']=asset($this->slider_file_path. $selectedSlider->slider_image);
                 foreach (SiteLang() as $locale => $specs) {
                     $selectedItem[$locale] = $selectedSlider->contents->where('locale', $locale)->pluck('element_content')[0];
                 }
+                $FormSubmitRoute='indexPageSliderUpdate';
 
-                break;
+            break;
 
-                case 'aboutus':
-                    echo 'hi';
-                    break;
+            case 'productSamples':
+                echo 'hi';
+            break;
         }
 
-     $FormSubmitRoute='indexPageSliderUpdate';
 
 
         return view('dashboard.Page',compact('Name','Page','p','selectedSection','selectedItemId','FormSubmitRoute','selectedItem'));

@@ -34,7 +34,7 @@ function DefaultLocale()
 /**
  * set default locale to first item in locale file in config. => fa
  *
- * @return array
+ * @return string
  */
 function siteName()
 {
@@ -58,12 +58,16 @@ function inputformTitle($page)
 {
     $title='';
     switch ($page) {
-        case 'صفحه اصلی':
-            $title= 'افزودن اسلایدر جدید (اندازه بهینه 1300 × 1950 حجم کمتر از ۱۰۰ کیلوبایت)';
+        case 'اسلایدر':
+            $title= 'افزودن اسلایدر جدید (اندازه بهینه 1300 × 1950 حجم کمتر از 90 کیلوبایت)';
             break;
 
             case 'درباره ما':
-                $title=  'درباره ما (اندازه بهینه 580 × 729 حجم کمتر از ۱۰۰ کیلوبایت)';
+                $title=  'درباره ما (اندازه بهینه 580 × 729 حجم کمتر از 20 کیلوبایت)';
+                break;
+
+            case 'نمونه محصولات':
+                $title=  'نمونه محصولات (اندازه بهینه 414 × 270 حجم کمتر از 10 کیلوبایت)';
                 break;
     }
     return $title;
@@ -93,11 +97,10 @@ function Dictionary()
             'EN' => 'About Us',
             'AR' => 'معلومات عنا',
         ],
-        'Products' => [
-            'FA' => 'محصولات',
-            'EN' => 'Products',
-            'RU' => 'Продукты',
-            'AR' => 'منتجات',
+        'ProductSamples' => [
+            'FA' => 'نمونه محصولات',
+            'EN' => 'Product Samples',
+            'AR' => 'عينات المنتج',
         ],
         'ViewProduct' => [
             'FA' => 'مشاهده محصول',

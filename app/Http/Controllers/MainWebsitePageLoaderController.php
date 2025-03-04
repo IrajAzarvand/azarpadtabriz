@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\ProductSample;
 use App\Models\Slider;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -16,6 +17,7 @@ class MainWebsitePageLoaderController extends Controller
 
     public $slider_path='storage/Main_images/Sliders/';
     public $aboutus_path='storage/Main_images/AboutUs/';
+    public $product_samples_path='storage/Main_images/ProductSamples/';
     //set website locale to user selected
     public function SetLocale(string $langsymbol)
     {
@@ -32,8 +34,6 @@ class MainWebsitePageLoaderController extends Controller
             }
         }
 
-
-
         $TrimmedUrl = trim($prev_url, '?dir=rtl');
         $RawUrl = trim($TrimmedUrl, '?dir=ltr');
 
@@ -42,7 +42,6 @@ class MainWebsitePageLoaderController extends Controller
         App::SetLocale($langsymbol);
 
         $SiteLang = SiteLang();
-
 
         if ($SpecialAddress) {
             if ($SiteLang[$langsymbol]['rtl']) {
@@ -72,11 +71,7 @@ class MainWebsitePageLoaderController extends Controller
         }
 
 //  ============================================      About Us Section
-
-
         try {
-
-
             $aboutus = aboutUs::with('contents')->get()[0];
             if ($aboutus) {
                 foreach (SiteLang() as $locale => $specs) {
@@ -92,6 +87,21 @@ class MainWebsitePageLoaderController extends Controller
                 $about_us['img'] = '';
             }
         }
+
+//  ============================================      product samples Section
+        $productSamples=ProductSample::with('contents')->get();
+
+        $PS=[];
+        foreach ($productSamples as $productSample) {
+            foreach (SiteLang() as $locale => $specs) {
+                $PS[$productSample->id][$locale] = $productSample->contents->where('locale', $locale)->where('element_id', $slider->id)->pluck('element_content')[0];
+            }
+            $PS[$productSample->id]['img']=$this->product_samples_path.$productSample->image_name;
+        }
+
+
+
+
 
         return view('welcome', compact('SL','about_us'));
     }

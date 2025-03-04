@@ -101,7 +101,7 @@ class SliderController extends Controller
             $selectedItem->save();
         }
 
-        return redirect()->route('indexPage');
+        return redirect()->route('indexPageSlider');
     }
 
     /**

@@ -4,15 +4,13 @@
 @section('contents')
 
 @switch($Page)
-@case('صفحه اصلی')
+@case('اسلایدر')
 
     <div class="row">
 
             <!-- input form -->
             @include('dashboard.InputForm')
             <!-- /.input form -->
-
-
 
         <div class="col-md-12">
 
@@ -42,7 +40,7 @@
                             @foreach($SL as $id=>$item)
                             <tr>
                                 <td>{{$id}}</td>
-                                <td><img width="40%"  src="{{$item['image']}}">
+                                <td><img width="40%"  src="{{$item['image']}}" alt="">
                                 </td>
                                 <td>{{$item['content']}}</td>
                                 <td>     <!-- General tools such as edit or delete-->
@@ -74,12 +72,9 @@
 
 @break
 
-
-
     {{--    =====================================================--}}
 
     {{--    =====================================================--}}
-
 @case('درباره ما')
 
     <div class="row">
@@ -88,10 +83,88 @@
         @include('dashboard.InputForm')
         <!-- /.input form -->
     </div>
-@break
-        {{--    =====================================================--}}
+    @break
+
 
     {{--    =====================================================--}}
+
+    {{--    =====================================================--}}
+
+@case('نمونه محصولات')
+
+    <div class="row">
+
+            <!-- input form -->
+            @include('dashboard.InputForm')
+            <!-- /.input form -->
+
+        <div class="col-md-12">
+
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">نمونه محصولات</h3>
+                </div>
+
+                <!-- /.card-header -->
+
+
+                <!-- form start -->
+                <form role="form">
+                    <div class="card-body">
+                        <table id="simple_paginate" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th style="width: 5%;">ردیف</th>
+                                <th style="width: 25%;">تصویر</th>
+                                <th style="width:50%;">متن فارسی</th>
+                                <th style="width: 20%;">عملیات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            @foreach($PS as $id=>$item)
+                            <tr>
+                                <td>{{$id}}</td>
+                                <td><img width="40%"  src="{{$item['image']}}" alt="">
+                                </td>
+                                <td>{{$item['content']}}</td>
+                                <td>     <!-- General tools such as edit or delete-->
+                                    <div class="tools">
+
+                                        <a href="{{route('editSelectedItem',['ویرایش آیتم','index','productSamples',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
+                                        <a href="{{route('removeSlider',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+
+
+                                    </div></td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.card -->
+
+        </div>
+
+    </div>
+
+@break
+
+
+
+    {{--    =====================================================--}}
+
+    {{--    =====================================================--}}
+
+
 @case('ویرایش آیتم')
 {{-- for use when edit button pressed in a page elements table--}}
     <div class="row">
@@ -107,7 +180,7 @@
                 <div class="card-header">
                     <h3 class="card-title">ویرایش اسلایدر {{$selectedItemId}}</h3>
                 </div><div class="card-body">
-                    <img src="{{$selectedItem['itemImage']}}">
+                    <img src="{{$selectedItem['itemImage']}}" alt="">
                 </div>
 
                 <!-- /.card-header -->
