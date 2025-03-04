@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ProductIntroductionController;
 use App\Http\Controllers\ProductSampleController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,9 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     //===== product samples
     Route::get('/indexPage/productSamples', [DashboardPageLoader::class, 'productSamplesPage'])->name('productSamplesPage');
     Route::post('/indexPage/productSamples/save', [ProductSampleController::class, 'store'])->name('indexPageProductSamplesSave');
+    //===== product introduction
+    Route::get('/indexPage/productIntroduction', [DashboardPageLoader::class, 'indexPageProductIntroduction'])->name('productIntroductionPage');
+    Route::post('/indexPage/productIntroduction/save', [ProductIntroductionController::class, 'store'])->name('productIntroductionSave');
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

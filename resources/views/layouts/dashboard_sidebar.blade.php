@@ -47,7 +47,7 @@
                     </li>
 
                     <li
-                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['slider','AboutUs','blogPage','productSamples','usagePage','contactUsPage'])) {{'menu-open' }} @endif">
+                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['slider','AboutUs','productIntroduction','productSamples','usagePage','contactUsPage'])) {{'menu-open' }} @endif">
                         <a href=" #" class="nav-link">
                             <i class="nav-icon fa fa-book"></i>
                             <p>
@@ -80,6 +80,14 @@
                             </li>
 
                            <li class="nav-item">
+                               <a href="{{ route('productIntroductionPage') }}"
+                                   class="nav-link @if(last(request()->segments())== 'productIntroduction'){{ 'active' }} @endif">
+                                   <i class="fa fa-address-card-o nav-icon"></i>
+                                   <p>معرفی محصولات</p>
+                               </a>
+                           </li>
+
+                            <li class="nav-item">
                                <a href="{{ route('blogPage') }}"
                                    class="nav-link @if(last(request()->segments())== 'blogPage'){{ 'active' }} @endif">
                                    <i class="fa fa-address-card-o nav-icon"></i>

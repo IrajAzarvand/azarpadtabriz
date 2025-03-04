@@ -75,6 +75,30 @@ class DashboardPageLoader extends Controller
     }
 
 
+
+
+    public function indexPageProductIntroduction(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $Name='صفحات';
+        $Page='معرفی محصولات';
+        $FormSubmitRoute='productIntroductionSave';
+
+//        read slider from db
+        $Sliders = Slider::with('contents')->get();
+        $SL = [];
+
+        foreach ($Sliders as $key => $item) {
+            $SL[$item->id]['content'] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
+            $SL[$item->id]['image'] =asset($this->slider_file_path. $item->slider_image);
+
+        }
+
+        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'SL'));
+    }
+
+
+
+
     public function blogPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='صفحات';
