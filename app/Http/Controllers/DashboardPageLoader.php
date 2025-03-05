@@ -10,6 +10,8 @@ use App\Models\Slider;
 class DashboardPageLoader extends Controller
 {
     public $slider_file_path='storage/Main_images/Sliders/';
+    public $product_samples_path='storage/Main_images/ProductSamples/';
+
     public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='داشبورد';
@@ -67,7 +69,7 @@ class DashboardPageLoader extends Controller
 
         foreach ($ProductSamples as $key => $item) {
             $PS[$item->id]['content'] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
-            $PS[$item->id]['image'] =asset($this->slider_file_path. $item->slider_image);
+            $PS[$item->id]['image'] =asset($this->product_samples_path. $item->image_name);
 
         }
 
@@ -147,7 +149,12 @@ class DashboardPageLoader extends Controller
             break;
 
             case 'productSamples':
-                echo 'hi';
+                $selectedProduct=ProductSample::where('id',$selectedItemId)->with('contents')->first();
+                $selectedItem['itemImage']=asset($this->product_samples_path. $selectedProduct->image_name);
+                foreach (SiteLang() as $locale => $specs) {
+                    $selectedItem[$locale] = $selectedProduct->contents->where('locale', $locale)->pluck('element_content')[0];
+                }
+                $FormSubmitRoute='indexPageProductSampleUpdate';
             break;
         }
 

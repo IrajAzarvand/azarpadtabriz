@@ -133,7 +133,7 @@
                                     <div class="tools">
 
                                         <a href="{{route('editSelectedItem',['ویرایش آیتم','index','productSamples',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
-                                        <a href="{{route('removeSlider',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+                                        <a href="{{route('removeProductSample',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
                                     </div></td>

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ProductSampleController extends Controller
 {
+    public $product_samples_path='storage/Main_images/ProductSamples/';
+
     /**
      * Display a listing of the resource.
      */
@@ -76,14 +78,58 @@ class ProductSampleController extends Controller
      */
     public function update(Request $request, ProductSample $productSample)
     {
-        //
+        $selectedItem=ProductSample::with('contents')->find($request->input('editedItemId'));
+
+        // Edit texts in locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $content = $selectedItem->contents()->where('locale', $locale)->get()[0];
+            $content->element_content = $request->input('content_' . $locale);
+            $content->save();
+        }
+
+        //replace file if user select another one
+        $uploaded = $request->file('file');
+        if($uploaded){
+            $this->removeImage($request->input('editedItemId'));
+            $uploaded->storeAs('Main_images\ProductSamples\\', $uploaded->getClientOriginalName());
+            $selectedItem->image_name = $uploaded->getClientOriginalName();
+            $selectedItem->save();
+        }
+
+        return redirect()->route('productSamplesPage');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProductSample $productSample)
+    public function destroy(int $productSample)
     {
-        //
+        $selected_item=ProductSample::with('contents')->find($productSample);
+        try {
+
+            unlink($this->product_samples_path . $selected_item->image_name);
+        }
+        catch (\Throwable $e)
+        {
+
+        }
+        $selected_item->contents()->delete();
+        $selected_item->delete();
+        return redirect()->back();
+    }
+
+    public function removeImage(int $productSample): true|\Illuminate\Http\RedirectResponse
+    {
+        $selected_item=ProductSample::with('contents')->find($productSample);
+        try {
+
+            unlink($this->product_samples_path . $selected_item->image_name);
+
+        }
+        catch (\Throwable $e)
+        {
+            return true;
+        }
+        return redirect()->back();
     }
 }

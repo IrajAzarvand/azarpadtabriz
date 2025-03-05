@@ -82,7 +82,6 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-//        dd('now here', $request);
         $selectedItem=Slider::with('contents')->find($request->input('editedItemId'));
 
         // Edit slider texts in locale contents
@@ -95,7 +94,7 @@ class SliderController extends Controller
         //replace slider file if user select another one
         $uploaded = $request->file('file');
         if($uploaded){
-            $this->destroy($request->input('editedItemId'));
+            $this->removeImage($request->input('editedItemId'));
             $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
             $selectedItem->slider_image = $uploaded->getClientOriginalName();
             $selectedItem->save();
@@ -116,10 +115,25 @@ class SliderController extends Controller
         }
         catch (\Throwable $e)
         {
-            $selected_slider->contents()->delete();
-            $selected_slider->delete();
+
         }
+        $selected_slider->contents()->delete();
+        $selected_slider->delete();
        return redirect()->back();
+    }
+
+    public function removeImage(int $slider): true|\Illuminate\Http\RedirectResponse
+    {
+        $selected_slider=Slider::with('contents')->find($slider);
+        try {
+
+            unlink($this->slider_file_path . $selected_slider->slider_image);
+        }
+        catch (\Throwable $e)
+        {
+            return true;
+        }
+    return redirect()->back();
     }
 
 }

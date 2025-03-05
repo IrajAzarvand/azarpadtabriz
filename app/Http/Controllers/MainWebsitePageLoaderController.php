@@ -94,7 +94,7 @@ class MainWebsitePageLoaderController extends Controller
         $PS=[];
         foreach ($productSamples as $productSample) {
             foreach (SiteLang() as $locale => $specs) {
-                $PS[$productSample->id][$locale] = $productSample->contents->where('locale', $locale)->where('element_id', $slider->id)->pluck('element_content')[0];
+                $PS[$productSample->id][$locale] = $productSample->contents->where('locale', $locale)->where('element_id', $productSample->id)->pluck('element_content')[0];
             }
             $PS[$productSample->id]['img']=$this->product_samples_path.$productSample->image_name;
         }
@@ -103,7 +103,7 @@ class MainWebsitePageLoaderController extends Controller
 
 
 
-        return view('welcome', compact('SL','about_us'));
+        return view('welcome', compact('SL','about_us','PS'));
     }
 
 

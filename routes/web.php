@@ -32,6 +32,10 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     //===== product samples
     Route::get('/indexPage/productSamples', [DashboardPageLoader::class, 'productSamplesPage'])->name('productSamplesPage');
     Route::post('/indexPage/productSamples/save', [ProductSampleController::class, 'store'])->name('indexPageProductSamplesSave');
+    Route::get('/indexPage/productSamples/{id}/delete', [ProductSampleController::class, 'destroy'])->name('removeProductSample');
+    Route::post('/indexPage/productSamples/update', [ProductSampleController::class, 'update'])->name('indexPageProductSampleUpdate');
+
+
     //===== product introduction
     Route::get('/indexPage/productIntroduction', [DashboardPageLoader::class, 'indexPageProductIntroduction'])->name('productIntroductionPage');
     Route::post('/indexPage/productIntroduction/save', [ProductIntroductionController::class, 'store'])->name('productIntroductionSave');
