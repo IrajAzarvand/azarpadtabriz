@@ -42,101 +42,101 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-12 col-md-6">
-                    <h6
-                        class="brk-white-font-color mb-40 mb-md-25 font__family-montserrat font__weight-semibold font__size-24 text-center text-sm-left">
-                        Latest news
-                    </h6>
-                    <article class="brk-tiles-simple mb-20 lazyload" data-bg="img/tiles-simple-1.jpg"
-                        data-brk-library="component__tiles">
-                        <div class="before"></div>
-                        <div class="brk-tiles-simple__content pt-30">
-                            <h4 class="font__family-montserrat font__weight-semibold font__size-21 text-truncate">
-                                Wrap up the project</h4>
-                            <p>Aenean vulputate eleifend tellus. Renean leo ligula, porttitor euequat vitae.
-                            </p>
-                            <a class="brk-tiles-simple__link" href="#">
-                                <span class="before"></span>
-                                <i class="fas fa-angle-right"></i>
-                                <span class="after"></span>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xl-3 col-12 col-md-6">
-                    <h6
-                        class="brk-white-font-color mb-40 mb-md-25 font__family-montserrat font__weight-semibold font__size-24 text-center text-sm-left mt-xs-20">
-                        Latest Works</h6>
-                    <ul class="brk-latest-works d-flex flex-wrap mb-20">
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-1.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-2.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-3.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-4.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-5.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-6.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-7.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-8.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                        <li class="brk-latest-works__item position-relative">
-                            <a href="#" class="brk-latest-works__link">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    data-src="img/demo_freelance_portfolio/works-9.jpg" alt="alt"
-                                    class="brk-abs-img lazyload">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+{{--                <div class="col-xl-3 col-12 col-md-6">--}}
+{{--                    <h6--}}
+{{--                        class="brk-white-font-color mb-40 mb-md-25 font__family-montserrat font__weight-semibold font__size-24 text-center text-sm-left">--}}
+{{--                        Latest news--}}
+{{--                    </h6>--}}
+{{--                    <article class="brk-tiles-simple mb-20 lazyload" data-bg="img/tiles-simple-1.jpg"--}}
+{{--                        data-brk-library="component__tiles">--}}
+{{--                        <div class="before"></div>--}}
+{{--                        <div class="brk-tiles-simple__content pt-30">--}}
+{{--                            <h4 class="font__family-montserrat font__weight-semibold font__size-21 text-truncate">--}}
+{{--                                Wrap up the project</h4>--}}
+{{--                            <p>Aenean vulputate eleifend tellus. Renean leo ligula, porttitor euequat vitae.--}}
+{{--                            </p>--}}
+{{--                            <a class="brk-tiles-simple__link" href="#">--}}
+{{--                                <span class="before"></span>--}}
+{{--                                <i class="fas fa-angle-right"></i>--}}
+{{--                                <span class="after"></span>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-3 col-12 col-md-6">--}}
+{{--                    <h6--}}
+{{--                        class="brk-white-font-color mb-40 mb-md-25 font__family-montserrat font__weight-semibold font__size-24 text-center text-sm-left mt-xs-20">--}}
+{{--                        Latest Works</h6>--}}
+{{--                    <ul class="brk-latest-works d-flex flex-wrap mb-20">--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-1.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-2.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-3.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-4.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-5.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-6.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-7.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-8.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="brk-latest-works__item position-relative">--}}
+{{--                            <a href="#" class="brk-latest-works__link">--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="--}}
+{{--                                    data-src="img/demo_freelance_portfolio/works-9.jpg" alt="alt"--}}
+{{--                                    class="brk-abs-img lazyload">--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
                 <div class="col-xl-3 col-12 col-md-6">
                     <h6
                         class="brk-white-font-color mb-25 font__family-montserrat font__weight-semibold font__size-24 text-center text-sm-left mt-xs-20">
-                        Find Us</h6>
+                        {{ Dictionary()['FollowUs'][app()->getLocale()] }}</h6>
                     <hr class="horiz-line mt-0">
                     <div class="brk-social-links brk-social-links_rounded brk-white-font-color mb-25 d-flex justify-content-center justify-content-sm-start"
                         data-brk-library="component__social_links">
@@ -173,7 +173,7 @@
                     <p
                         class="font__family-open-sans font__weight-bold font__size-14 mb-10 brk-white-font-color text-sm-left text-center">
                         <i class="brk-footer-icon text-middle fas fa-map-marker-alt line__height-24 mb-20"></i>
-                        <span>Chicago, USA</span>
+                        <span>{{ Dictionary()['Address'][app()->getLocale()] }}</span>
                     </p>
                 </div>
             </div>
@@ -181,29 +181,29 @@
             <div
                 class="d-flex align-items-center justify-content-sm-between justify-content-center flex-lg-row flex-column flex-wrap mb-25">
                 <p class="brk-dark-font-color-3 font__family-open-sans font__size-14">
-                    © All rights reserved
+                    © {{ Dictionary()['AllRightsReserved'][app()->getLocale()] }}
                 </p>
-                <div class="brk-social-links brk-dark-font-color-3 font__size-14"
-                    data-brk-library="component__social_links">
-                    <a href="#" class="brk-social-links__item">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="brk-social-links__item">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="brk-social-links__item">
-                        <i class="fab fa-google-plus-g"></i>
-                    </a>
-                    <a href="#" class="brk-social-links__item">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="#" class="brk-social-links__item">
-                        <i class="fab fa-vimeo"></i>
-                    </a>
-                    <a href="#" class="brk-social-links__item">
-                        <i class="fab fa-vk"></i>
-                    </a>
-                </div>
+{{--                <div class="brk-social-links brk-dark-font-color-3 font__size-14"--}}
+{{--                    data-brk-library="component__social_links">--}}
+{{--                    <a href="#" class="brk-social-links__item">--}}
+{{--                        <i class="fab fa-twitter"></i>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="brk-social-links__item">--}}
+{{--                        <i class="fab fa-instagram"></i>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="brk-social-links__item">--}}
+{{--                        <i class="fab fa-google-plus-g"></i>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="brk-social-links__item">--}}
+{{--                        <i class="fab fa-youtube"></i>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="brk-social-links__item">--}}
+{{--                        <i class="fab fa-vimeo"></i>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="brk-social-links__item">--}}
+{{--                        <i class="fab fa-vk"></i>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>

@@ -74,6 +74,21 @@ function inputformTitle($page)
 
 }
 
+//site info for use all over the website
+// usage {{siteInfo()['email']}}
+function siteInfo()
+{
+    $info=[
+        'email'=>'azarpadtabriz@gmail.com',
+        'mobile1'=>'09143181665',
+        'mobile2'=>'09143090087',
+        'mobile3'=>'09143065635',
+        'phone' => '04134328877',
+
+    ];
+
+    return $info;
+}
 
 //common words used in whole website
 // usage:
@@ -102,6 +117,22 @@ function Dictionary()
             'EN' => 'Product Samples',
             'AR' => 'عينات المنتج',
         ],
+        'Address' => [
+            'FA' => 'شهرک سلیمی، بیست متری اصلی -کمر بندی جنوبی -کوچه تصفیه خانه-پلاک H33',
+            'EN' => 'Shahid Salimi Industrial Town',
+            'AR' => 'مدينة الشهيد سليمي الصناعية',
+        ],
+        'AllRightsReserved' => [
+            'FA' => 'تمامی حقوق برای شرکت آذرپد تبریز محفوظ است.',
+            'EN' => 'All rights reserved for Azarpad Tabriz Company',
+            'AR' => 'جميع الحقوق محفوظة بشركة آذرپد تبریز',
+        ],
+        'FollowUs' => [
+            'FA' => 'ما را دنبال کنید',
+            'EN' => 'Follow Us',
+            'AR' => 'تابعنا',
+        ],
+
         'ViewProduct' => [
             'FA' => 'مشاهده محصول',
             'EN' => 'View Product',
@@ -151,26 +182,11 @@ function Dictionary()
             'AR' => 'الأحداث',
         ],
 
-        'FollowUs' => [
-            'FA' => 'ما را دنبال کنید',
-            'EN' => 'Follow Us',
-            'RU' => 'Подписывайтесь на нас',
-            'AR' => 'تابعنا',
-        ],
 
-        'AllRightsReserved' => [
-            'FA' => 'تمامی حقوق محفوظ است، طراحی و اجرا واحد انفورماتیک شرکت بستنی اطمینان.',
-            'EN' => 'All rights reserved, design and developed by IT department of Etminan Ice Cream Company',
-            'RU' => 'Все права защищены, дизайн и разработка отдела ИТ компании Etminan Ice Cream Company.',
-            'AR' => 'جميع الحقوق محفوظة ، تصميم وتطوير قسم تقنية المعلومات بشركة Etminan Ice Cream',
-        ],
 
-        'Address' => [
-            'FA' => 'آذربایجان شرقی، شهرک صنعتی شهید سلیمی',
-            'EN' => 'East Azerbaijan, Shahid Salimi Industrial Town',
-            'RU' => 'Восточный Азербайджан, Промышленный город Шахид Салими',
-            'AR' => 'أذربيجان الشرقية ، مدينة الشهيد سليمي الصناعية',
-        ],
+
+
+
         'RandomImgs' => [
             'FA' => 'تصاویر تصادفی',
             'EN' => 'Random Images',
