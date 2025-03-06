@@ -103,8 +103,15 @@ class MainWebsitePageLoaderController extends Controller
 
 
 
+
+
         return view('welcome', compact('SL','about_us','PS'));
     }
 
+
+    public function download_catalog(string $filename)
+    {
+        return response()->download($filename);
+    }
 
 }

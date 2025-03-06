@@ -84,6 +84,8 @@ function siteInfo()
         'mobile2'=>'09143090087',
         'mobile3'=>'09143065635',
         'phone' => '04134328877',
+        'borochor1'=>asset('storage/Main_images/catalog/borochor1.jpg'),
+        'borochor2'=>asset('storage/Main_images/catalog/borochor1.jpg'),
 
     ];
 
@@ -92,7 +94,7 @@ function siteInfo()
 
 //common words used in whole website
 // usage:
-// {{ Dictionary()['NewProducts'][app()->getLocale()] }}
+// {{ Dictionary()['ProductCataloges'][app()->getLocale()] }}
 function Dictionary()
 {
     return [
@@ -147,7 +149,6 @@ function Dictionary()
         'ViewCatalog' => [
             'FA' => 'مشاهده کاتالوگ',
             'EN' => 'View Catalog',
-            'RU' => 'Посмотреть каталог',
             'AR' => 'اعرض الكتالوج',
         ],
         'ProductIntro' => [

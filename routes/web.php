@@ -62,6 +62,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
+
 //    //===== trigger when submit button pressed in dashboard forms
 //    Route::get('/dashboardSubmit', [DashboardPageLoader::class, 'dashboardSubmit'
 //)->name('dashboardSubmit');
@@ -104,3 +105,6 @@ Route::get('/', function () {
         return redirect()->to('/index?dir=ltr');
     }
 })->name('MainWebsite');
+
+
+Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
