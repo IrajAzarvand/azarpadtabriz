@@ -1,11 +1,8 @@
 <section class="pt-lg-150 pt-90 pb-90 pb-lg-140 bg-white">
     <div class="text-center mb-80">
         <div class="z-index-high" data-brk-library="component__title">
-            <h2 class="title__heading-02 title__heading-main font__family-roboto font__size-36 font__weight-bold">Some
-                category</h2>
-            <span
-                class="title__heading-02 title__heading-sub font__family-roboto font__size-50 line__height-68 font__weight-thin">Some
-                Category</span>
+            <h2 class="title__heading-02 title__heading-main font__family-roboto font__size-36 font__weight-bold">{{ Dictionary()['ProductIntroduction'][app()->getLocale()] }}</h2>
+
         </div>
     </div>
     <div class="container">

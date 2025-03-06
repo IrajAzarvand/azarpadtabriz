@@ -119,8 +119,8 @@ function Dictionary()
         ],
         'Address' => [
             'FA' => 'شهرک سلیمی، بیست متری اصلی -کمر بندی جنوبی -کوچه تصفیه خانه-پلاک H33',
-            'EN' => 'Shahid Salimi Industrial Town',
-            'AR' => 'مدينة الشهيد سليمي الصناعية',
+            'EN' => 'Plate H33, Water Treatment Plant Alley, South Beltway, 20 meter main road, Shahid Salimi Industrial Town',
+            'AR' => 'بلدة السليمي تبعد 20 متر عن الشارع العام - الحزام الجنوبي - زقاق دار المصفاة - لوحة H33',
         ],
         'AllRightsReserved' => [
             'FA' => 'تمامی حقوق برای شرکت آذرپد تبریز محفوظ است.',
@@ -133,11 +133,10 @@ function Dictionary()
             'AR' => 'تابعنا',
         ],
 
-        'ViewProduct' => [
-            'FA' => 'مشاهده محصول',
-            'EN' => 'View Product',
-            'RU' => 'Посмотреть продукт',
-            'AR' => 'عرض المنتج',
+        'ProductIntroduction' => [
+            'FA' => 'معرفی محصول',
+            'EN' => 'Product Introduction',
+            'AR' => 'مقدمة المنتج',
         ],
         'ProductCataloges' => [
             'FA' => 'کاتالوگ محصولات',

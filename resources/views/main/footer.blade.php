@@ -8,39 +8,39 @@
                 <div class="col-xl-3 col-12 col-md-6">
                     <h6 class="sr-only">Twitter posts</h6>
                     <a href="#" class="d-sm-inline-block d-block text-center mb-45" style="margin-top:-10px">
-                        <img src="img/footer/brk-logo.png" alt="alt">
+                        <img src="{{LogoPath()}}" alt="alt">
                     </a>
-                    <div class="brk-swiper-default z-index-5 position-relative"
-                        data-brk-swiper='{"autoplay": {"delay": 3500}, "loop": false}'
-                        data-brk-library="slider__swiper">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="mb-20 brk-styled-twitter-2 brk-styled-twitter-2_primary">
-                                        <a href="https://twitter.com/We_Nikadevs" class="twitter-timeline"
-                                            data-tweet-limit="1" data-chrome="noheader,nofooter,noborders,transparent"
-                                            data-theme="dark"></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div
-                                        class="mb-20 brk-styled-twitter-2 brk-styled-twitter-2_primary brk-styled-twitter-slide-2">
-                                        <a href="https://twitter.com/We_Nikadevs" class="twitter-timeline"
-                                            data-tweet-limit="2" data-chrome="noheader,nofooter,noborders,transparent"
-                                            data-theme="dark"></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div
-                                        class="mb-20 brk-styled-twitter-2 brk-styled-twitter-2_primary brk-styled-twitter-slide-3">
-                                        <a href="https://twitter.com/We_Nikadevs" class="twitter-timeline"
-                                            data-tweet-limit="3" data-chrome="noheader,nofooter,noborders,transparent"
-                                            data-theme="dark"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="brk-swiper-default z-index-5 position-relative"--}}
+{{--                        data-brk-swiper='{"autoplay": {"delay": 3500}, "loop": false}'--}}
+{{--                        data-brk-library="slider__swiper">--}}
+{{--                        <div class="swiper-container">--}}
+{{--                            <div class="swiper-wrapper">--}}
+{{--                                <div class="swiper-slide">--}}
+{{--                                    <div class="mb-20 brk-styled-twitter-2 brk-styled-twitter-2_primary">--}}
+{{--                                        <a href="https://twitter.com/We_Nikadevs" class="twitter-timeline"--}}
+{{--                                            data-tweet-limit="1" data-chrome="noheader,nofooter,noborders,transparent"--}}
+{{--                                            data-theme="dark"></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="swiper-slide">--}}
+{{--                                    <div--}}
+{{--                                        class="mb-20 brk-styled-twitter-2 brk-styled-twitter-2_primary brk-styled-twitter-slide-2">--}}
+{{--                                        <a href="https://twitter.com/We_Nikadevs" class="twitter-timeline"--}}
+{{--                                            data-tweet-limit="2" data-chrome="noheader,nofooter,noborders,transparent"--}}
+{{--                                            data-theme="dark"></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="swiper-slide">--}}
+{{--                                    <div--}}
+{{--                                        class="mb-20 brk-styled-twitter-2 brk-styled-twitter-2_primary brk-styled-twitter-slide-3">--}}
+{{--                                        <a href="https://twitter.com/We_Nikadevs" class="twitter-timeline"--}}
+{{--                                            data-tweet-limit="3" data-chrome="noheader,nofooter,noborders,transparent"--}}
+{{--                                            data-theme="dark"></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
 {{--                <div class="col-xl-3 col-12 col-md-6">--}}
 {{--                    <h6--}}
@@ -140,35 +140,29 @@
                     <hr class="horiz-line mt-0">
                     <div class="brk-social-links brk-social-links_rounded brk-white-font-color mb-25 d-flex justify-content-center justify-content-sm-start"
                         data-brk-library="component__social_links">
-                        <a href="#" class="brk-social-links__item">
-                            <i class="fab fa-vimeo-v"></i>
+                        <a href="https://wa.me/qr/3TUC7RCY4IZMA1" class="brk-social-links__item">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" class="brk-social-links__item">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://www.instagram.com/azarpadtabriz.co?utm_source=qr&igsh=MXdiOGZha2pvZmRnbQ==" class="brk-social-links__item">
+                            <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="brk-social-links__item">
+                        <a href="https://t.me/azarpadtabriz" class="brk-social-links__item">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1VvynLZMjD/" class="brk-social-links__item">
                             <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="brk-social-links__item">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="brk-social-links__item">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="#" class="brk-social-links__item">
-                            <i class="fab fa-vk"></i>
                         </a>
                     </div>
                     <hr class="horiz-line mt-0 mb-35">
                     <p class="font__size-36 mb-40 text-sm-left text-center">
                         <a href="#"
-                            class="brk-white-font-color font__family-open-sans font__weight-light line__height-36">8
-                            800 12 34 567</a>
+                            class="brk-white-font-color font__family-open-sans font__weight-light line__height-36">
+                            {{siteInfo()['phone']}} - {{siteInfo()['mobile1']}}</a>
                     </p>
                     <p
                         class="font__family-open-sans font__weight-bold font__size-14 mb-10 brk-white-font-color text-sm-left text-center">
                         <i class="brk-footer-icon text-middle fa fa-envelope line__height-24"></i>
-                        <a href="mailto:info@domain.com" class="show-inline-block">info@domain.com</a>
+                        <a href="mailto:{{siteInfo()['email']}}" class="show-inline-block">{{siteInfo()['email']}}</a>
                     </p>
                     <p
                         class="font__family-open-sans font__weight-bold font__size-14 mb-10 brk-white-font-color text-sm-left text-center">

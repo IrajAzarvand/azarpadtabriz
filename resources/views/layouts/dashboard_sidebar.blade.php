@@ -74,7 +74,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('productSamplesPage') }}"
                                    class="nav-link @if(last(request()->segments())== 'productSamples'){{ 'active' }} @endif">
-                                    <i class="fa fa-address-card-o nav-icon"></i>
+                                    <i class="fa fa-file-image-o nav-icon"></i>
                                     <p>نمونه محصولات</p>
                                 </a>
                             </li>
