@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('product_introductions', function (Blueprint $table) {
             $table->id();
-            $table->string('type'); //title or content of section
-            $table->string('content');
             $table->string('image')->nullable();
             $table->timestamps();
         });

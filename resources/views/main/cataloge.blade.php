@@ -7,7 +7,8 @@
         <span class="brk-abs-bg-overlay"></span>
     </div>
     <div class="text-center mb-lg-50 mb-40">
-        <h2 class="title__heading-06 title__heading-sub wow zoomIn font__family-montserrat font__size-56 font__weight-bold"
+        <h2 class="title__heading-06 title__heading-sub wow zoomIn font__family-
+        montserrat font__size-56 font__weight-bold"
             data-brk-library="component__title">
             <span class="brk-base-font-color opacity-10 text-capitalize">{{ Dictionary()['ProductCataloges'][app()->getLocale()] }}</span>
         </h2>

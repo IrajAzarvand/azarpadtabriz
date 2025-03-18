@@ -26,68 +26,20 @@
                 <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                     <div class="card-block text-left font__family-open-sans">
                         <div class="row">
-                            <div class="col-sm-6 order-sm-2 order-xs-1">
+                            <div class="col-sm-3 order-sm-2 order-xs-1">
                                 <div class="slider-wrapper">
-                                    <div class="mb-40 rotation-slider dots-base-skin dots-base-color slick-loading arrows-classic"
-                                        data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "arrows": true, "dots": true, "draggable": false, "infinite": false, "responsive": [
-           {"breakpoint": 992, "settings": {"centerMode": false, "initialSlide": 0, "arrows": false, "focusOnSelect": false, "centerPadding": "0"}}
-           ]}' data-brk-library="slider__slick,fancybox">
-                                        <div>
-                                            <div class="brk-slid">
-                                                <a href="img/230x300_1.jpg"
-                                                    class="frame-image image-popup img-square shadow fancybox"
-                                                    style="width: 230px;height: 300px;">
-                                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                        data-src="img/230x300_1.jpg" class="lazyload" alt="alt">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="brk-slid">
-                                                <a href="img/230x300_2.jpg"
-                                                    class="frame-image image-popup img-square shadow fancybox"
-                                                    style="width: 230px;height: 300px;">
-                                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                        data-src="img/230x300_2.jpg" class="lazyload" alt="alt">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="brk-slid">
-                                                <a href="img/230x300_3.jpg"
-                                                    class="frame-image image-popup img-square shadow fancybox"
-                                                    style="width: 230px;height: 300px;">
-                                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                        data-src="img/230x300_3.jpg" class="lazyload" alt="alt">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                         data-src="img/230x300_1.jpg" class="lazyload" alt="alt">
+
                                 </div>
                             </div>
-                            <div class="col-sm-6 order-sm-1 order-xs-2">
-                                <h4 class="font__family-montserrat font__weight-bold font__size-24 line__height-24">
-                                    Extensive Documentation
-                                </h4>
+                            <div class="col-sm-9 order-sm-1 order-xs-2">
                                 <p class="mt-25">
                                     Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
                                     eleifend ac, enim. Aliquam lorem ante,
                                     dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
                                     laoreet.
                                 </p>
-                                <p class="mt-25">
-                                    Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper.
-                                    Aenean vulputate eleifend tellus. Aenean
-                                    leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-                                    dapibus in
-                                </p>
-                                <button
-                                    class="ml-0 mr-0 btn btn-lg btn-min-width-200 border-radius-30 font__family-open-sans font__weight-bold btn-inside-out mt-30"
-                                    data-brk-library="component__button">
-                                    <span class="before">Read More</span>
-                                    <span class="text">Read More</span>
-                                    <span class="after">Read More</span>
-                                </button>
                             </div>
                         </div>
                     </div>

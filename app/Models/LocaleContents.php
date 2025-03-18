@@ -30,4 +30,9 @@ class LocaleContents extends Model
     {
         return $this->belongsTo(ProductSample::class);
     }
+
+    public function productIntroduction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(ProductIntroduction::class);
+    }
 }
