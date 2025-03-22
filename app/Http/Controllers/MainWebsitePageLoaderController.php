@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
 use Illuminate\Support\Facades\File;
@@ -18,6 +19,7 @@ class MainWebsitePageLoaderController extends Controller
     public $slider_path='storage/Main_images/Sliders/';
     public $aboutus_path='storage/Main_images/AboutUs/';
     public $product_samples_path='storage/Main_images/ProductSamples/';
+    public $product_introductions_path='storage/Main_images/ProductIntroduction/';
     //set website locale to user selected
     public function SetLocale(string $langsymbol)
     {
@@ -99,13 +101,21 @@ class MainWebsitePageLoaderController extends Controller
             $PS[$productSample->id]['img']=$this->product_samples_path.$productSample->image_name;
         }
 
+//  ============================================      product introduction Section
+        $productIntroductions=ProductIntroduction::with('contents')->get();
+        $PI=[];
+        foreach ($productIntroductions as $productIntroduction) {
+            foreach (SiteLang() as $locale => $specs) {
+                $PI[$productIntroduction->id]['title'][$locale] = $productIntroduction->contents->where('locale', $locale)->where('element_id', $productIntroduction->id)->where('element_title', 'title_'.$locale)->pluck('element_content')[0];
+                $PI[$productIntroduction->id]['content'][$locale] = $productIntroduction->contents->where('locale', $locale)->where('element_id', $productIntroduction->id)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
+            }
+            $PI[$productIntroduction->id]['img']=$this->product_introductions_path.$productIntroduction->image;
+        }
 
 
 
 
-
-
-        return view('welcome', compact('SL','about_us','PS'));
+        return view('welcome', compact('SL','about_us','PS','PI'));
     }
 
 
