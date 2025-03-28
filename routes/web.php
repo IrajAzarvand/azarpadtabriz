@@ -38,6 +38,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     //===== product introduction
     Route::get('/indexPage/productIntroduction', [DashboardPageLoader::class, 'indexPageProductIntroduction'])->name('productIntroductionPage');
     Route::post('/indexPage/productIntroduction/save', [ProductIntroductionController::class, 'store'])->name('productIntroductionSave');
+    Route::get('/indexPage/productIntroduction/{id}/delete', [ProductIntroductionController::class, 'destroy'])->name('removeProductIntroduction');
+    Route::post('/indexPage/productIntroduction/update', [ProductIntroductionController::class, 'update'])->name('indexPageProductIntroductionUpdate');
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

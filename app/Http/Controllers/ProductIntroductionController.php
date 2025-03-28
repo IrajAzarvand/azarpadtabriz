@@ -92,7 +92,25 @@ class ProductIntroductionController extends Controller
      */
     public function update(Request $request, ProductIntroduction $productIntroduction)
     {
-        //
+        $selectedItem=ProductIntroduction::with('contents')->find($request->input('editedItemId'));
+dd($selectedItem,$request);
+        // Edit texts in locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $content = $selectedItem->contents()->where('locale', $locale)->get()[0];
+            $content->element_content = $request->input('content_' . $locale);
+            $content->save();
+        }
+
+        //replace file if user select another one
+        $uploaded = $request->file('file');
+        if($uploaded){
+            $this->removeImage($request->input('editedItemId'));
+            $uploaded->storeAs('Main_images\ProductSamples\\', $uploaded->getClientOriginalName());
+            $selectedItem->image_name = $uploaded->getClientOriginalName();
+            $selectedItem->save();
+        }
+
+        return redirect()->route('productSamplesPage');
     }
 
     /**

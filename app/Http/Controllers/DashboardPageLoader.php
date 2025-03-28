@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
+use Illuminate\Support\Str;
 
 
 class DashboardPageLoader extends Controller
 {
     public $slider_file_path='storage/Main_images/Sliders/';
     public $product_samples_path='storage/Main_images/ProductSamples/';
+    public $product_introductions_path='storage/Main_images/ProductIntroduction/';
 
     public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
@@ -86,16 +89,16 @@ class DashboardPageLoader extends Controller
         $FormSubmitRoute='productIntroductionSave';
 
 //        read slider from db
-        $Sliders = Slider::with('contents')->get();
-        $SL = [];
+        $product_introductions = ProductIntroduction::with('contents')->get();
+        $PI = [];
 
-        foreach ($Sliders as $key => $item) {
-            $SL[$item->id]['content'] = $item->contents()->where('locale', 'FA')->pluck('element_content')[0];
-            $SL[$item->id]['image'] =asset($this->slider_file_path. $item->slider_image);
+        foreach ($product_introductions as $key => $item) {
+            $PI[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'title_FA')->pluck('element_content')[0];
+            $PI[$item->id]['image'] =asset($this->product_introductions_path. $item->image);
 
         }
 
-        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'SL'));
+        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'PI'));
     }
 
 
@@ -155,6 +158,16 @@ class DashboardPageLoader extends Controller
                     $selectedItem[$locale] = $selectedProduct->contents->where('locale', $locale)->pluck('element_content')[0];
                 }
                 $FormSubmitRoute='indexPageProductSampleUpdate';
+            break;
+
+            case 'ProductIntroduction':
+                $selected=ProductIntroduction::where('id',$selectedItemId)->with('contents')->first();
+                $selectedItem['itemImage']=asset($this->product_introductions_path. $selected->image);
+                foreach (SiteLang() as $locale => $specs) {
+                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'title_'.$locale)->pluck('element_content')[0]. $selected->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
+//                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
+                }
+                $FormSubmitRoute='indexPageProductIntroductionUpdate';
             break;
         }
 

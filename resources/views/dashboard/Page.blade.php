@@ -59,9 +59,9 @@
                     </div>
                     <!-- /.card-body -->
 
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">ارسال</button>
-                    </div>
+{{--                    <div class="card-footer">--}}
+{{--                        <button type="submit" class="btn btn-primary">ارسال</button>--}}
+{{--                    </div>--}}
                 </form>
             </div>
             <!-- /.card -->
@@ -145,9 +145,9 @@
                     </div>
                     <!-- /.card-body -->
 
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">ارسال</button>
-                    </div>
+{{--                    <div class="card-footer">--}}
+{{--                        <button type="submit" class="btn btn-primary">ارسال</button>--}}
+{{--                    </div>--}}
                 </form>
             </div>
             <!-- /.card -->
@@ -177,7 +177,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">اسلایدرها</h3>
+                    <h3 class="card-title">معرفی محصولات</h3>
                 </div>
 
                 <!-- /.card-header -->
@@ -197,7 +197,7 @@
                             </thead>
                             <tbody>
 
-                            @foreach($SL as $id=>$item)
+                            @foreach($PI as $id=>$item)
                                 <tr>
                                     <td>{{$id}}</td>
                                     <td><img width="40%"  src="{{$item['image']}}" alt="">
@@ -206,8 +206,8 @@
                                     <td>     <!-- General tools such as edit or delete-->
                                         <div class="tools">
 
-                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','index','slider',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
-                                            <a href="{{route('removeSlider',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','index','ProductIntroduction',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
+                                            <a href="{{route('removeProductIntroduction',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
                                         </div></td>
@@ -219,9 +219,6 @@
                     </div>
                     <!-- /.card-body -->
 
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">ارسال</button>
-                    </div>
                 </form>
             </div>
             <!-- /.card -->
@@ -310,9 +307,9 @@
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">ارسال</button>
-                </div>
+{{--                <div class="card-footer">--}}
+{{--                    <button type="submit" class="btn btn-primary">ارسال</button>--}}
+{{--                </div>--}}
             </form>
         </div>
         <!-- /.card -->
