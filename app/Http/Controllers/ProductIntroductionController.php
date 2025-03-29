@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class ProductIntroductionController extends Controller
 {
+    public $product_introductions_path='storage/Main_images/ProductIntroduction/';
+
+
     /**
      * Display a listing of the resource.
      */
@@ -92,32 +95,70 @@ class ProductIntroductionController extends Controller
      */
     public function update(Request $request, ProductIntroduction $productIntroduction)
     {
-        $selectedItem=ProductIntroduction::with('contents')->find($request->input('editedItemId'));
-dd($selectedItem,$request);
+        $selectedItem = ProductIntroduction::with('contents')->find($request->input('editedItemId'));
+
         // Edit texts in locale contents
         foreach (SiteLang() as $locale => $specs) {
-            $content = $selectedItem->contents()->where('locale', $locale)->get()[0];
-            $content->element_content = $request->input('content_' . $locale);
-            $content->save();
-        }
+            $data = explode("\n", $request->input('content_' . $locale), 2);
 
-        //replace file if user select another one
-        $uploaded = $request->file('file');
-        if($uploaded){
-            $this->removeImage($request->input('editedItemId'));
-            $uploaded->storeAs('Main_images\ProductSamples\\', $uploaded->getClientOriginalName());
-            $selectedItem->image_name = $uploaded->getClientOriginalName();
-            $selectedItem->save();
-        }
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'index',
+                    'section' => 'productIntroduction',
+                    'element_title' => 'title_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $data[0],
+                ]
+            );
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'index',
+                    'section' => 'productIntroduction',
+                    'element_title' => 'content_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $data[1],
+                ]
+            );
 
-        return redirect()->route('productSamplesPage');
+            //replace file if user select another one
+            $uploaded = $request->file('file');
+            if ($uploaded) {
+                $this->removeImage($request->input('editedItemId'));
+                $uploaded->storeAs('Main_images\ProductIntroduction\\', $uploaded->getClientOriginalName());
+                $selectedItem->image = $uploaded->getClientOriginalName();
+                $selectedItem->save();
+            }
+
+        }
+        return redirect()->route('productIntroductionPage');
+
     }
-
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(ProductIntroduction $productIntroduction)
     {
         //
+    }
+
+    public function removeImage(int $productIntroduction): true|\Illuminate\Http\RedirectResponse
+    {
+        $selected_item=ProductIntroduction::with('contents')->find($productIntroduction);
+        try {
+
+            unlink($this->product_introductions_path . $selected_item->image);
+
+        }
+        catch (\Throwable $e)
+        {
+            return true;
+        }
+        return redirect()->back();
     }
 }
