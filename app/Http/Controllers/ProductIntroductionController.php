@@ -142,9 +142,20 @@ class ProductIntroductionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProductIntroduction $productIntroduction)
+    public function destroy(int $productIntroduction)
     {
-        //
+        $selected_item=ProductIntroduction::with('contents')->find($productIntroduction);
+        try {
+
+            unlink($this->product_introductions_path . $selected_item->image);
+        }
+        catch (\Throwable $e)
+        {
+
+        }
+        $selected_item->contents()->delete();
+        $selected_item->delete();
+        return redirect()->back();
     }
 
     public function removeImage(int $productIntroduction): true|\Illuminate\Http\RedirectResponse
