@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
@@ -14,6 +15,7 @@ class DashboardPageLoader extends Controller
     public $slider_file_path='storage/Main_images/Sliders/';
     public $product_samples_path='storage/Main_images/ProductSamples/';
     public $product_introductions_path='storage/Main_images/ProductIntroduction/';
+    public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
 
     public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
@@ -88,7 +90,7 @@ class DashboardPageLoader extends Controller
         $Page='معرفی محصولات';
         $FormSubmitRoute='productIntroductionSave';
 
-//        read slider from db
+//        read data from db
         $product_introductions = ProductIntroduction::with('contents')->get();
         $PI = [];
 
@@ -99,6 +101,28 @@ class DashboardPageLoader extends Controller
         }
 
         return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'PI'));
+    }
+
+
+
+    public function indexPageProductAdvantages(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $Name='صفحات';
+        $Page='مزایای محصول';
+        $FormSubmitRoute='productAdvantagesSave';
+
+//        read data from db
+        $product_Advantages = ProductAdvantage::with('contents')->get();
+//        dd($product_Advantages);
+        $PA = [];
+
+        foreach ($product_Advantages as $key => $item) {
+            $PA[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'ProductAdvantages')->pluck('element_content')[0];
+            $PA[$item->id]['image'] =asset($this->product_Advantages_path. $item->image);
+
+        }
+
+        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'PA'));
     }
 
 
@@ -165,9 +189,17 @@ class DashboardPageLoader extends Controller
                 $selectedItem['itemImage']=asset($this->product_introductions_path. $selected->image);
                 foreach (SiteLang() as $locale => $specs) {
                     $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'title_'.$locale)->pluck('element_content')[0]. $selected->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
-//                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
                 }
                 $FormSubmitRoute='indexPageProductIntroductionUpdate';
+            break;
+
+            case 'ProductAdvantages':
+                $selected=ProductAdvantage::where('id',$selectedItemId)->with('contents')->first();
+                $selectedItem['itemImage']=asset($this->product_Advantages_path. $selected->image);
+                foreach (SiteLang() as $locale => $specs) {
+                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'title_'.$locale)->pluck('element_content')[0]. $selected->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
+                }
+                $FormSubmitRoute='indexPageProductAdvantagesUpdate';
             break;
         }
 

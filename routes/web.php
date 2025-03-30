@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ProductAdvantageController;
 use App\Http\Controllers\ProductIntroductionController;
 use App\Http\Controllers\ProductSampleController;
 use App\Http\Controllers\SliderController;
@@ -41,8 +42,15 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/indexPage/productIntroduction/{id}/delete', [ProductIntroductionController::class, 'destroy'])->name('removeProductIntroduction');
     Route::post('/indexPage/productIntroduction/update', [ProductIntroductionController::class, 'update'])->name('indexPageProductIntroductionUpdate');
 
+   //===== product advantages
+    Route::get('/indexPage/productAdvantages', [DashboardPageLoader::class, 'indexPageProductAdvantages'])->name('productAdvantagesPage');
+    Route::post('/indexPage/productAdvantages/save', [ProductAdvantageController::class, 'store'])->name('productAdvantagesSave');
+    Route::get('/indexPage/productAdvantages/{id}/delete', [ProductIntroductionController::class, 'destroy'])->name('removeProductAdvantages');
+    Route::post('/indexPage/productAdvantages/update', [ProductAdvantageController::class, 'update'])->name('indexPageProductAdvantagesUpdate');
+
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

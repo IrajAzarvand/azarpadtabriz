@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
@@ -20,6 +21,9 @@ class MainWebsitePageLoaderController extends Controller
     public $aboutus_path='storage/Main_images/AboutUs/';
     public $product_samples_path='storage/Main_images/ProductSamples/';
     public $product_introductions_path='storage/Main_images/ProductIntroduction/';
+    public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
+
+
     //set website locale to user selected
     public function SetLocale(string $langsymbol)
     {
@@ -113,9 +117,24 @@ class MainWebsitePageLoaderController extends Controller
         }
 
 
+//  ============================================      product advantages Section
+        $productAdvantages=ProductAdvantage::with('contents')->get();
+        $PA=[];
+        $data=[];
+        foreach ($productAdvantages as $productAdvantage) {
 
+            foreach (SiteLang() as $locale => $specs) {
 
-        return view('welcome', compact('SL','about_us','PS','PI'));
+                $data[$locale] = $productAdvantage->contents->where('locale', $locale)->where('element_id', $productAdvantage->id)->where('element_title', 'ProductAdvantages')->pluck('element_content')[0];
+            }
+
+//            $PA[$productIntroduction->id]['img']=$this->product_Advantages_path.$productAdvantage->image;
+        }
+        foreach ($data as $lang=>$datum){
+                $content[$lang]= explode("\n", $datum);
+        }
+dd($content);
+        return view('welcome', compact('SL','about_us','PS','PI','PA'));
     }
 
 

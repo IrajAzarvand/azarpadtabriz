@@ -35,4 +35,9 @@ class LocaleContents extends Model
     {
         return $this->belongsTo(ProductIntroduction::class);
     }
+
+    public function productAdvantages(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(ProductAdvantage::class);
+    }
 }

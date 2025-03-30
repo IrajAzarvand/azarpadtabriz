@@ -32,7 +32,6 @@ class ProductIntroductionController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
         $newProductIntroduction = new ProductIntroduction;
 //        save file to product introduction folder and add row to DB
         $uploaded = $request->file('file');
