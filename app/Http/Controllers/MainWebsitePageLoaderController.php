@@ -130,9 +130,26 @@ class MainWebsitePageLoaderController extends Controller
 
 //            $PA[$productIntroduction->id]['img']=$this->product_Advantages_path.$productAdvantage->image;
         }
+
+//        Str::macro('onlyNumbers', function (string $str) {
+//            return preg_replace('/[^0-9]/', '', $str);
+//        });
+
+
+        //devide each row of each lang to separate item
         foreach ($data as $lang=>$datum){
                 $content[$lang]= explode("\n", $datum);
+
         }
+
+        //devide each item of content to 2 piece and extract number from it
+        foreach ($content as $locale=>$data){
+            foreach ($data as $id=>$dt){
+                $devide[$locale][$id]= explode(" ", $dt,2);
+
+            }
+        }
+
 dd($content);
         return view('welcome', compact('SL','about_us','PS','PI','PA'));
     }
