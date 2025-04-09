@@ -117,7 +117,7 @@ class DashboardPageLoader extends Controller
         $PA = [];
 
         foreach ($product_Advantages as $key => $item) {
-            $PA[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'ProductAdvantages')->pluck('element_content')[0];
+            $PA[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'ProductAdvantages_FA')->pluck('element_content')[0];
             $PA[$item->id]['image'] =asset($this->product_Advantages_path. $item->image);
 
         }
@@ -159,6 +159,7 @@ class DashboardPageLoader extends Controller
 //dd($selectedPage, $selectedSection, $selectedItemId, $p);
         $Name='صفحات';
         $Page='ویرایش آیتم';
+     $FormSubmitRoute='';
 //        should be fixed
 
 
@@ -195,9 +196,10 @@ class DashboardPageLoader extends Controller
 
             case 'ProductAdvantages':
                 $selected=ProductAdvantage::where('id',$selectedItemId)->with('contents')->first();
+
                 $selectedItem['itemImage']=asset($this->product_Advantages_path. $selected->image);
                 foreach (SiteLang() as $locale => $specs) {
-                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'title_'.$locale)->pluck('element_content')[0]. $selected->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
+                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'ProductAdvantages_'.$locale)->pluck('element_content')[0];
                 }
                 $FormSubmitRoute='indexPageProductAdvantagesUpdate';
             break;

@@ -147,6 +147,11 @@ function Dictionary()
             'EN' => 'Product Introduction',
             'AR' => 'مقدمة المنتج',
         ],
+        'ProductAdvantage' => [
+            'FA' => 'مزایای محصول',
+            'EN' => 'Product Advantage',
+            'AR' => 'فوائد المنتج',
+        ],
         'ProductCataloges' => [
             'FA' => 'کاتالوگ محصولات',
             'EN' => 'Product Catalogs',

@@ -45,7 +45,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
    //===== product advantages
     Route::get('/indexPage/productAdvantages', [DashboardPageLoader::class, 'indexPageProductAdvantages'])->name('productAdvantagesPage');
     Route::post('/indexPage/productAdvantages/save', [ProductAdvantageController::class, 'store'])->name('productAdvantagesSave');
-    Route::get('/indexPage/productAdvantages/{id}/delete', [ProductIntroductionController::class, 'destroy'])->name('removeProductAdvantages');
+    Route::get('/indexPage/productAdvantages/{id}/delete', [ProductAdvantageController::class, 'destroy'])->name('removeProductAdvantages');
     Route::post('/indexPage/productAdvantages/update', [ProductAdvantageController::class, 'update'])->name('indexPageProductAdvantagesUpdate');
 
 
