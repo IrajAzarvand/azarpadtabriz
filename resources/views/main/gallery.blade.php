@@ -1,56 +1,166 @@
-<section class="pt-240 pb-150 position-relative brk-base-bg-13  pt-xs-100 pb-xs-80 lazyload">
-    <span class="brk-svg-pattern-container brk-svg-pattern-container-7-top brk-svg-pattern-container_top"
-        data-brk-library="component__svg_pattern">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 144">
-            <defs>
-                <path id="path-id-7-1"
-                    d="M0 657.88s316.8-72.16 689-15.96c256.8 38.77 524.63 105.83 756 116.7 218.56 10.27 420.43-40.37 475-63.95V616H0z" />
-            </defs>
-            <g>
-                <g transform="translate(0 -616)">
-                    <use fill="#fff" xlink:href="#path-id-7-1" />
-                </g>
-            </g>
-        </svg>
-    </span>
-
-    <div class="container">
-        <h2 class=" font__family-montserrat font__size-56 line__height-60 text-uppercase text-center mb-40">
-            Gallery</h2>
-    </div>
-    <div class="container">
-        <div class="default-slider slick-loading arrows-classic-dark fa-req" data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows": true,
-            "responsive": [
-            {"breakpoint": 992, "settings": {"slidesToShow": 3}},
-            {"breakpoint": 768, "settings": {"slidesToShow": 2}},
-            {"breakpoint": 480, "settings": {"slidesToShow": 1}}
-            ], "autoplay": true, "autoplaySpeed": 2000}' data-brk-library="slider__slick">
-            <div class="pl-15 pr-15">
-                <div class="brk-team-strict" data-brk-library="component__team"
-                    style="background-image: url(img/270x414_1.jpg)">
-                    <a href="#">
-                        <h3 class="brk-team-strict__name font__family-montserrat font__weight-semibold font__size-21">
-                            Leana K.A0</h3>
-                    </a>
-
+<div class="container mb-180" dir="ltr">
+    <div class="brk-gradien-carousel position-relative brk-z-index-10" data-brk-library="component__gallery_sliders,fancybox">
+        <ul class="brk-sort-list font__family-montserrat font__size-15 font__weight-bold text-uppercase letter-spacing-20 brk-sort-list_full-width brk-sort-list_bottom-indicators mb-40" data-brk-library="component__gallery_sliders_css">
+            <li class="brk-sort-list__item active" data-filter="all">
+                <span>All</span> <span class="brk-sort-list__item-counter brk-base-font-color font__weight-light">8</span>
+            </li>
+            <li class="brk-sort-list__item" data-filter="branding">
+                <span>Branding</span> <span class="brk-sort-list__item-counter brk-base-font-color font__weight-light">6</span>
+            </li>
+            <li class="brk-sort-list__item" data-filter="photography">
+                <span>Photography</span> <span class="brk-sort-list__item-counter brk-base-font-color font__weight-light">2</span>
+            </li>
+        </ul>
+        <div class="brk-bordered-bg pt-100 pb-130">
+            <div class="brk-bordered-bg__img brk-abs-overlay brk-bgi-1 brk-bg-pattern">
+            </div>
+            <div class="brk-abs-overlay brk-base-bg-gradient-10deg"></div>
+            <div class="brk-gradien-carousel__items slick-loading">
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="photography" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_1.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_1.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="branding" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_2.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_2.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="branding" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_3.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_3.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="photography" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_4.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_4.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="branding" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_3.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_3.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="branding" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_1.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_1.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="branding" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_4.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_4.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="brk-gradient-card brk-gradient-card_hover-sizer" data-filter="branding" data-brk-library="component__gallery_sliders_css">
+                        <img class="brk-gradient-card__img lazyload" alt="alt" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/560x379_3.jpg">
+                        <div class="brk-gradient-card__overlay brk-base-bg-gradient-6-black"></div>
+                        <div class="brk-gradient-card__body">
+                            <a href="img/560x379_3.jpg" class="brk-gradient-card__img-frame fancybox">
+                                <i class="fal fa-plus font__size-23 brk-base-font-color"></i>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-heart font__size-17"></i>
+                                <span class="font__size-15 font__weight-light">12</span>
+                            </a>
+                            <a href="#" class="brk-gradient-card__link text-uppercase font__family-montserrat brk-white-font-color">
+                                <i class="fal fa-long-arrow-right font__size-17"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="pl-15 pr-15">
-                <div class="brk-team-strict" data-brk-library="component__team"
-                    style="background-image: url(img/270x414_1.jpg)">
-                    <a href="#">
-                        <h3 class="brk-team-strict__name font__family-montserrat font__weight-semibold font__size-21">
-                            Leana K.A1</h3>
-                    </a>
-
-                </div>
-            </div>
-
-
         </div>
-
-        <span class="brk-svg-pattern-container brk-svg-pattern-container-7-bottom brk-svg-pattern-container_bottom"
-            data-brk-library="component__svg_pattern">
-        </span>
     </div>
-</section>
+</div>
