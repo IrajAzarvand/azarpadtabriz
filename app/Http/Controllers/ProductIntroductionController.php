@@ -37,8 +37,8 @@ class ProductIntroductionController extends Controller
         $uploaded = $request->file('file');
         if($uploaded){
 
-        $uploaded->storeAs('Main_images\ProductIntroduction\\', $uploaded->getClientOriginalName());
-            $newProductIntroduction->image= $uploaded->getClientOriginalName();
+        $uploaded[0]->storeAs('Main_images\ProductIntroduction\\', $uploaded[0]->getClientOriginalName());
+            $newProductIntroduction->image= $uploaded[0]->getClientOriginalName();
         }
         $newProductIntroduction->save();
 
@@ -47,27 +47,32 @@ class ProductIntroductionController extends Controller
         $Contents = [];
         // add new slider texts to locale contents
         foreach (SiteLang() as $locale => $specs) {
-            $data= explode("\n", $request->input('content_' . $locale), 2);
+            $Contents[0]=null;
+            $Contents[1]=null;
+            if($request->input('content_' . $locale)) {
+                $Contents = explode("\n", $request->input('content_' . $locale), 2);
+            }
 
-            $newProductIntroduction->contents()->saveMany([
-                new LocaleContents([
-                    'page' => 'index',
-                    'section' => 'productIntroduction',
-                    'element_title' => 'title_' . $locale,
-                    'element_id' => $newProductIntroduction->id,
-                    'locale' => $locale,
-                    'element_content' => $data[0],
-                ]),
+                $newProductIntroduction->contents()->saveMany([
+                    new LocaleContents([
+                        'page' => 'index',
+                        'section' => 'productIntroduction',
+                        'element_title' => 'title_' . $locale,
+                        'element_id' => $newProductIntroduction->id,
+                        'locale' => $locale,
+                        'element_content' => $Contents[0],
+                    ]),
 
-                new LocaleContents([
-                    'page' => 'index',
-                    'section' => 'productIntroduction',
-                    'element_title' => 'content_' . $locale,
-                    'element_id' => $newProductIntroduction->id,
-                    'locale' => $locale,
-                    'element_content' => $data[1],
-                ]),
-            ]);
+                    new LocaleContents([
+                        'page' => 'index',
+                        'section' => 'productIntroduction',
+                        'element_title' => 'content_' . $locale,
+                        'element_id' => $newProductIntroduction->id,
+                        'locale' => $locale,
+                        'element_content' => $Contents[1],
+                    ]),
+                ]);
+
         }
 
         return redirect()->back();
@@ -98,8 +103,11 @@ class ProductIntroductionController extends Controller
 
         // Edit texts in locale contents
         foreach (SiteLang() as $locale => $specs) {
-            $data = explode("\n", $request->input('content_' . $locale), 2);
-
+            $Contents[0]=null;
+            $Contents[1]=null;
+            if($request->input('content_' . $locale)) {
+                $Contents = explode("\n", $request->input('content_' . $locale), 2);
+            }
             $selectedItem->contents()->updateOrCreate(
                 [
                     'page' => 'index',
@@ -109,7 +117,7 @@ class ProductIntroductionController extends Controller
                     'locale' => $locale,
                 ],
                 [
-                    'element_content' => $data[0],
+                    'element_content' => $Contents[0],
                 ]
             );
             $selectedItem->contents()->updateOrCreate(
@@ -121,7 +129,7 @@ class ProductIntroductionController extends Controller
                     'locale' => $locale,
                 ],
                 [
-                    'element_content' => $data[1],
+                    'element_content' => $Contents[1],
                 ]
             );
 
@@ -129,8 +137,8 @@ class ProductIntroductionController extends Controller
             $uploaded = $request->file('file');
             if ($uploaded) {
                 $this->removeImage($request->input('editedItemId'));
-                $uploaded->storeAs('Main_images\ProductIntroduction\\', $uploaded->getClientOriginalName());
-                $selectedItem->image = $uploaded->getClientOriginalName();
+                $uploaded[0]->storeAs('Main_images\ProductIntroduction\\', $uploaded[0]->getClientOriginalName());
+                $selectedItem->image = $uploaded[0]->getClientOriginalName();
                 $selectedItem->save();
             }
 

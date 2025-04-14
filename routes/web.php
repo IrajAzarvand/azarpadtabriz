@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductAdvantageController;
 use App\Http\Controllers\ProductIntroductionController;
 use App\Http\Controllers\ProductSampleController;
@@ -47,6 +48,13 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::post('/indexPage/productAdvantages/save', [ProductAdvantageController::class, 'store'])->name('productAdvantagesSave');
     Route::get('/indexPage/productAdvantages/{id}/delete', [ProductAdvantageController::class, 'destroy'])->name('removeProductAdvantages');
     Route::post('/indexPage/productAdvantages/update', [ProductAdvantageController::class, 'update'])->name('indexPageProductAdvantagesUpdate');
+
+
+   //===== gallery
+    Route::get('/indexPage/gallery', [DashboardPageLoader::class, 'indexPageGallery'])->name('GalleryPage');
+    Route::post('/indexPage/gallery/save', [GalleryController::class, 'store'])->name('gallerySave');
+//    Route::get('/indexPage/productAdvantages/{id}/delete', [ProductAdvantageController::class, 'destroy'])->name('removeProductAdvantages');
+//    Route::post('/indexPage/productAdvantages/update', [ProductAdvantageController::class, 'update'])->name('indexPageProductAdvantagesUpdate');
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

@@ -40,4 +40,8 @@ class LocaleContents extends Model
     {
         return $this->belongsTo(ProductAdvantage::class);
     }
+    public function gallery(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Gallery::class);
+    }
 }

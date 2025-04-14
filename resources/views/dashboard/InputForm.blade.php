@@ -34,7 +34,7 @@
             <!-- ./card -->
 
                 <div class="custom-file col-6 float-right">
-                    <input type="file" name="file" id="file">
+                    <input type="file" name="file[]" id="file" multiple>
                     <label class="custom-file-label" for="file">انتخاب فایل</label>
                 </div>
 

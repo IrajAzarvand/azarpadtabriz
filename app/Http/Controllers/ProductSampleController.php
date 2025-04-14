@@ -34,8 +34,9 @@ class ProductSampleController extends Controller
 
 //        save file to product samples folder and add row to DB
         $uploaded = $request->file('file');
-        $uploaded->storeAs('Main_images\ProductSamples\\', $uploaded->getClientOriginalName());
-        $new_ps=ProductSample::create(['image_name' => $uploaded->getClientOriginalName()]);
+
+        $uploaded[0]->storeAs('Main_images\ProductSamples\\', $uploaded[0]->getClientOriginalName());
+        $new_ps=ProductSample::create(['image_name' => $uploaded[0]->getClientOriginalName()]);
 
 
         $Contents = [];
@@ -91,8 +92,8 @@ class ProductSampleController extends Controller
         $uploaded = $request->file('file');
         if($uploaded){
             $this->removeImage($request->input('editedItemId'));
-            $uploaded->storeAs('Main_images\ProductSamples\\', $uploaded->getClientOriginalName());
-            $selectedItem->image_name = $uploaded->getClientOriginalName();
+            $uploaded[0]->storeAs('Main_images\ProductSamples\\', $uploaded[0]->getClientOriginalName());
+            $selectedItem->image_name = $uploaded[0]->getClientOriginalName();
             $selectedItem->save();
         }
 

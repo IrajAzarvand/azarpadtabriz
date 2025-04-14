@@ -76,6 +76,10 @@ function inputformTitle($page)
             case 'مزایای محصول':
                 $title=  'مزایای محصول (اندازه بهینه 300 × 230 حجم کمتر از 6 کیلوبایت)';
                 break;
+
+            case 'گالری تصاویر':
+                $title=  'مزایای محصول (اندازه بهینه 379 × 560 حجم کمتر از 20 کیلوبایت)';
+                break;
     }
     return $title;
 
@@ -152,6 +156,11 @@ function Dictionary()
             'EN' => 'Product Advantage',
             'AR' => 'فوائد المنتج',
         ],
+        'Gallery' => [
+            'FA' => 'گالری تصاویر',
+            'EN' => 'Photo Gallery',
+            'AR' => 'معرض الصور',
+        ],
         'ProductCataloges' => [
             'FA' => 'کاتالوگ محصولات',
             'EN' => 'Product Catalogs',
@@ -180,12 +189,6 @@ function Dictionary()
             'EN' => 'Certificates',
             'RU' => 'Сертификаты',
             'AR' => 'الشهادات',
-        ],
-        'Gallery' => [
-            'FA' => 'گالری تصاویر',
-            'EN' => 'Photo Gallery',
-            'RU' => 'Фотогалерея',
-            'AR' => 'معرض الصور',
         ],
         'Events' => [
             'FA' => 'رویدادها',

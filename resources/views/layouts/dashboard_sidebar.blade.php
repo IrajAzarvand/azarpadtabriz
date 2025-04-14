@@ -47,7 +47,7 @@
                     </li>
 
                     <li
-                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['slider','AboutUs','productIntroduction','productSamples','usagePage','contactUsPage','productAdvantages'])) {{'menu-open' }} @endif">
+                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['slider','AboutUs','productIntroduction','productSamples','usagePage','contactUsPage','productAdvantages','gallery'])) {{'menu-open' }} @endif">
                         <a href=" #" class="nav-link">
                             <i class="nav-icon fa fa-book"></i>
                             <p>
@@ -92,6 +92,14 @@
                                    class="nav-link @if(last(request()->segments())== 'productAdvantages'){{ 'active' }} @endif">
                                    <i class="fa fa-bookmark-o nav-icon"></i>
                                    <p>مزایای محصول</p>
+                               </a>
+                           </li>
+
+                            <li class="nav-item">
+                               <a href="{{ route('GalleryPage') }}"
+                                   class="nav-link @if(last(request()->segments())== 'gallery'){{ 'active' }} @endif">
+                                   <i class="fa fa fa-th-large nav-icon"></i>
+                                   <p>گالری تصاویر</p>
                                </a>
                            </li>
 

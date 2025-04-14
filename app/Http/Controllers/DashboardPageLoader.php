@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\Gallery;
 use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
@@ -113,7 +114,6 @@ class DashboardPageLoader extends Controller
 
 //        read data from db
         $product_Advantages = ProductAdvantage::with('contents')->get();
-//        dd($product_Advantages);
         $PA = [];
 
         foreach ($product_Advantages as $key => $item) {
@@ -124,6 +124,31 @@ class DashboardPageLoader extends Controller
 
         return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'PA'));
     }
+
+
+
+
+
+    public function indexPageGallery(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $Name='صفحات';
+        $Page='گالری تصاویر';
+        $FormSubmitRoute='gallerySave';
+
+//        read data from db
+        $galleries = Gallery::all();
+//        dd($galleries);
+        $PA = [];
+
+//        foreach ($product_Advantages as $key => $item) {
+//            $PA[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'ProductAdvantages_FA')->pluck('element_content')[0];
+//            $PA[$item->id]['image'] =asset($this->product_Advantages_path. $item->image);
+//
+//        }
+
+        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'PA'));
+    }
+
 
 
 

@@ -36,8 +36,8 @@ class SliderController extends Controller
 
 //        save file to slider folder and add row to DB
         $uploaded = $request->file('file');
-        $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
-        $new_slider=Slider::create(['slider_image' => $uploaded->getClientOriginalName()]);
+        $uploaded[0]->storeAs('Main_images\Sliders\\', $uploaded[0]->getClientOriginalName());
+        $new_slider=Slider::create(['slider_image' => $uploaded[0]->getClientOriginalName()]);
 //        $new_slider->save();
 
 
@@ -95,8 +95,8 @@ class SliderController extends Controller
         $uploaded = $request->file('file');
         if($uploaded){
             $this->removeImage($request->input('editedItemId'));
-            $uploaded->storeAs('Main_images\Sliders\\', $uploaded->getClientOriginalName());
-            $selectedItem->slider_image = $uploaded->getClientOriginalName();
+            $uploaded[0]->storeAs('Main_images\Sliders\\', $uploaded[0]->getClientOriginalName());
+            $selectedItem->slider_image = $uploaded[0]->getClientOriginalName();
             $selectedItem->save();
         }
 

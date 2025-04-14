@@ -37,8 +37,8 @@ class ProductAdvantageController extends Controller
         $uploaded = $request->file('file');
         if($uploaded){
 
-            $uploaded->storeAs('Main_images\ProductAdvantages\\', $uploaded->getClientOriginalName());
-            $newProductAdvantage->image= $uploaded->getClientOriginalName();
+            $uploaded[0]->storeAs('Main_images\ProductAdvantages\\', $uploaded[0]->getClientOriginalName());
+            $newProductAdvantage->image= $uploaded[0]->getClientOriginalName();
         }
         $newProductAdvantage->save();
 
@@ -101,8 +101,8 @@ class ProductAdvantageController extends Controller
             $uploaded = $request->file('file');
             if ($uploaded) {
                 $this->removeImage($request->input('editedItemId'));
-                $uploaded->storeAs('Main_images\ProductAdvantages\\', $uploaded->getClientOriginalName());
-                $selectedItem->image = $uploaded->getClientOriginalName();
+                $uploaded[0]->storeAs('Main_images\ProductAdvantages\\', $uploaded[0]->getClientOriginalName());
+                $selectedItem->image = $uploaded[0]->getClientOriginalName();
                 $selectedItem->save();
             }
 
