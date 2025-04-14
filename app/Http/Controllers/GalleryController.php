@@ -35,10 +35,9 @@ class GalleryController extends Controller
 //        save files to product introduction folder and add row to DB
         $uploaded = $request->file('file');
         if($uploaded){
-            dd($uploaded);
             foreach ($uploaded as $fle) {
 
-                $fle->storeAs('Main_images\Gallery\\', $fle->getClientOriginalName());
+                $fle->storeAs('Main_images\Gallery\\'.$newGallery->id.'\\', $fle->getClientOriginalName());
 
             }
         }
