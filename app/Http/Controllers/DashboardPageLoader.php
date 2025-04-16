@@ -8,6 +8,7 @@ use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 
@@ -17,6 +18,8 @@ class DashboardPageLoader extends Controller
     public $product_samples_path='storage/Main_images/ProductSamples/';
     public $product_introductions_path='storage/Main_images/ProductIntroduction/';
     public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
+
+    public $galleries_path='storage/Main_images/Gallery/';
 
     public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
@@ -137,16 +140,18 @@ class DashboardPageLoader extends Controller
 
 //        read data from db
         $galleries = Gallery::all();
-//        dd($galleries);
-        $PA = [];
+        $Gallery = [];
 
-//        foreach ($product_Advantages as $key => $item) {
-//            $PA[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'ProductAdvantages_FA')->pluck('element_content')[0];
-//            $PA[$item->id]['image'] =asset($this->product_Advantages_path. $item->image);
-//
-//        }
+        foreach ($galleries as $key => $item) {
+            $Gallery[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'title_FA')->pluck('element_content')[0];
+            $files = File::allFiles($this->galleries_path.$item->id);
+            foreach ($files as $file) {
+            $Gallery[$item->id]['image'][] =asset($this->galleries_path. $item->id.'\\'.$file->getFilename());
 
-        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'PA'));
+            }
+        }
+
+        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'Gallery'));
     }
 
 
@@ -223,6 +228,20 @@ class DashboardPageLoader extends Controller
                 $selected=ProductAdvantage::where('id',$selectedItemId)->with('contents')->first();
 
                 $selectedItem['itemImage']=asset($this->product_Advantages_path. $selected->image);
+                foreach (SiteLang() as $locale => $specs) {
+                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'ProductAdvantages_'.$locale)->pluck('element_content')[0];
+                }
+                $FormSubmitRoute='indexPageProductAdvantagesUpdate';
+            break;
+
+            case 'gallery':
+                $selected=Gallery::where('id',$selectedItemId)->with('contents')->first();
+                $files = File::allFiles($this->galleries_path. $selectedItemId);
+                foreach ($files as $file) {
+                    $selectedItem[]['itemImage']=asset($this->galleries_path. $selectedItemId .'\\'.$file->getFilename());
+
+                }
+dd($selected, $files, $selectedItem);
                 foreach (SiteLang() as $locale => $specs) {
                     $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'ProductAdvantages_'.$locale)->pluck('element_content')[0];
                 }
