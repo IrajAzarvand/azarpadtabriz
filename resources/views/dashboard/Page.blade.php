@@ -392,7 +392,6 @@
                     @isset($selectedItem['itemImage'])
                     @if(is_array($selectedItem['itemImage']))
                         @foreach($selectedItem['itemImage'] as $item)
-{{--                          <a href="{{route('removeGalleryImage',[str ('\\', $item)])}}"> <img src="{{$item}}" alt=""> </a>--}}
                           <a href="{{route('removeGalleryImage',[$selectedItemId,explode('\\', $item)[1] ]) }}"> <img src="{{$item}}" alt=""> </a>
 
                         @endforeach

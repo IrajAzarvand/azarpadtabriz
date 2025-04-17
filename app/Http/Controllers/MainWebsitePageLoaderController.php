@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\Gallery;
 use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
@@ -22,6 +23,9 @@ class MainWebsitePageLoaderController extends Controller
     public $product_samples_path='storage/Main_images/ProductSamples/';
     public $product_introductions_path='storage/Main_images/ProductIntroduction/';
     public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
+
+    public $galleries_path='storage/Main_images/Gallery/';
+
 
 
     //set website locale to user selected
@@ -146,7 +150,40 @@ class MainWebsitePageLoaderController extends Controller
         }
 
 
-        return view('welcome', compact('SL','about_us','PS','PI','PA'));
+//  ============================================      gallery Section
+        $galleries=[];
+        try {
+            $Galleries = Gallery::with('contents')->get();
+            if ($Galleries) {
+                foreach ($Galleries as $gallery) {
+                    foreach (SiteLang() as $locale => $specs) {
+                        if ($locale == app()->getLocale()) {
+                            $galleries[$gallery->id]['title'] = $gallery->contents->where('locale', $locale)->where('element_id', $gallery->id)->pluck('element_content')[0];
+                        }
+                    }
+                    foreach (File::allFiles($this->galleries_path.$gallery->id) as $file) {
+
+                $galleries[$gallery->id]['images'][] = asset($this->galleries_path. $gallery->id . '\\' . $file->getFilename()) ;
+                    }
+                }
+
+
+            }
+
+//            $about_us['img'] = $this->aboutus_path . $filename;
+        }
+        catch (\Exception $exception){
+            foreach (SiteLang() as $locale => $specs) {
+                $galleries[$locale] = '';
+                $galleries['images'] = '';
+            }
+        }
+
+//  ============================================
+//dd($galleries);
+
+
+        return view('welcome', compact('SL','about_us','PS','PI','PA','galleries'));
     }
 
 
