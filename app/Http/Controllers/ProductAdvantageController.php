@@ -83,7 +83,6 @@ class ProductAdvantageController extends Controller
     public function update(Request $request, ProductAdvantage $productAdvantage)
     {
         $selectedItem = ProductAdvantage::with('contents')->find($request->input('editedItemId'));
-//dd('sel',$selectedItem, $request);
         foreach (SiteLang() as $locale => $specs) {
             $selectedItem->contents()->updateOrCreate(
                 [

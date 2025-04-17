@@ -86,7 +86,35 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        //
+        $selectedItem = Gallery::with('contents')->find($request->input('editedItemId'));
+        foreach (SiteLang() as $locale => $specs) {
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'index',
+                    'section' => 'gallery',
+                    'element_title' => 'title_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $request->input('content_' . $locale),
+                ]
+            );
+
+            //replace file if user select another one
+            $uploaded = $request->file('file');
+            if($uploaded){
+                foreach ($uploaded as $fle) {
+
+                    $fle->storeAs('Main_images\Gallery\\'.$selectedItem->id.'\\', $fle->getClientOriginalName());
+
+                }
+            }
+
+        }
+
+        return redirect()->route('GalleryPage');
+
     }
 
     /**
