@@ -238,14 +238,14 @@ class DashboardPageLoader extends Controller
                 $selected=Gallery::where('id',$selectedItemId)->with('contents')->first();
                 $files = File::allFiles($this->galleries_path. $selectedItemId);
                 foreach ($files as $file) {
-                    $selectedItem[]['itemImage']=asset($this->galleries_path. $selectedItemId .'\\'.$file->getFilename());
+                    $selectedItem['itemImage'][]=asset($this->galleries_path. $selectedItemId .'\\'.$file->getFilename());
 
                 }
-dd($selected, $files, $selectedItem);
                 foreach (SiteLang() as $locale => $specs) {
-                    $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'ProductAdvantages_'.$locale)->pluck('element_content')[0];
+                    $selectedItem[$locale] = $selected->contents->where('section','gallery')->where('locale', $locale)->where('element_title', 'title_'.$locale)->pluck('element_content')[0];
                 }
-                $FormSubmitRoute='indexPageProductAdvantagesUpdate';
+
+                $FormSubmitRoute='indexPageGalleryUpdate';
             break;
         }
 

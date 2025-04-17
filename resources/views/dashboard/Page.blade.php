@@ -375,7 +375,6 @@
 @case('ویرایش آیتم')
 {{-- for use when edit button pressed in a page elements table--}}
     <div class="row">
-
         <!-- input form -->
         @include('dashboard.InputForm')
         <!-- /.input form -->
@@ -385,9 +384,17 @@
             <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">ویرایش اسلایدر {{$selectedItemId}}</h3>
+                    <h3 class="card-title">ویرایش آیتم {{$selectedItemId}}</h3>
                 </div><div class="card-body">
+                    @if(is_array($selectedItem['itemImage']))
+                        @foreach($selectedItem['itemImage'] as $item)
+{{--                          <a href="{{route('removeGalleryImage',[str ('\\', $item)])}}"> <img src="{{$item}}" alt=""> </a>--}}
+                          <a href="{{route('removeGalleryImage',[$selectedItemId,explode('\\', $item)[1] ]) }}"> <img src="{{$item}}" alt=""> </a>
+
+                        @endforeach
+                        @else
                     <img src="{{$selectedItem['itemImage']}}" alt="">
+                    @endif
                 </div>
 
                 <!-- /.card-header -->

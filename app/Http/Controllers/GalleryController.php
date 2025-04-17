@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Gallery;
 use App\Models\LocaleContents;
 use Illuminate\Http\Request;
+use JetBrains\PhpStorm\NoReturn;
 
 class GalleryController extends Controller
 {
+    public $galleries_path='storage/Main_images/Gallery/';
+
     /**
      * Display a listing of the resource.
      */
@@ -92,5 +95,18 @@ class GalleryController extends Controller
     public function destroy(Gallery $gallery)
     {
         //
+    }
+
+    public function removeImage(int $id , string $img): true|\Illuminate\Http\RedirectResponse
+    {
+
+        try {
+            unlink($this->galleries_path . $id . '/' . $img);
+        }
+        catch (\Throwable $e)
+        {
+            return true;
+        }
+        return redirect()->back();
     }
 }

@@ -54,7 +54,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/indexPage/gallery', [DashboardPageLoader::class, 'indexPageGallery'])->name('GalleryPage');
     Route::post('/indexPage/gallery/save', [GalleryController::class, 'store'])->name('gallerySave');
 //    Route::get('/indexPage/productAdvantages/{id}/delete', [ProductAdvantageController::class, 'destroy'])->name('removeProductAdvantages');
-//    Route::post('/indexPage/productAdvantages/update', [ProductAdvantageController::class, 'update'])->name('indexPageProductAdvantagesUpdate');
+    Route::post('/indexPage/gallery/update', [GalleryController::class, 'update'])->name('indexPageGalleryUpdate');
+    Route::get('/indexPage/gallery/{id}/{img}/delete', [GalleryController::class, 'removeImage'])->name('removeGalleryImage');
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
