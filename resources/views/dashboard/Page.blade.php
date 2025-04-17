@@ -338,14 +338,17 @@
                             @foreach($Gallery as $id=>$item)
                                 <tr>
                                     <td>{{$id}}</td>
-                                    <td><img width="40%"  src="{{$item['image'][0]}}" alt="">
+                                    <td>
+                                        @isset($item['image'])
+                                        <img width="40%"  src="{{$item['image'][0]}}" alt="">
+                                        @endisset
                                     </td>
                                     <td>{{$item['content']}}</td>
                                     <td>     <!-- General tools such as edit or delete-->
                                         <div class="tools">
 
                                             <a href="{{route('editSelectedItem',['ویرایش آیتم','index','gallery',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
-                                            <a href="{{route('removeProductIntroduction',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+                                            <a href="{{route('removeGallery',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
                                         </div></td>

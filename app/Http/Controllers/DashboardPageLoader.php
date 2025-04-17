@@ -144,11 +144,17 @@ class DashboardPageLoader extends Controller
 
         foreach ($galleries as $key => $item) {
             $Gallery[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'title_FA')->pluck('element_content')[0];
-            $files = File::allFiles($this->galleries_path.$item->id);
-            foreach ($files as $file) {
-            $Gallery[$item->id]['image'][] =asset($this->galleries_path. $item->id.'\\'.$file->getFilename());
+            try {
+                $files = File::allFiles($this->galleries_path . $item->id);
+                foreach ($files as $file) {
+                    $Gallery[$item->id]['image'][] =asset($this->galleries_path. $item->id.'\\'.$file->getFilename());
 
+                }
             }
+            catch (\Exception $exception){
+                $files=[];
+            }
+
         }
 
         return view('dashboard.Page',compact('Name','Page','FormSubmitRoute', 'Gallery'));
@@ -236,10 +242,16 @@ class DashboardPageLoader extends Controller
 
             case 'gallery':
                 $selected=Gallery::where('id',$selectedItemId)->with('contents')->first();
+                try {
+
                 $files = File::allFiles($this->galleries_path. $selectedItemId);
                 foreach ($files as $file) {
                     $selectedItem['itemImage'][]=asset($this->galleries_path. $selectedItemId .'\\'.$file->getFilename());
 
+                }
+                }
+                catch (\Exception $exception){
+                    $selectedItem['itemImage']='';
                 }
                 foreach (SiteLang() as $locale => $specs) {
                     $selectedItem[$locale] = $selected->contents->where('section','gallery')->where('locale', $locale)->where('element_title', 'title_'.$locale)->pluck('element_content')[0];

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gallery;
 use App\Models\LocaleContents;
 use Illuminate\Http\Request;
-use JetBrains\PhpStorm\NoReturn;
+use Illuminate\Support\Facades\File;
 
 class GalleryController extends Controller
 {
@@ -120,9 +120,21 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Gallery $gallery)
+    public function destroy(int $gallery)
     {
-        //
+        $selected_item=Gallery::with('contents')->find($gallery);
+        try {
+        File::deleteDirectory($this->galleries_path . $gallery);
+
+        }
+        catch (\Throwable $e)
+        {
+
+        }
+
+        $selected_item->contents()->delete();
+        $selected_item->delete();
+        return redirect()->back();
     }
 
     public function removeImage(int $id , string $img): true|\Illuminate\Http\RedirectResponse
