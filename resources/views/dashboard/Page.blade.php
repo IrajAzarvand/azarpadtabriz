@@ -389,6 +389,7 @@
                 <div class="card-header">
                     <h3 class="card-title">ویرایش آیتم {{$selectedItemId}}</h3>
                 </div><div class="card-body">
+                    @isset($selectedItem['itemImage'])
                     @if(is_array($selectedItem['itemImage']))
                         @foreach($selectedItem['itemImage'] as $item)
 {{--                          <a href="{{route('removeGalleryImage',[str ('\\', $item)])}}"> <img src="{{$item}}" alt=""> </a>--}}
@@ -398,6 +399,7 @@
                         @else
                     <img src="{{$selectedItem['itemImage']}}" alt="">
                     @endif
+                    @endisset
                 </div>
 
                 <!-- /.card-header -->
