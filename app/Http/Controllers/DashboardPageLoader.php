@@ -164,6 +164,20 @@ class DashboardPageLoader extends Controller
 
 
 
+    public function indexPageCatalog(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $Name='صفحات';
+        $Page='کاتالوگ';
+        $FormSubmitRoute='catalogSave';
+
+
+
+        return view('dashboard.Page',compact('Name','Page', 'FormSubmitRoute'));
+    }
+
+
+
+
     public function blogPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         $Name='صفحات';

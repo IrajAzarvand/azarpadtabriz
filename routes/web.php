@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductAdvantageController;
 use App\Http\Controllers\ProductIntroductionController;
@@ -56,6 +57,14 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/indexPage/productAdvantages/{id}/delete', [GalleryController::class, 'destroy'])->name('removeGallery');
     Route::post('/indexPage/gallery/update', [GalleryController::class, 'update'])->name('indexPageGalleryUpdate');
     Route::get('/indexPage/gallery/{id}/{img}/delete', [GalleryController::class, 'removeImage'])->name('removeGalleryImage');
+
+    //===== catalog
+    Route::get('/indexPage/catalog', [DashboardPageLoader::class, 'indexPageCatalog'])->name('catalogPage');
+    Route::post('/indexPage/catalog/save', [CatalogController::class, 'store'])->name('catalogSave');
+
+    Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
+
+
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -126,4 +135,3 @@ Route::get('/', function () {
 })->name('MainWebsite');
 
 
-Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
