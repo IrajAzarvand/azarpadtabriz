@@ -125,6 +125,7 @@ class MainWebsitePageLoaderController extends Controller
         $productAdvantages=ProductAdvantage::with('contents')->get();
         $PA=[];
         $data=[];
+        $content=[];
         foreach ($productAdvantages as $productAdvantage) {
 
             foreach (SiteLang() as $locale => $specs) {
