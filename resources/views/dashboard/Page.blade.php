@@ -424,28 +424,28 @@
                             <tr>
                                 <th style="width: 5%;">ردیف</th>
                                 <th style="width: 25%;">تصویر</th>
-                                <th style="width:50%;">متن فارسی</th>
+{{--                                <th style="width:50%;">متن فارسی</th>--}}
                                 <th style="width: 20%;">عملیات</th>
                             </tr>
                             </thead>
                             <tbody>
 
-{{--                            @foreach($PA as $id=>$item)--}}
-{{--                                <tr>--}}
-{{--                                    <td>{{$id}}</td>--}}
-{{--                                    <td><img width="40%"  src="{{$item['image']}}" alt="">--}}
-{{--                                    </td>--}}
+                            @foreach($catalogs as $id=>$item)
+                                <tr>
+                                    <td>{{$id}}</td>
+                                    <td><img width="40%"  src="{{$item['image']}}" alt="">
+                                    </td>
 {{--                                    <td>{{$item['content']}}</td>--}}
-{{--                                    <td>     <!-- General tools such as edit or delete-->--}}
-{{--                                        <div class="tools">--}}
+                                    <td>     <!-- General tools such as edit or delete-->
+                                        <div class="tools">
 
 {{--                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','index','ProductAdvantages',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>--}}
-{{--                                            <a href="{{route('removeProductAdvantages',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>--}}
+                                            <a href="{{route('removeProductAdvantages',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
-{{--                                        </div></td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
+                                        </div></td>
+                                </tr>
+                            @endforeach
                             </tbody>
 
                         </table>

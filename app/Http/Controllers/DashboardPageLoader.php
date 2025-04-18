@@ -18,8 +18,8 @@ class DashboardPageLoader extends Controller
     public $product_samples_path='storage/Main_images/ProductSamples/';
     public $product_introductions_path='storage/Main_images/ProductIntroduction/';
     public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
-
     public $galleries_path='storage/Main_images/Gallery/';
+    public $catalogs_path='storage/Main_images/Catalog/';
 
     public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
@@ -170,9 +170,15 @@ class DashboardPageLoader extends Controller
         $Page='کاتالوگ';
         $FormSubmitRoute='catalogSave';
 
+        $catalogs=[];
+        $files = File::allFiles($this->catalogs_path)? File::allFiles($this->catalogs_path) : [];
 
-
-        return view('dashboard.Page',compact('Name','Page', 'FormSubmitRoute'));
+        if($files){
+            foreach ($files as $id=>$file){
+                $catalogs[]['image']=asset($this->catalogs_path.$file->getFilename());
+            }
+        }
+        return view('dashboard.Page',compact('Name','Page', 'FormSubmitRoute','catalogs'));
     }
 
 
