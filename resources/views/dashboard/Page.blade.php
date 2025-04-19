@@ -429,8 +429,8 @@
                             </tr>
                             </thead>
                             <tbody>
-
                             @foreach($catalogs as $id=>$item)
+
                                 <tr>
                                     <td>{{$id}}</td>
                                     <td><img width="40%"  src="{{$item['image']}}" alt="">
@@ -440,7 +440,7 @@
                                         <div class="tools">
 
 {{--                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','index','ProductAdvantages',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>--}}
-                                            <a href="{{route('removeProductAdvantages',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+                                            <a href="{{route('removeCatalog',[last(explode('/', $item['image']))])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
                                         </div></td>

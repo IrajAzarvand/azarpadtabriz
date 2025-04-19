@@ -54,13 +54,14 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
    //===== gallery
     Route::get('/indexPage/gallery', [DashboardPageLoader::class, 'indexPageGallery'])->name('GalleryPage');
     Route::post('/indexPage/gallery/save', [GalleryController::class, 'store'])->name('gallerySave');
-    Route::get('/indexPage/productAdvantages/{id}/delete', [GalleryController::class, 'destroy'])->name('removeGallery');
+    Route::get('/indexPage/gallery/{id}/delete', [GalleryController::class, 'destroy'])->name('removeGallery');
     Route::post('/indexPage/gallery/update', [GalleryController::class, 'update'])->name('indexPageGalleryUpdate');
     Route::get('/indexPage/gallery/{id}/{img}/delete', [GalleryController::class, 'removeImage'])->name('removeGalleryImage');
 
     //===== catalog
     Route::get('/indexPage/catalog', [DashboardPageLoader::class, 'indexPageCatalog'])->name('catalogPage');
     Route::post('/indexPage/catalog/save', [CatalogController::class, 'store'])->name('catalogSave');
+    Route::get('/indexPage/catalog/{filename}/delete', [CatalogController::class, 'removeCatalog'])->name('removeCatalog');
 
     Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
 
