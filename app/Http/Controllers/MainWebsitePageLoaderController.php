@@ -23,8 +23,9 @@ class MainWebsitePageLoaderController extends Controller
     public $product_samples_path='storage/Main_images/ProductSamples/';
     public $product_introductions_path='storage/Main_images/ProductIntroduction/';
     public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
-
     public $galleries_path='storage/Main_images/Gallery/';
+    public $catalogs_path='storage/Main_images/Catalog/';
+
 
 
 
@@ -181,10 +182,22 @@ class MainWebsitePageLoaderController extends Controller
         }
 
 //  ============================================
-//dd($galleries);
+
+//  ============================================      catalog Section
+        $catalogs=[];
+        $files = File::allFiles($this->catalogs_path)? File::allFiles($this->catalogs_path) : [];
+        if($files){
+            foreach ($files as $id=>$file){
+                $catalogs[]['image']=asset($this->catalogs_path.$file->getFilename());
+            }
+        }
 
 
-        return view('welcome', compact('SL','about_us','PS','PI','PA','galleries'));
+//  ============================================
+
+
+
+        return view('welcome', compact('SL','about_us','PS','PI','PA','galleries', 'catalogs'));
     }
 
 
