@@ -99,9 +99,14 @@ function siteInfo()
         'mobile2'=>'09143090087',
         'mobile3'=>'09143065635',
         'phone' => '04134328877',
-        'borochor1'=>asset('storage/Main_images/catalog/borochor1.jpg'),
-        'borochor2'=>asset('storage/Main_images/catalog/borochor1.jpg'),
-
+        'description'=>[
+            'آذرپدتبریز',
+            'آذر پد تبریز',
+            'آذرپد تبریز',
+            'پد سلولزی',
+            'پدسلولزی',
+            'تبریز',
+        ],
     ];
 
     return $info;
