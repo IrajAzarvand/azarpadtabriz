@@ -52,10 +52,10 @@
                         <div class="brk-open-top-bar__circle"></div>
                     </div>
                     <a href="/" class="brk-header__logo brk-header__item @@modifier">
-                        <img class="brk-header__logo-1 lazyload"
+                        <img style="max-width: 50%;" class="brk-header__logo-1 lazyload"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                             data-src="{{ LogoPath() }}" alt="alt">
-                        <img class="brk-header__logo-2 lazyload"
+                        <img style="max-width: 50%;" class="brk-header__logo-2 lazyload"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                             data-src="{{ LogoPath() }}" alt="alt">
                     </a>
@@ -64,36 +64,54 @@
                     <nav class="brk-nav brk-header__item">
                         <ul class="brk-nav__menu">
                             <li class="brk-nav__children brk-nav__drop-down-effect">
+                                <a href="{{route('MainWebsite')}}">
+                                    <span>{{Dictionary()['Home'][app()->getLocale()] }}</span>
+                                </a>
+
+                            </li>
+
+
+                            <li class="brk-nav__children brk-nav__drop-down-effect">
                                 <a href="#">
-                                    <span>Portfolio</span>
+                                    <span>{{Dictionary()['AboutUs'][app()->getLocale()] }}</span>
+                                </a>
+
+                            </li>
+
+
+                            <li class="brk-nav__children brk-nav__drop-down-effect">
+                                <a href="#">
+                                    <span>{{Dictionary()['Blog'][app()->getLocale()] }}</span>
+                                </a>
+                            </li>
+
+
+
+                            <li class="brk-nav__children brk-nav__drop-down-effect">
+                                <a href="#">
+                                    <span>{{Dictionary()['Applications'][app()->getLocale()] }}</span>
                                 </a>
                                 <ul class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
                                     <li class="dd-effect">
-                                        <a href="portfolio-categories.html">Portfolio categories</a>
+                                        <a href="portfolio-categories.html">{{Dictionary()['Greenhouse'][app()->getLocale()] }}</a>
                                     </li>
                                     <li class="dd-effect">
-                                        <a href="portfolio-galleries.html">Portfolio galleries</a>
+                                        <a href="portfolio-categories.html">{{Dictionary()['PoultryFarms'][app()->getLocale()] }}</a>
                                     </li>
                                     <li class="dd-effect">
-                                        <a href="portfolio-grid.html">Portfolio grid</a>
-                                    </li>
-                                    <li class="dd-effect">
-                                        <a href="portfolio-isotope.html">Portfolio isotope</a>
-                                    </li>
-                                    <li class="dd-effect">
-                                        <a href="portfolio-list.html">Portfolio list</a>
-                                    </li>
-                                    <li class="dd-effect">
-                                        <a href="portfolio-masonry.html">Portfolio masonry</a>
-                                    </li>
-                                    <li class="dd-effect">
-                                        <a href="portfolio-page.html">Portfolio page</a>
-                                    </li>
-                                    <li class="dd-effect">
-                                        <a href="portfolio-rows.html">Portfolio rows</a>
+                                        <a href="portfolio-categories.html">{{Dictionary()['PowerPlants'][app()->getLocale()] }}</a>
                                     </li>
                                 </ul>
                             </li>
+
+
+                            <li class="brk-nav__children brk-nav__drop-down-effect">
+                                <a href="#">
+                                    <span>{{Dictionary()['ContactUs'][app()->getLocale()] }}</span>
+                                </a>
+                            </li>
+
+
 
                         </ul>
                     </nav>

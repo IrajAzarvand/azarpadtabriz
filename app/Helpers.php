@@ -173,7 +173,6 @@ function Dictionary()
         'ProductCataloges' => [
             'FA' => 'کاتالوگ محصولات',
             'EN' => 'Product Catalogs',
-            'RU' => 'каталог продукции',
             'AR' => 'كتالوجات المنتجات',
         ],
         'ViewCatalog' => [
@@ -181,48 +180,40 @@ function Dictionary()
             'EN' => 'View Catalog',
             'AR' => 'اعرض الكتالوج',
         ],
-        'ProductIntro' => [
-            'FA' => 'معرفی محصول',
-            'EN' => 'Product Introduction',
-            'RU' => 'премьера продукта',
-            'AR' => 'مقدمة المنتج',
+        'Home' => [
+            'FA' => 'خانه',
+            'EN' => 'Home',
+            'AR' => 'الصفحة الرئيسية',
         ],
-        'ProductNutrition' => [
-            'FA' => 'ارزش غذایی محصول',
-            'EN' => 'Nutritional value of the product',
-            'RU' => 'Пищевая ценность продукта',
-            'AR' => 'القيمة الغذائية للمنتج',
+        'Blog' => [
+            'FA' => 'وبلاگ',
+            'EN' => 'Blog',
+            'AR' => 'مدونة',
         ],
-        'Certificates' => [
-            'FA' => 'گواهینامه ها و افتخارات',
-            'EN' => 'Certificates',
-            'RU' => 'Сертификаты',
-            'AR' => 'الشهادات',
+        'Applications' => [
+            'FA' => 'کاربردها',
+            'EN' => 'Applications',
+            'AR' => 'التطبيقات',
         ],
-        'Events' => [
-            'FA' => 'رویدادها',
-            'EN' => 'Events',
-            'RU' => 'События',
-            'AR' => 'الأحداث',
+        'Greenhouse' => [
+            'FA' => 'گلخانه',
+            'EN' => 'greenhouse',
+            'AR' => 'دفيئة',
+        ],
+        'PoultryFarms' => [
+            'FA' => 'مرغداریها',
+            'EN' => 'Poultry Farms',
+            'AR' => 'مزارع الدواجن',
+        ],
+        'PowerPlants' => [
+            'FA' => 'نیروگاهها',
+            'EN' => 'Power Plants',
+            'AR' => 'محطات توليد الطاقة',
         ],
 
 
 
 
-
-
-        'RandomImgs' => [
-            'FA' => 'تصاویر تصادفی',
-            'EN' => 'Random Images',
-            'RU' => 'Случайные изображения',
-            'AR' => 'صور عشوائية',
-        ],
-        'RelatedProducts' => [
-            'FA' => 'محصولات مرتبط',
-            'EN' => 'Related Products',
-            'RU' => 'сопутствующие товары',
-            'AR' => 'منتجات ذات صله',
-        ],
         'Name' => [
             'FA' => 'نام',
             'EN' => 'Name',
