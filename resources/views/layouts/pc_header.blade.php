@@ -110,9 +110,6 @@
                                     <span>{{Dictionary()['ContactUs'][app()->getLocale()] }}</span>
                                 </a>
                             </li>
-
-
-
                         </ul>
                     </nav>
                 </div>
