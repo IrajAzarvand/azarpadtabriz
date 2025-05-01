@@ -1,7 +1,7 @@
 <section>
 
     <div class="pt-80 pb-80 position-relative z-index-2 bg__style text-center lazyload"
-        data-bg="img/demo_freelance_portfolio/1920x390_1.jpg" data-brk-library="component__social_block">
+        data-bg="{{asset('storage/Main_images/socialmedia.jpg')}}" data-brk-library="component__social_block">
         <span class="brk-bg-gradient-40deg-80 brk-abs-overlay"></span>
         <div class="container" >
             <div class="row mt-30">
