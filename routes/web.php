@@ -63,7 +63,6 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::post('/indexPage/catalog/save', [CatalogController::class, 'store'])->name('catalogSave');
     Route::get('/indexPage/catalog/{filename}/delete', [CatalogController::class, 'removeCatalog'])->name('removeCatalog');
 
-    Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
 
 
 
@@ -76,6 +75,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     //===== blog
     Route::get('/blogPage', [DashboardPageLoader::class, 'blogPage'])->name('blogPage');
+    Route::get('/blog/tags', [DashboardPageLoader::class, 'tags'])->name('blogTags');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== usageGreenhouse
@@ -135,4 +135,6 @@ Route::get('/', function () {
     }
 })->name('MainWebsite');
 
+// index -> catalog
+Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
 

@@ -112,6 +112,26 @@
                            </li>
                        </ul>
                    </li>
+                    <li
+                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),[])) {{'menu-open' }} @endif">
+                        <a href=" #" class="nav-link">
+                            <i class="nav-icon fa fa-file-text"></i>
+                            <p>
+                                وبلاگ
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('indexPageSlider') }}"
+                                    class="nav-link @if(last(request()->segments())== 'slider'){{ 'active' }} @endif">
+                                    <i class="fa fa-tags nav-icon"></i>
+                                    <p>برچسب ها</p>
+                                </a>
+                            </li>
+
+                       </ul>
+                   </li>
                </ul>
            </nav>
            <!-- /.sidebar-menu -->
