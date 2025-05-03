@@ -191,6 +191,25 @@ class DashboardPageLoader extends Controller
         return view('dashboard.Page',compact('Name','Page'));
     }
 
+    public function tags(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $Name='صفحات';
+        $Page='برچسب ها';
+        $FormSubmitRoute='catalogSave';
+
+        $catalogs=[];
+        $files = File::allFiles($this->catalogs_path)? File::allFiles($this->catalogs_path) : [];
+
+        if($files){
+            foreach ($files as $id=>$file){
+                $catalogs[]['image']=asset($this->catalogs_path.$file->getFilename());
+            }
+        }
+        return view('dashboard.Page',compact('Name','Page', 'FormSubmitRoute','catalogs'));
+    }
+
+
+
 
     public function usagePage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
