@@ -32,7 +32,7 @@ class AboutUsController extends Controller
      */
     public function store(Request $request)
     {
-        //        save file to slider folder and add row to DB
+
         $uploaded = $request->file('file');
         if($uploaded){
 //remove previous file in about us directory

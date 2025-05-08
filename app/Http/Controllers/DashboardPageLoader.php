@@ -8,6 +8,7 @@ use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
+use App\Models\Tag;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -195,17 +196,17 @@ class DashboardPageLoader extends Controller
     {
         $Name='صفحات';
         $Page='برچسب ها';
-        $FormSubmitRoute='catalogSave';
+        $FormSubmitRoute='tagSave';
 
-        $catalogs=[];
-        $files = File::allFiles($this->catalogs_path)? File::allFiles($this->catalogs_path) : [];
+        //        read data from db
+        $tags = Tag::all();
+        $Tag = [];
 
-        if($files){
-            foreach ($files as $id=>$file){
-                $catalogs[]['image']=asset($this->catalogs_path.$file->getFilename());
-            }
+        foreach ($tags as $key => $item) {
+            $Tag[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'tag')->pluck('element_content')[0];
         }
-        return view('dashboard.Page',compact('Name','Page', 'FormSubmitRoute','catalogs'));
+
+        return view('dashboard.Page',compact('Name','Page', 'FormSubmitRoute','Tag'));
     }
 
 
@@ -298,6 +299,16 @@ class DashboardPageLoader extends Controller
 
                 $FormSubmitRoute='indexPageGalleryUpdate';
             break;
+
+
+         case 'tag':
+             $selected=Tag::where('id',$selectedItemId)->with('contents')->first();
+
+             foreach (SiteLang() as $locale => $specs) {
+                 $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'tag')->pluck('element_content')[0];
+             }
+             $FormSubmitRoute='TagUpdate';
+             break;
         }
 
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductAdvantageController;
 use App\Http\Controllers\ProductIntroductionController;
 use App\Http\Controllers\ProductSampleController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardPageLoader;
 use App\Http\Controllers\MainWebsitePageLoaderController;
@@ -63,19 +64,15 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::post('/indexPage/catalog/save', [CatalogController::class, 'store'])->name('catalogSave');
     Route::get('/indexPage/catalog/{filename}/delete', [CatalogController::class, 'removeCatalog'])->name('removeCatalog');
 
-
-
-
-
-    // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-
-
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== blog
     Route::get('/blogPage', [DashboardPageLoader::class, 'blogPage'])->name('blogPage');
     Route::get('/blog/tags', [DashboardPageLoader::class, 'tags'])->name('blogTags');
+    Route::post('/blog/tag/save', [TagController::class, 'store'])->name('tagSave');
+    Route::get('/blog/tag/{id}/delete', [TagController::class, 'destroy'])->name('removeTag');
+    Route::post('/blog/tag/update', [TagController::class, 'update'])->name('TagUpdate');
+
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== usageGreenhouse
