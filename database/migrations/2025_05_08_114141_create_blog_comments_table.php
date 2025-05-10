@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('blog_comments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('blog_id')->nullable()->references('id')->on('blogs')->cascadeOnUpdate()->cascadeOnDelete();;
+            $table->unsignedBigInteger('blog_id')->nullable()->references('id')->on('blogs')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
             $table->string('email');
             $table->string('comment');

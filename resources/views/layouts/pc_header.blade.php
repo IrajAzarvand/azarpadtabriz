@@ -80,7 +80,7 @@
 
 
                             <li class="brk-nav__children brk-nav__drop-down-effect">
-                                <a href="#">
+                                <a href="{{route('BlogPage')}}">
                                     <span>{{Dictionary()['Blog'][app()->getLocale()] }}</span>
                                 </a>
                             </li>

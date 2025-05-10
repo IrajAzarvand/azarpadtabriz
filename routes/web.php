@@ -132,6 +132,11 @@ Route::get('/', function () {
     }
 })->name('MainWebsite');
 
+//=======================================================================
+//blog page
+Route::get('/blog',[MainWebsitePageLoaderController::class,'BlogPage'])->name('BlogPage');
+
+
 // index -> catalog
 Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
 

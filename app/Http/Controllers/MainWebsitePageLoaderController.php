@@ -200,10 +200,16 @@ class MainWebsitePageLoaderController extends Controller
         return view('welcome', compact('SL','about_us','PS','PI','PA','galleries', 'catalogs'));
     }
 
-
     public function download_catalog(string $filename)
     {
         return response()->download($filename);
     }
 
+
+    public function BlogPage()
+    {
+
+        return view('blog');
+
+    }
 }
