@@ -66,7 +66,6 @@
 
                         <div class="brs-tab brs-tab_dual" data-brk-library="component__widgets">
                             <ul class="nav nav-tabs brs-tab__header" id="news-tab" role="tablist">
-
                                 <li class="nav-item brs-tab__header-item">
                                     <a class="nav-link brs-tab__header-title font__family-montserrat font__size-16 font__weight-bold line__height-18 active" id="recent-tab" data-toggle="tab" href="#recent" role="tab" aria-controls="recent" aria-selected="true">
                                         <i class="brs-tab__header-title-icon"></i>Recent</a>
@@ -129,11 +128,9 @@
                             <h3 class="font__family-montserrat font__size-21 font__weight-bold line__height-22">Tags</h3>
                         </div>
                         <ul class="brk-tags brk-tags_solid font__family-montserrat" data-brk-library="component__tags">
-                            <li><a href="#" rel="tag">Network</a></li>
-                            <li><a href="#" rel="tag">Development</a></li>
-                            <li><a href="#" rel="tag">Bussines</a></li>
-                            <li><a href="#" rel="tag">Beauty</a></li>
-                            <li><a href="#" rel="tag">WordPress</a></li>
+                            @foreach($tagList[app()->getLocale()] as $item)
+                            <li><a href="#" rel="tag">{{$item}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

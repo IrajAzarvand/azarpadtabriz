@@ -8,6 +8,7 @@ use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
+use App\Models\Tag;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -209,7 +210,14 @@ class MainWebsitePageLoaderController extends Controller
     public function BlogPage()
     {
 
-        return view('blog');
+        $Tags=Tag::with('contents')->get();
+        $tagList=[];
+        foreach ($Tags as $Tag) {
+            foreach (SiteLang() as $locale => $specs) {
+                $tagList[$locale][] = $Tag->contents->where('locale', $locale)->where('element_id', $Tag->id)->where('element_title', 'tag')->pluck('element_content')[0];
+            }
+        }
+        return view('blog',compact('tagList'));
 
     }
 }
