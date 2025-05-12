@@ -113,7 +113,7 @@
                        </ul>
                    </li>
                     <li
-                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['tags'])) {{'menu-open' }} @endif">
+                        class="nav-item has-treeview @if(Str::contains(last(request()->segments()),['tags','blogPage'])) {{'menu-open' }} @endif">
                         <a href=" #" class="nav-link">
                             <i class="nav-icon fa fa-file-text"></i>
                             <p>
@@ -127,6 +127,14 @@
                                     class="nav-link @if(last(request()->segments())== 'tags'){{ 'active' }} @endif">
                                     <i class="fa fa-tags nav-icon"></i>
                                     <p>برچسب ها</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('blogPage') }}"
+                                    class="nav-link @if(last(request()->segments())== 'blogPage'){{ 'active' }} @endif">
+                                    <i class="fa fa-newspaper-o nav-icon"></i>
+                                    <p>مطالب وبلاگ</p>
                                 </a>
                             </li>
 

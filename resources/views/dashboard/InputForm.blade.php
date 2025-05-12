@@ -32,7 +32,16 @@
 
             </div>
             <!-- ./card -->
-
+            @if($Page=='وبلاگ')
+                <div class="row">
+                    <select name="pets" multiple >
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="bird">Bird</option>
+                        <option value="rabbit">Rabbit</option>
+                    </select>
+                </div>
+             @endif
                 <div class="custom-file col-6 float-right">
                     <input type="file" name="file[]" id="file" multiple>
                     <label class="custom-file-label" for="file">انتخاب فایل</label>

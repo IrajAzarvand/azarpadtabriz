@@ -189,7 +189,16 @@ class DashboardPageLoader extends Controller
     {
         $Name='صفحات';
         $Page='وبلاگ';
-        return view('dashboard.Page',compact('Name','Page'));
+        $FormSubmitRoute='blogSave';
+
+        //        read tags from db
+        $tags = Tag::all();
+        $Tag = [];
+
+        foreach ($tags as $key => $item) {
+            $Tag[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'tag')->pluck('element_content')[0];
+        }
+        return view('dashboard.Page',compact('Name','Page','Tag', 'FormSubmitRoute'));
     }
 
     public function tags(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application

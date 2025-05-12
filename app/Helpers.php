@@ -88,6 +88,10 @@ function inputformTitle($page)
             case 'برچسب ها':
                 $title=  'نام برچسب های مورد استفاده در وبلاگ در این قسمت نوشته می شود.';
                 break;
+
+            case 'وبلاگ':
+                $title=  'وبلاگ (اندازه بهینه 400 × 650 حجم کمتر از 90 کیلوبایت)';
+                break;
     }
     return $title;
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductAdvantageController;
@@ -68,6 +69,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     //===== blog
     Route::get('/blogPage', [DashboardPageLoader::class, 'blogPage'])->name('blogPage');
+    Route::post('/blogPage/save', [BlogController::class, 'store'])->name('blogSave');
+
     Route::get('/blog/tags', [DashboardPageLoader::class, 'tags'])->name('blogTags');
     Route::post('/blog/tag/save', [TagController::class, 'store'])->name('tagSave');
     Route::get('/blog/tag/{id}/delete', [TagController::class, 'destroy'])->name('removeTag');

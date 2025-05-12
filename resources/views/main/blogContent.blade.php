@@ -128,9 +128,11 @@
                             <h3 class="font__family-montserrat font__size-21 font__weight-bold line__height-22">Tags</h3>
                         </div>
                         <ul class="brk-tags brk-tags_solid font__family-montserrat" data-brk-library="component__tags">
+                            @isset($tagList[app()->getLocale()])
                             @foreach($tagList[app()->getLocale()] as $item)
                             <li><a href="#" rel="tag">{{$item}}</a></li>
                             @endforeach
+                            @endisset
                         </ul>
                     </div>
                 </div>
