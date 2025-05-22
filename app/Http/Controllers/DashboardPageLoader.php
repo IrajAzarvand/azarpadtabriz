@@ -196,7 +196,7 @@ class DashboardPageLoader extends Controller
         $Tag = [];
 
         foreach ($tags as $key => $item) {
-            $Tag[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'tag')->pluck('element_content')[0];
+            $Tag[$item->id] = $item->contents()->where('locale', 'FA')->where('element_title', 'tag')->pluck('element_content')[0];
         }
         return view('dashboard.Page',compact('Name','Page','Tag', 'FormSubmitRoute'));
     }

@@ -33,14 +33,15 @@
             </div>
             <!-- ./card -->
             @if($Page=='وبلاگ')
-                <div class="row">
-                    <select name="pets" multiple >
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="bird">Bird</option>
-                        <option value="rabbit">Rabbit</option>
-                    </select>
-                </div>
+        <div class="form-group">
+            <label>انتخاب تگ های مربوطه: </label>
+            @foreach($Tag as $id=>$item)
+            <label>
+                <input name="tags[]" type="checkbox" class="minimal" value="{{$id}}">
+                {{$item}}
+            </label>
+            @endforeach
+        </div>
              @endif
                 <div class="custom-file col-6 float-right">
                     <input type="file" name="file[]" id="file" multiple>
