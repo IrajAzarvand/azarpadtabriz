@@ -5,12 +5,14 @@
                 <span>*</span>
             </li>
             @isset($galleries)
+               @if($galleries['images'] != "")
             @foreach($galleries as $id=>$gallery)
             <li class="brk-sort-list__item" data-filter="{{$id}}">
                 <span>{{$gallery['title']}}</span>
             </li>
 
             @endforeach
+                @endif
             @endisset
         </ul>
         <div class="brk-bordered-bg pt-100 pb-130">
@@ -20,6 +22,8 @@
             <div class="brk-gradien-carousel__items slick-loading">
 
                 @isset($galleries)
+                    @if($galleries['images'] != "")
+
                     @foreach($galleries as $id=>$gallery)
                         @foreach($gallery['images'] as $image)
 
@@ -40,6 +44,8 @@
                 </div>
                         @endforeach
                     @endforeach
+                    @endif
+
                 @endisset
 
             </div>
