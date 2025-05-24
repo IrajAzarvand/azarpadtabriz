@@ -49,4 +49,9 @@ class LocaleContents extends Model
     {
         return $this->belongsTo(Tag::class);
     }
+
+    public function blog(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(blog::class);
+    }
 }

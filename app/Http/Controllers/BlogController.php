@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\blog;
+use App\Models\LocaleContents;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -28,7 +29,60 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+
+        if ($request->input('content_FA') == null) {
+        return back();
+    }
+        $newBlogPost = new blog;
+//        save file to blog folder and add row to DB
+        if ($request->file('file')){
+        $uploaded = $request->file('file')[0];
+
+            $uploaded->storeAs('Main_images\Blog\\', $uploaded->getClientOriginalName());
+            $newBlogPost->image= $uploaded->getClientOriginalName();
+        }
+
+        //add tags to new created blog post
+        if($request->tags){
+            $newBlogPost->tags=$request->tags;
+        }
+        $newBlogPost->save();
+
+
+        //devide the text into (header and content), then save to DB
+        $Contents = [];
+        // add new slider texts to locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $Contents[0]=null;
+            $Contents[1]=null;
+            if($request->input('content_' . $locale)) {
+                $Contents = explode("\n", $request->input('content_' . $locale), 2);
+            }
+
+            $newBlogPost->contents()->saveMany([
+                new LocaleContents([
+                    'page' => 'blog',
+                    'section' => 'blog',
+                    'element_title' => 'title_' . $locale,
+                    'element_id' => $newBlogPost->id,
+                    'locale' => $locale,
+                    'element_content' => $Contents[0],
+                ]),
+
+                new LocaleContents([
+                    'page' => 'blog',
+                    'section' => 'blog',
+                    'element_title' => 'content_' . $locale,
+                    'element_id' => $newBlogPost->id,
+                    'locale' => $locale,
+                    'element_content' => $Contents[1],
+                ]),
+            ]);
+
+        }
+
+        return redirect()->back();
+
     }
 
     /**

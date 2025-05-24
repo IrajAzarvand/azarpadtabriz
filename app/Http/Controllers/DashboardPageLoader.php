@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\blog;
 use App\Models\Gallery;
 use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
@@ -21,6 +22,7 @@ class DashboardPageLoader extends Controller
     public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
     public $galleries_path='storage/Main_images/Gallery/';
     public $catalogs_path='storage/Main_images/Catalog/';
+    public $blogs_path='storage/Main_images/Blog/';
 
     public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
@@ -191,6 +193,15 @@ class DashboardPageLoader extends Controller
         $Page='وبلاگ';
         $FormSubmitRoute='blogSave';
 
+        //        read data from db
+        $blogs = blog::with('contents')->get();
+        $blog = [];
+
+        foreach ($blogs as $key => $item) {
+            $blog[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'title_FA')->pluck('element_content')[0];
+            $blog[$item->id]['image'] =asset($this->blogs_path. $item->image);
+
+        }
         //        read tags from db
         $tags = Tag::all();
         $Tag = [];
@@ -198,7 +209,7 @@ class DashboardPageLoader extends Controller
         foreach ($tags as $key => $item) {
             $Tag[$item->id] = $item->contents()->where('locale', 'FA')->where('element_title', 'tag')->pluck('element_content')[0];
         }
-        return view('dashboard.Page',compact('Name','Page','Tag', 'FormSubmitRoute'));
+        return view('dashboard.Page',compact('Name','Page','Tag', 'blog', 'FormSubmitRoute'));
     }
 
     public function tags(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
