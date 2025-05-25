@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+    public $blogs_path='storage/Main_images/Blog/';
+
+
     /**
      * Display a listing of the resource.
      */
@@ -112,8 +115,34 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(blog $blog)
+    public function destroy(int $blog)
     {
-        //
+        $selected_item=blog::with('contents')->find($blog);
+        try {
+
+            unlink($this->blogs_path . $selected_item->image);
+        }
+        catch (\Throwable $e)
+        {
+
+        }
+        $selected_item->contents()->delete();
+        $selected_item->delete();
+        return redirect()->back();
+    }
+
+    public function removeImage(int $blog): true|\Illuminate\Http\RedirectResponse
+    {
+        $selected_item=blog::with('contents')->find($blog);
+        try {
+
+            unlink($this->blogs_path . $selected_item->image);
+
+        }
+        catch (\Throwable $e)
+        {
+            return true;
+        }
+        return redirect()->back();
     }
 }
