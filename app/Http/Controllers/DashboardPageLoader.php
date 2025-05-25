@@ -329,6 +329,15 @@ class DashboardPageLoader extends Controller
              }
              $FormSubmitRoute='TagUpdate';
              break;
+
+         case 'blog':
+             $selected=blog::where('id',$selectedItemId)->with('contents')->first();
+             $selectedItem['itemImage']=asset($this->blogs_path. $selected->image);
+             foreach (SiteLang() as $locale => $specs) {
+                 $selectedItem[$locale] = $selected->contents->where('locale', $locale)->where('element_title', 'title_'.$locale)->pluck('element_content')[0]. $selected->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
+             }
+             $FormSubmitRoute='BlogPageItemUpdate';
+             break;
         }
 
 

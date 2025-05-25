@@ -576,7 +576,7 @@
                                     <td>     <!-- General tools such as edit or delete-->
                                         <div class="tools">
 
-                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','index','ProductIntroduction',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
+                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','blog','blog',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
                                             <a href="{{route('removeBlog',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 

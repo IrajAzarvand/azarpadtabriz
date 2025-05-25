@@ -109,7 +109,52 @@ class BlogController extends Controller
      */
     public function update(Request $request, blog $blog)
     {
-        //
+        $selectedItem = blog::with('contents')->find($request->input('editedItemId'));
+
+        // Edit texts in locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $Contents[0]=null;
+            $Contents[1]=null;
+            if($request->input('content_' . $locale)) {
+                $Contents = explode("\n", $request->input('content_' . $locale), 2);
+            }
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'blog',
+                    'section' => 'blog',
+                    'element_title' => 'title_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $Contents[0],
+                ]
+            );
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'blog',
+                    'section' => 'blog',
+                    'element_title' => 'content_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $Contents[1],
+                ]
+            );
+
+            //replace file if user select another one
+            $uploaded = $request->file('file');
+            if ($uploaded) {
+                $this->removeImage($request->input('editedItemId'));
+                $uploaded[0]->storeAs('Main_images\Blog\\', $uploaded[0]->getClientOriginalName());
+                $selectedItem->image = $uploaded[0]->getClientOriginalName();
+                $selectedItem->save();
+            }
+
+        }
+        return redirect()->route('blogPage');
+
     }
 
     /**

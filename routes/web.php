@@ -71,6 +71,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/blogPage', [DashboardPageLoader::class, 'blogPage'])->name('blogPage');
     Route::post('/blogPage/save', [BlogController::class, 'store'])->name('blogSave');
     Route::get('/blogPage/{id}/delete', [BlogController::class, 'destroy'])->name('removeBlog');
+    Route::post('/indexPage/productIntroduction/update', [BlogController::class, 'update'])->name('BlogPageItemUpdate');
+
 
     Route::get('/blog/tags', [DashboardPageLoader::class, 'tags'])->name('blogTags');
     Route::post('/blog/tag/save', [TagController::class, 'store'])->name('tagSave');
