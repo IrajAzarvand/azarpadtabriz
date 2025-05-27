@@ -29,7 +29,7 @@
                             @endisset
 
                             <p class="brk-dark-font-color font__family-open-sans font__size-15 font__weight-normal line__height-26 mb-25">
-                                {{$blogContents['content']}}
+                                {!! nl2br($blogContents['content']) !!}
                             </p>
 
                             <div class="d-flex align-items-start mb-10">
@@ -41,9 +41,9 @@
                                 </ul>
                             </div>
 
-                        </div>
-                        <div class="mb-40">
-                            <div class="brk-reply mt-40" data-brk-library="component__forum_post">
+                            </div>
+                            <div class="mb-40">
+                                <div class="brk-reply mt-40" data-brk-library="component__forum_post">
                                 <h3 class="brk-reply__header font__family-montserrat font__size-21 font__weight-bold line__height-60">{{ Dictionary()['LeaveAComment'][app()->getLocale()] }}</h3>
                                 <form action="#" class="brk-reply__form brk-form-strict" data-brk-library="component__form">
                                     <div class="row">
@@ -62,10 +62,25 @@
                                         <span class="before">{{ Dictionary()['Send'][app()->getLocale()] }}</span><span class="text">{{ Dictionary()['Send'][app()->getLocale()] }}</span><span class="after">{{ Dictionary()['Send'][app()->getLocale()] }}</span>
                                     </button>
                                 </form>
+                                </div>
                             </div>
-                        </div>
-                        <h3 class="brk-reply__header font__family-montserrat font__size-21 font__weight-bold line__height-60 mb-10">{{ Dictionary()['Comments'][app()->getLocale()] }}</h3>
-                        <div>
+                            <h3 class="brk-reply__header font__family-montserrat font__size-21 font__weight-bold line__height-60 mb-10">{{ Dictionary()['Comments'][app()->getLocale()] }}</h3>
+                            <div>
+                                <div class="brk-reply-item" data-brk-library="component__blog_page_css">
+                                <a href="#" class="brk-reply-item__user">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('storage/Main_images/person.jpg')}}" alt="alt" class="lazyload">
+                                </a>
+                                <div class="brk-reply-item__content">
+                                    <div class="d-sm-flex justify-content-sm-between">
+
+                                        <a href="#" class="font__size-md-17 font__size-15 line-height-1-5 font__weight-bold">Rebeca Oliva</a>
+                                    </div>
+                                    <div class="brk-dark-font-color font__family-open-sans font__size-md-14 font__size-13 line-height-1-625 mt-10">
+                                        Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.
+                                    </div>
+                                </div>
+                                </div>
+                            {{--                            -------===========--------}}
                             <div class="brk-reply-item" data-brk-library="component__blog_page_css">
                                 <a href="#" class="brk-reply-item__user">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('storage/Main_images/person.jpg')}}" alt="alt" class="lazyload">
@@ -80,42 +95,10 @@
                                     </div>
                                 </div>
                             </div>
-{{--                            -------===========--------}}
-                            <div class="brk-reply-item" data-brk-library="component__blog_page_css">
-                                <a href="#" class="brk-reply-item__user">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('storage/Main_images/person.jpg')}}" alt="alt" class="lazyload">
-                                </a>
-                                <div class="brk-reply-item__content">
-                                    <div class="d-sm-flex justify-content-sm-between">
-
-                                        <a href="#" class="font__size-md-17 font__size-15 line-height-1-5 font__weight-bold">Rebeca Oliva</a>
-                                    </div>
-                                    <div class="brk-dark-font-color font__family-open-sans font__size-md-14 font__size-13 line-height-1-625 mt-10">
-                                        Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.
-                                    </div>
-                                </div>
                             </div>
-
-                        </div>
-
                     </div>
                 </div>
-{{--                <div class="col-12 col-lg-4 col-xl-3">--}}
-{{--                    <div class="mb-60">--}}
-{{--                        <div class="brs-sidebar brs-sidebar_right" data-brk-library="component__widgets">--}}
-{{--                            <div class="brs-sidebar__title">--}}
-{{--                                <h3 class="font__family-montserrat font__size-21 font__weight-bold line__height-22">Tags</h3>--}}
-{{--                            </div>--}}
-{{--                            <ul class="brk-tags brk-tags_solid font__family-montserrat" data-brk-library="component__tags">--}}
-{{--                                @foreach($blogTags as $tag)--}}
-{{--                                    <li><a href="#" rel="tag">{{$tag}}</a></li>--}}
-{{--                                @endforeach--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
-
         </div>
     </main>
 </div>
