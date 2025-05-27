@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\blog;
 use App\Models\Gallery;
 use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
 use App\Models\Slider;
 use App\Models\Tag;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use persian_date;
 
 class MainWebsitePageLoaderController extends Controller
 {
@@ -26,6 +29,8 @@ class MainWebsitePageLoaderController extends Controller
     public $product_Advantages_path='storage/Main_images/ProductAdvantages/';
     public $galleries_path='storage/Main_images/Gallery/';
     public $catalogs_path='storage/Main_images/Catalog/';
+    public $blogs_path='storage/Main_images/Blog/';
+
 
 
 
@@ -217,7 +222,48 @@ class MainWebsitePageLoaderController extends Controller
                 $tagList[$locale][] = $Tag->contents->where('locale', $locale)->where('element_id', $Tag->id)->where('element_title', 'tag')->pluck('element_content')[0];
             }
         }
-        return view('blog',compact('tagList'));
+
+        $Blogs=blog::with('contents')->get()->reverse();
+        $BlogList=[];
+        $persian = new persian_date();
+
+
+        foreach ($Blogs as $Blog) {
+            foreach (SiteLang() as $locale => $specs) {
+                $BlogList[$Blog->id]['id'] = $Blog->id;
+                $BlogList[$Blog->id]['title'][$locale] = $Blog->contents->where('locale', $locale)->where('element_id', $Blog->id)->where('element_title', 'title_'.$locale)->pluck('element_content')[0];
+                $BlogList[$Blog->id]['content'][$locale] = Str::words($Blog->contents->where('locale', $locale)->where('element_id', $Blog->id)->where('element_title', 'content_'.$locale)->pluck('element_content')[0],15);
+                //convert date to jalali
+                $BlogList[$Blog->id]['date'] = persian()->to_date(Carbon::parse($Blog->created_at->format('Y/m/d'))->format('Y/m/d'), 'Y/m/d');
+            }
+            $BlogList[$Blog->id]['img']=$this->blogs_path.$Blog->image;
+        }
+        $RecentBlogs=array_chunk($BlogList,3)[0];
+        return view('blog',compact('tagList', 'BlogList', 'RecentBlogs'));
+
+    }
+
+    public function showBlog(int $blogId): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $selectedBlog=blog::with('contents')->find($blogId);
+        $blogTags=[];
+        foreach ($selectedBlog->tags as $tag) {
+            $blogTags[]=Tag::find($tag)->contents->where('element_id', $tag)->where('locale', app()->getLocale())->pluck('element_content')[0];
+        }
+
+        $blogContents['title']=$selectedBlog->contents()->where('element_title', 'title_'.app()->getLocale())->pluck('element_content')[0];
+        $blogContents['content']=$selectedBlog->contents()->where('element_title', 'content_'.app()->getLocale())->pluck('element_content')[0];
+        $blogContents['date'] =persian()->to_date(Carbon::parse($selectedBlog->created_at->format('Y/m/d'))->format('Y/m/d'), 'Y/m/d');
+
+        if($selectedBlog->image)
+        {
+            $blogContents['image']=$this->blogs_path.$selectedBlog->image;
+        }
+
+//        dd($selectedBlog, $blogTags,$blogContents);
+
+
+        return view('blog',compact('blogContents','blogTags'));
 
     }
 }

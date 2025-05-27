@@ -141,6 +141,7 @@ Route::get('/', function () {
 //=======================================================================
 //blog page
 Route::get('/blog',[MainWebsitePageLoaderController::class,'BlogPage'])->name('BlogPage');
+Route::get('/{blogId}',[MainWebsitePageLoaderController::class,'showBlog'])->name('showBlog');
 
 
 // index -> catalog
