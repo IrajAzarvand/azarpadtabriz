@@ -12,4 +12,9 @@ class blog extends Model
     {
         return $this->hasMany(LocaleContents::class,'element_id','id')->where('page','blog')->where('section','blog');
     }
+
+    public function comments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(BlogComments::class,'blog_id','id');
+    }
 }

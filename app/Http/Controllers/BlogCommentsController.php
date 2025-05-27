@@ -28,7 +28,15 @@ class BlogCommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $newComment = new BlogComments;
+        $newComment->blog_id=$request->input('blogId');
+        $newComment->name=$request->input('name');
+        $newComment->email=$request->input('email');
+        $newComment->comment=$request->input('Message');
+        $newComment->save();
+        return redirect()->back();
     }
 
     /**

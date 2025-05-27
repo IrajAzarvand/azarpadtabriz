@@ -45,19 +45,22 @@
                             <div class="mb-40">
                                 <div class="brk-reply mt-40" data-brk-library="component__forum_post">
                                 <h3 class="brk-reply__header font__family-montserrat font__size-21 font__weight-bold line__height-60">{{ Dictionary()['LeaveAComment'][app()->getLocale()] }}</h3>
-                                <form action="#" class="brk-reply__form brk-form-strict" data-brk-library="component__form">
+                                <form method="post" action="{{route('saveBlogComment')}}" class="brk-reply__form brk-form-strict" data-brk-library="component__form">
+                                    @csrf
+                                    <input type="hidden" name="blogId" value="{{$blogId}}" >
+
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
-                                            <input name="name" type="text" placeholder="{{ Dictionary()['Name'][app()->getLocale()] }}">
+                                            <input name="name" type="text" required placeholder="{{ Dictionary()['Name'][app()->getLocale()] }}">
                                         </div>
                                         <div class="col-lg-6 col-12">
-                                            <input name="email" type="email" placeholder="{{ Dictionary()['Email'][app()->getLocale()] }}">
+                                            <input name="email" type="email" required placeholder="{{ Dictionary()['Email'][app()->getLocale()] }}">
                                         </div>
                                         <div class="col-12">
-                                            <textarea name="textarea" placeholder="{{ Dictionary()['Message'][app()->getLocale()] }}"></textarea>
+                                            <textarea name="Message" required placeholder="{{ Dictionary()['Message'][app()->getLocale()] }}"></textarea>
                                         </div>
                                     </div>
-                                    <button class="btn btn-inside-out btn-md btn-icon border-radius-25 font__family-open-sans font__weight-semibold btn-icon-right m-0 mt-25" data-brk-library="component__button">
+                                    <button type="submit" class="btn btn-inside-out btn-md btn-icon border-radius-25 font__family-open-sans font__weight-semibold btn-icon-right m-0 mt-25" data-brk-library="component__button">
                                         <i class="fas fa-long-arrow-alt-right icon-inside"></i>
                                         <span class="before">{{ Dictionary()['Send'][app()->getLocale()] }}</span><span class="text">{{ Dictionary()['Send'][app()->getLocale()] }}</span><span class="after">{{ Dictionary()['Send'][app()->getLocale()] }}</span>
                                     </button>
@@ -66,6 +69,9 @@
                             </div>
                             <h3 class="brk-reply__header font__family-montserrat font__size-21 font__weight-bold line__height-60 mb-10">{{ Dictionary()['Comments'][app()->getLocale()] }}</h3>
                             <div>
+
+                                @foreach($blogContents['comments'] as $name=>$comment)
+
                                 <div class="brk-reply-item" data-brk-library="component__blog_page_css">
                                 <a href="#" class="brk-reply-item__user">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('storage/Main_images/person.jpg')}}" alt="alt" class="lazyload">
@@ -73,28 +79,15 @@
                                 <div class="brk-reply-item__content">
                                     <div class="d-sm-flex justify-content-sm-between">
 
-                                        <a href="#" class="font__size-md-17 font__size-15 line-height-1-5 font__weight-bold">Rebeca Oliva</a>
+                                        <a href="#" class="font__size-md-17 font__size-15 line-height-1-5 font__weight-bold">{{$name}}</a>
                                     </div>
                                     <div class="brk-dark-font-color font__family-open-sans font__size-md-14 font__size-13 line-height-1-625 mt-10">
-                                        Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.
+                                        {!! nl2br($comment) !!}
                                     </div>
                                 </div>
                                 </div>
-                            {{--                            -------===========--------}}
-                            <div class="brk-reply-item" data-brk-library="component__blog_page_css">
-                                <a href="#" class="brk-reply-item__user">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('storage/Main_images/person.jpg')}}" alt="alt" class="lazyload">
-                                </a>
-                                <div class="brk-reply-item__content">
-                                    <div class="d-sm-flex justify-content-sm-between">
+                                @endforeach
 
-                                        <a href="#" class="font__size-md-17 font__size-15 line-height-1-5 font__weight-bold">Rebeca Oliva</a>
-                                    </div>
-                                    <div class="brk-dark-font-color font__family-open-sans font__size-md-14 font__size-13 line-height-1-625 mt-10">
-                                        Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.
-                                    </div>
-                                </div>
-                            </div>
                             </div>
                     </div>
                 </div>

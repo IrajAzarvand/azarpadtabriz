@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\BlogCommentsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\GalleryController;
@@ -142,6 +143,7 @@ Route::get('/', function () {
 //blog page
 Route::get('/blog',[MainWebsitePageLoaderController::class,'BlogPage'])->name('BlogPage');
 Route::get('/{blogId}',[MainWebsitePageLoaderController::class,'showBlog'])->name('showBlog');
+Route::post('/saveBlogComment', [BlogCommentsController::class, 'store'])->name('saveBlogComment');
 
 
 // index -> catalog

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
 use App\Models\blog;
+use App\Models\BlogComments;
 use App\Models\Gallery;
 use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
@@ -245,7 +246,7 @@ class MainWebsitePageLoaderController extends Controller
 
     public function showBlog(int $blogId): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
-        $selectedBlog=blog::with('contents')->find($blogId);
+        $selectedBlog=blog::with('contents','comments')->find($blogId);
         $blogTags=[];
         foreach ($selectedBlog->tags as $tag) {
             $blogTags[]=Tag::find($tag)->contents->where('element_id', $tag)->where('locale', app()->getLocale())->pluck('element_content')[0];
@@ -260,10 +261,10 @@ class MainWebsitePageLoaderController extends Controller
             $blogContents['image']=$this->blogs_path.$selectedBlog->image;
         }
 
-//        dd($selectedBlog, $blogTags,$blogContents);
+            $blogContents['comments'] = $selectedBlog->comments()->pluck('comment','name')->toArray();
 
-
-        return view('blog',compact('blogContents','blogTags'));
+        return view('blog',compact('blogId','blogContents','blogTags'));
 
     }
+
 }
