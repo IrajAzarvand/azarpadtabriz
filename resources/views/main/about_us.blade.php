@@ -21,7 +21,7 @@
                     {{ Dictionary()['AboutUs'][app()->getLocale()] }}</h2>
 
                 <p class="brk-dark-font-color font__size-16 line__height-28 mb-50" style="max-width: 330px">
-                    {{ $about_us[app()->getLocale()] }}
+                    {!! nl2br($about_us[app()->getLocale()])  !!}
                 </p>
 
 

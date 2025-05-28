@@ -33,7 +33,7 @@ class AboutUsController extends Controller
     public function store(Request $request)
     {
 
-        $uploaded = $request->file('file');
+        $uploaded = $request->file('file')[0];
         if($uploaded){
 //remove previous file in about us directory
             try {

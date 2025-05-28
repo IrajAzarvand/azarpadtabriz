@@ -179,7 +179,6 @@ class MainWebsitePageLoaderController extends Controller
 
             }
 
-//            $about_us['img'] = $this->aboutus_path . $filename;
         }
         catch (\Exception $exception){
             foreach (SiteLang() as $locale => $specs) {
@@ -213,6 +212,13 @@ class MainWebsitePageLoaderController extends Controller
     }
 
 
+    public function iuhn()
+    {
+        dd('dfafdsa');
+//        return view('blog');
+
+    }
+
     public function BlogPage()
     {
 
@@ -240,13 +246,13 @@ class MainWebsitePageLoaderController extends Controller
             $BlogList[$Blog->id]['img']=$this->blogs_path.$Blog->image;
                $BlogList[$Blog->id]['CommentsCount'] = $Blog->comments()->count();
         }
-        $RecentBlogs=array_chunk($BlogList,3)[0];
+        $BlogList? $RecentBlogs=array_chunk($BlogList,3)[0] : $RecentBlogs=[];
 
         return view('blog',compact('tagList', 'BlogList', 'RecentBlogs'));
 
     }
 
-    public function showBlog(int $blogId): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    public function showBlog(int $blogId)
     {
         $selectedBlog=blog::with('contents','comments')->find($blogId);
         $blogTags=[];
@@ -269,5 +275,7 @@ class MainWebsitePageLoaderController extends Controller
         return view('blog',compact('blogId','blogContents','blogTags'));
 
     }
+
+
 
 }

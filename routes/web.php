@@ -149,3 +149,7 @@ Route::post('/saveBlogComment', [BlogCommentsController::class, 'store'])->name(
 // index -> catalog
 Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_catalog'])->name('download_catalog');
 
+//=======================================================================
+//contact us page
+Route::get('/yhuyfuy', [MainWebsitePageLoaderController::class, 'iuhn'])->name('poiu');
+

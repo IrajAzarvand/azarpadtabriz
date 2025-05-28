@@ -4,16 +4,14 @@
             <li class="brk-sort-list__item active" data-filter="all">
                 <span>*</span>
             </li>
-            @isset($galleries)
-               @if($galleries['images'] != "")
-            @foreach($galleries as $id=>$gallery)
-            <li class="brk-sort-list__item" data-filter="{{$id}}">
-                <span>{{$gallery['title']}}</span>
-            </li>
+               @if($galleries)
+                    @foreach($galleries as $id=>$gallery)
+                    <li class="brk-sort-list__item" data-filter="{{$id}}">
+                        <span>{{$gallery['title']}}</span>
+                    </li>
 
-            @endforeach
+                    @endforeach
                 @endif
-            @endisset
         </ul>
         <div class="brk-bordered-bg pt-100 pb-130">
             <div class="brk-bordered-bg__img brk-abs-overlay brk-bgi-1 brk-bg-pattern">
@@ -22,7 +20,6 @@
             <div class="brk-gradien-carousel__items slick-loading">
 
                 @isset($galleries)
-                    @if($galleries['images'] != "")
 
                     @foreach($galleries as $id=>$gallery)
                         @foreach($gallery['images'] as $image)
@@ -44,7 +41,6 @@
                 </div>
                         @endforeach
                     @endforeach
-                    @endif
 
                 @endisset
 
