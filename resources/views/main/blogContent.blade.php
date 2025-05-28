@@ -18,7 +18,7 @@
                                             <i class="fa fa-calendar"></i>{{$data['date']}}
                                         </a>
                                         <a href="#" class="brs-post__comments">
-                                            <i class="far fa-comments brs-post__comments-icon"></i> 12
+                                            <i class="far fa-comments brs-post__comments-icon"></i> {{$data['CommentsCount']}}
                                         </a>
                                     </div>
                                     <h2 class="brs-post__title font__family-montserrat font__size-24 font__weight-bold line__height-28 text-left">

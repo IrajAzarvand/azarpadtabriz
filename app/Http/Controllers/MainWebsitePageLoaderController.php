@@ -224,7 +224,7 @@ class MainWebsitePageLoaderController extends Controller
             }
         }
 
-        $Blogs=blog::with('contents')->get()->reverse();
+        $Blogs=blog::with('contents','comments')->get()->reverse();
         $BlogList=[];
         $persian = new persian_date();
 
@@ -238,8 +238,10 @@ class MainWebsitePageLoaderController extends Controller
                 $BlogList[$Blog->id]['date'] = persian()->to_date(Carbon::parse($Blog->created_at->format('Y/m/d'))->format('Y/m/d'), 'Y/m/d');
             }
             $BlogList[$Blog->id]['img']=$this->blogs_path.$Blog->image;
+               $BlogList[$Blog->id]['CommentsCount'] = $Blog->comments()->count();
         }
         $RecentBlogs=array_chunk($BlogList,3)[0];
+
         return view('blog',compact('tagList', 'BlogList', 'RecentBlogs'));
 
     }
@@ -260,8 +262,9 @@ class MainWebsitePageLoaderController extends Controller
         {
             $blogContents['image']=$this->blogs_path.$selectedBlog->image;
         }
+        $blogContents['CommentsCount'] = $selectedBlog->comments()->count();
 
-            $blogContents['comments'] = $selectedBlog->comments()->pluck('comment','name')->toArray();
+        $blogContents['comments'] = $selectedBlog->comments()->pluck('comment','name')->toArray();
 
         return view('blog',compact('blogId','blogContents','blogTags'));
 

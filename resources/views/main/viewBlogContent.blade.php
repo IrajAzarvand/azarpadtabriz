@@ -14,7 +14,7 @@
                                 </a>
                                 <a href="#" class="brk-post-full__meta-comments">
                                     <i class="far fa-comments"></i>
-                                    <span>12</span>
+                                    <span>{{$blogContents['CommentsCount']}}</span>
                                 </a>
                             </div>
                             <h2 class="brk-post-full__title font__family-montserrat font__size-lg-36 font__size-26 line-height-1 font__weight-semibold mt-10 mb-35">
