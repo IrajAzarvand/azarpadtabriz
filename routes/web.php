@@ -151,5 +151,5 @@ Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_cata
 
 //=======================================================================
 //contact us page
-Route::get('/yhuyfuy', [MainWebsitePageLoaderController::class, 'iuhn'])->name('poiu');
+Route::get('contactus/message', [MainWebsitePageLoaderController::class, 'CU'])->name('CU');
 

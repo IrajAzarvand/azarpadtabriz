@@ -106,7 +106,7 @@
 
 
                             <li class="brk-nav__children brk-nav__drop-down-effect">
-                                <a href="{{route('poiu')}}">
+                                <a href="{{route('CU')}}">
                                     <span>{{Dictionary()['ContactUs'][app()->getLocale()] }}</span>
                                 </a>
 

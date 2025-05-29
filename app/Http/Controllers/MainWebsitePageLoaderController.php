@@ -212,10 +212,9 @@ class MainWebsitePageLoaderController extends Controller
     }
 
 
-    public function iuhn()
+    public function CU()
     {
-        dd('dfafdsa');
-//        return view('blog');
+        return view('contactUs');
 
     }
 
