@@ -67,7 +67,6 @@
                                 <a href="{{route('MainWebsite')}}">
                                     <span>{{Dictionary()['Home'][app()->getLocale()] }}</span>
                                 </a>
-
                             </li>
 
 
@@ -75,7 +74,6 @@
                                 <a href="#">
                                     <span>{{Dictionary()['AboutUs'][app()->getLocale()] }}</span>
                                 </a>
-
                             </li>
 
 
@@ -109,7 +107,6 @@
                                 <a href="{{route('CU')}}">
                                     <span>{{Dictionary()['ContactUs'][app()->getLocale()] }}</span>
                                 </a>
-
                             </li>
 
                         </ul>

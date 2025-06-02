@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogCommentsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductAdvantageController;
 use App\Http\Controllers\ProductIntroductionController;
 use App\Http\Controllers\ProductSampleController;
@@ -152,4 +153,5 @@ Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_cata
 //=======================================================================
 //contact us page
 Route::get('contactus/message', [MainWebsitePageLoaderController::class, 'CU'])->name('CU');
+Route::post('contactus/message/save', [MessageController::class, 'store'])->name('CUSave');
 

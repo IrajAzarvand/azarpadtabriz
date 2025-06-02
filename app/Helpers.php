@@ -262,13 +262,11 @@ function Dictionary()
         'Subject' => [
             'FA' => 'موضوع',
             'EN' => 'Subject',
-            'RU' => 'Тема',
             'AR' => 'موضوع',
         ],
         'Message' => [
             'FA' => 'متن پیام',
             'EN' => 'Message',
-            'RU' => 'Сообщение',
             'AR' => 'رسالة',
         ],
         'Send' => [
@@ -277,11 +275,17 @@ function Dictionary()
             'RU' => 'представить',
             'AR' => 'إرسال',
         ],
-        'SalesOffices' => [
-            'FA' => 'شعب فروش',
-            'EN' => 'Sales branches',
-            'RU' => 'Филиалы продаж',
-            'AR' => 'فروع المبيعات',
+
+        'AskForHelp' => [
+            'FA' => 'ما برای کمک به شما آماده ایم',
+            'EN' => 'We are ready to help you.',
+            'AR' => 'نحن مستعدون لمساعدتك.',
+        ],
+
+        'ContactUsDetail' => [
+            'FA' => 'برای دریافت مشاوره و راهنمایی در مورد محصولات و فروش با ما تماس بگیرید یا پیام ارسال فرمایید. ما در سریعترین زمان به شما پاسخ خواهیم داد.',
+            'EN' => 'For advice and guidance on products and sales, please contact us or send us a message. We will respond to you as soon as possible.',
+            'AR' => 'اتصل بنا أو أرسل لنا رسالة لتلقي النصائح والإرشادات حول المنتجات والمبيعات. سوف نقوم بالرد عليك في أقرب وقت ممكن.',
         ],
 
         'Weight' => [

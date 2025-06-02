@@ -212,7 +212,7 @@ class MainWebsitePageLoaderController extends Controller
     }
 
 
-    public function CU()
+    public function CU(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         return view('contactUs');
 

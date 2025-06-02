@@ -1,84 +1,62 @@
 @extends('layouts.master_layout')
 
 @section('contents')
-            <div class="col-xl-6 col-12">
-                <div class="brk-map h-100" data-height="520" data-brk-library="component__map">
-                    <div class="brk-map__section">
-                        <div class="brk-map__canvas h-100" data-address="412 Throop Ave, Brooklyn, NY 11221, USA" data-zoom="13" data-type="roadmap" data-marker="{{asset('img/gm-1.png')}}" data-offset-lat="0.0047" data-style="silver" data-lat="40.6898297" data-lng="-73.94250620000003">
-                        </div>
-                    </div>
-                    <div class="brk-map__infoicon brk-map__infoicon_layout-one text-center">
-								<span class="marker">
-									<img src="{{asset('img/gm-1.png')}}" alt="alt">
-								</span>
-                        <h4 class="font__family-montserrat font__weight-bold font__size-21 line__height-22">Chicago, USA</h4>
-                        <div class="brk-map__infoicon--text">
-                            <ul class="font__size-15 line__height-21">
-                                <li class="brk-dark-font-color">
-                                    <i class="fas fa-phone brk-base-font-color font__size-13"></i>
-                                    <a href="tel:8800123456789">8 800 123 456 789</a>
-                                </li>
-                                <li class="brk-dark-font-color">
-                                    <i class="far fa-clock brk-base-font-color font__size-13"></i>
-                                    <span>Mon - Sat 8:00 - 18:00<br>Sunday CLOSED</span>
-                                </li>
-                            </ul>
-                        </div>
 
+    <div class="container mt-90">
+        <div class="row">
+            <div class="col-xl-4 col-lg-6">
+                <div class="pt-160 pb-130 position-relative">
+                    <span class="brk-abs-overlay bg-cover bg-lg-contain" style="left: -130px; width: calc(100% + 240px); background-repeat: no-repeat;  background-image: url('{{asset('storage/Main_images/footer-shape-1.svg')}}')"></span>
+                    <h5 class="brk-white-font-color font__family-montserrat font__size-42 line__height-50 font__weight-bold text-uppercase text-center text-sm-left">{{ Dictionary()['ContactUs'][app()->getLocale()] }}</h5>
+                    <p class="brk-white-font-color font__family-montserrat font__size-25 font__weight-light line__height-30 mb-30 text-center text-sm-left">{{ Dictionary()['AskForHelp'][app()->getLocale()] }}</p>
+                    <p class="brk-white-font-color font__size-16 font__weight-normal line__height-26 mb-20 text-center text-sm-left">
+                        {{ Dictionary()['ContactUsDetail'][app()->getLocale()] }}
+                    </p>
+                    <hr class="horiz-line mb-10 mt-30">
+                    <div class="d-flex flex-wrap brk-footer__info-grid flex-sm-row flex-column brk-white-font-color text-center text-sm-left">
+                        <p class="font__family-open-sans font__weight-bold font__size-14 mt-10">
+                            <i class="brk-footer-icon text-middle fa fa-envelope line__height-24"></i>
+                            <a href="mailto:{{siteInfo()['email']}}" class="show-inline-block">{{siteInfo()['email']}}</a>
+                        </p>
+
+
+                        <p class="font__family-open-sans font__weight-bold font__size-14 mt-10">
+                            <i class="brk-footer-icon text-middle fa fa-phone line__height-24"></i>
+                            <a href="#" class="show-inline-block">{{siteInfo()['mobile1']}}</a>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6 col-12">
-                <div class="brk-base-bg-gradient-40-no-opacity h-100">
-                    <div class="row no-gutters">
-                        <div class="col-12 col-md-7">
-                            <div class="all-light text-center text-sm-left pt-md-80 pb-md-90 pt-40 pb-35 pl-md-60 pl-15 pr-15 pr-md-30">
-                                <a href="#" class="d-inline-block pt-1">
-                                    <img src="{{asset('img/logo.svg')}}" alt="alt">
-                                </a>
-                                <hr class="horiz-line" style="margin-top: 20px; margin-bottom: 47px;">
-                                <p class="font__family-open-sans font__size-14 line__height-21 brk-white-font-color">Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor
-                                    eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra fequis, feugiat arutr, tellus.
-                                    Phasellus viverra nulla ut metus varius laoreet. </p>
-                                <hr class="horiz-line" style="margin-bottom: 12px;">
-                                <div class="d-flex flex-wrap brk-footer__info-grid flex-sm-row flex-column mb-50">
-                                    <p class="font__family-open-sans font__weight-bold font__size-14 mt-10">
-                                        <i class="brk-footer-icon text-middle fa fa-map-marker line__height-24"></i>Chicago
-                                    </p>
-                                    <p class="font__family-open-sans font__weight-bold font__size-14 mt-10">
-                                        <i class="brk-footer-icon text-middle fa fa-envelope line__height-24"></i>
-                                        <a href="mailto:i@nikadevs.com" class="show-inline-block">we@dev.com</a>
-                                    </p>
-                                    <p class="font__family-open-sans font__weight-bold font__size-14 mt-10">
-                                        <i class="brk-footer-icon text-middle fa fa-comments line__height-24"></i>Contact
-                                    </p>
-                                    <p class="font__family-open-sans font__weight-bold font__size-14 mt-10">
-                                        <i class="brk-footer-icon text-middle fa fa-phone line__height-24"></i>
-                                        <a href="#" class="show-inline-block">800 12 34 567</a>
-                                    </p>
-                                </div>
-                                <form action="#" name="subscribe" class="brk-subscribe-mail" data-brk-library="recaptcha">
-                                    <div class="brk-subscribe brk-subscribe-map">
-                                        <input name="EMAIL" type="email" placeholder="enter-your@mail.com">
-                                        <button type="submit">
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+            <div class="col-xl-2"></div>
+            <div class="col-xl-6">
+                <form action="{{route('CUSave')}}" method="post" class="brk-form-strict pt-md-120 pt-50 z-index-3">
+                    @csrf
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <input type="text" required placeholder="{{ Dictionary()['Name'][app()->getLocale()] }}" name="name">
                         </div>
-                        <div class="col-12 col-md-5">
-                            <div class="pt-80 pt-xs-20 pb-50 pr-30">
-                                <h6 class="brk-white-font-color text-center text-sm-left font__family-montserrat font__size-36 font__weight-bold line__height-36">
-                                    Our Twitter
-                                </h6>
-                                <hr class="horiz-line mb-40" style="margin-top: 19px;">
-                                <div class="brk-styled-twitter-3 pr-xs-15 pl-xs-15">
-                                    <a href="https://twitter.com/We_Nikadevs" class="twitter-timeline" data-tweet-limit="2" data-chrome="noheader,transparent,nofooter,noborders" data-theme="dark"></a>
-                                </div>
-                            </div>
+                        <div class="col-12 col-md-6">
+                            <input type="email" required placeholder="{{ Dictionary()['Email'][app()->getLocale()] }}" name="email">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" required placeholder="{{ Dictionary()['Subject'][app()->getLocale()] }}" name="subject">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" required id="footer15" placeholder="{{ Dictionary()['Message'][app()->getLocale()] }}" class="bordered-bottom"></textarea>
                         </div>
                     </div>
-                </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-backgrounds btn-backgrounds_left-icon btn-backgrounds_white font__family-montserrat font__weight-bold text-uppercase font__size-13 mt-50 mb-10">
+                            {{ Dictionary()['Send'][app()->getLocale()] }}
+                            <span class="before line__height-15">
+                                <i class="far fa-hand-point-right font__size-15"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
             </div>
+        </div>
+
+    </div>
+
 @endsection
