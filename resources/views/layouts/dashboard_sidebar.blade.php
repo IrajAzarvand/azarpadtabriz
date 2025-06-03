@@ -140,6 +140,16 @@
 
                        </ul>
                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('MainWebsite') }}" target="_blank" class="nav-link">
+                            <i class="nav-icon fa fa-envelope-open-o"></i>
+                            <p>
+                                پیام ها
+                            </p>
+                        </a>
+                    </li>
+
                </ul>
            </nav>
            <!-- /.sidebar-menu -->
