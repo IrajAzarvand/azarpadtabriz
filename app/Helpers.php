@@ -92,6 +92,10 @@ function inputformTitle($page)
             case 'وبلاگ':
                 $title=  'وبلاگ (اندازه بهینه 400 × 650 حجم کمتر از 90 کیلوبایت)';
                 break;
+
+            case 'پیام ها':
+                $title=  'مشاهده پیام های ارسال شده از طرف کاربران';
+                break;
     }
     return $title;
 

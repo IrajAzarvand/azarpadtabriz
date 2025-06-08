@@ -142,7 +142,7 @@
                    </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('MainWebsite') }}" target="_blank" class="nav-link">
+                        <a href="{{ route('messages') }}" target="_blank" class="nav-link @if(last(request()->segments())== 'messages'){{ 'active' }} @endif">
                             <i class="nav-icon fa fa-envelope-open-o"></i>
                             <p>
                                 پیام ها

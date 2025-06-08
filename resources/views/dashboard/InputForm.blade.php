@@ -33,24 +33,25 @@
             </div>
             <!-- ./card -->
             @if($Page=='وبلاگ')
-        <div class="form-group">
-            <label>انتخاب تگ های مربوطه: </label>
-            @foreach($Tag as $id=>$item)
-            <label>
-                <input name="tags[]" type="checkbox" class="minimal" value="{{$id}}">
-                {{$item}}
-            </label>
-            @endforeach
-        </div>
+                <div class="form-group">
+                    <label>انتخاب تگ های مربوطه: </label>
+                    @foreach($Tag as $id=>$item)
+                    <label>
+                        <input name="tags[]" type="checkbox" class="minimal" value="{{$id}}">
+                        {{$item}}
+                    </label>
+                    @endforeach
+                </div>
              @endif
+    @unless($Page=='پیام ها')
                 <div class="custom-file col-6 float-right">
                     <input type="file" name="file[]" id="file" multiple>
                     <label class="custom-file-label" for="file">انتخاب فایل</label>
                 </div>
-
-    <div class="col-6 float-left">
-        <button type="submit" class="btn btn-primary">@isset($selectedItemId) ویرایش @else  ذخیره @endisset</button>
-    </div>
+                <div class="col-6 float-left">
+                    <button type="submit" class="btn btn-primary">@isset($selectedItemId) ویرایش @else  ذخیره @endisset</button>
+                </div>
+    @endunless
 </form>
 
     </div>

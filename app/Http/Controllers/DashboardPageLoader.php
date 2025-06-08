@@ -230,6 +230,24 @@ class DashboardPageLoader extends Controller
     }
 
 
+    public function messages(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $Name='';
+        $Page='پیام ها';
+        $FormSubmitRoute='messages';
+
+        //        read data from db
+        $tags = Tag::all();
+        $Tag = [];
+
+        foreach ($tags as $key => $item) {
+            $Tag[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'tag')->pluck('element_content')[0];
+        }
+
+        return view('dashboard.Page',compact('Name','Page','Tag', 'FormSubmitRoute'));
+    }
+
+
 
 
     public function usagePage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application

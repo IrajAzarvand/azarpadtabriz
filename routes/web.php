@@ -81,6 +81,11 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/blog/tag/{id}/delete', [TagController::class, 'destroy'])->name('removeTag');
     Route::post('/blog/tag/update', [TagController::class, 'update'])->name('TagUpdate');
 
+
+    //===== messages
+    Route::get('/messages', [DashboardPageLoader::class, 'messages'])->name('messages');
+
+
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== usageGreenhouse
