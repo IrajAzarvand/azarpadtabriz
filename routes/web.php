@@ -91,7 +91,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== usageGreenhouse
-    Route::get('/usagePage', [DashboardPageLoader::class, 'usagePage'])->name('usagePage');
+    Route::get('/Applications', [DashboardPageLoader::class, 'applications'])->name('applicationsPage');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== contactUs

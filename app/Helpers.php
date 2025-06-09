@@ -96,6 +96,10 @@ function inputformTitle($page)
             case 'پیام ها':
                 $title=  'مشاهده پیام های ارسال شده از طرف کاربران';
                 break;
+
+            case 'کاربردها':
+                $title=  'کاربردها (اندازه بهینه 400 × 650 حجم کمتر از 90 کیلوبایت)';
+                break;
     }
     return $title;
 

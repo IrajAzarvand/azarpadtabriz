@@ -24,6 +24,7 @@ class DashboardPageLoader extends Controller
     public $galleries_path='storage/Main_images/Gallery/';
     public $catalogs_path='storage/Main_images/Catalog/';
     public $blogs_path='storage/Main_images/Blog/';
+    public $applications_path='storage/Main_images/Applications/';
 
     public function dashboard(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
@@ -254,14 +255,16 @@ class DashboardPageLoader extends Controller
 
 
 
-    public function usagePage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    public function applications(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
     {
         //usageGreenhousePage گلخانه
         //usagePoultryFarmPage مرغداری ها
         //usagePowerPlantPage نیروگاه ها
         $Name='صفحات';
         $Page='کاربردها';
-        return view('dashboard.Page',compact('Name','Page'));
+        $FormSubmitRoute='productIntroductionSave';
+
+        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute'));
     }
 
     public function contactUsPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
