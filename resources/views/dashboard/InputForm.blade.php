@@ -23,7 +23,7 @@
                         @foreach (SiteLang() as $locale => $specs)
                             <div class="tab-pane @if ($loop->first) active @endif" id="tab_{{ $specs['name'] }}">
                        <textarea name="content_{{$locale}}" @if ($specs['rtl']) dir="rtl" @else dir="ltr" @endif class="textarea" placeholder="لطفا  متن {{ $specs['name'] }} خود را وارد کنید"
-                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">@isset($selectedItem[$locale])  {{$selectedItem[$locale]}}@endisset</textarea>
+                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">@isset($selectedItem[$locale]){{$selectedItem[$locale]}}@endisset</textarea>
                             </div>
                         @endforeach
                     </div>
@@ -43,7 +43,7 @@
                     @endforeach
                 </div>
              @endif
-    @unless($Page=='پیام ها')
+    @unless(Request::segment(2)=='messages')
                 <div class="custom-file col-6 float-right">
                     <input type="file" name="file[]" id="file" multiple>
                     <label class="custom-file-label" for="file">انتخاب فایل</label>

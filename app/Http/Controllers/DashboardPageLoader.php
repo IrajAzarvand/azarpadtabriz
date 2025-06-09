@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\aboutUs;
 use App\Models\blog;
 use App\Models\Gallery;
+use App\Models\Message;
 use App\Models\ProductAdvantage;
 use App\Models\ProductIntroduction;
 use App\Models\ProductSample;
@@ -237,14 +238,17 @@ class DashboardPageLoader extends Controller
         $FormSubmitRoute='messages';
 
         //        read data from db
-        $tags = Tag::all();
-        $Tag = [];
+        $messages = Message::all();
+        $UserMessages = [];
 
-        foreach ($tags as $key => $item) {
-            $Tag[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'tag')->pluck('element_content')[0];
+        foreach ($messages as $key => $item) {
+            $UserMessages[$item->id]['name'] = $item->name;
+            $UserMessages[$item->id]['email'] = $item->email;
+            $UserMessages[$item->id]['subject'] = $item->subject;
+            $UserMessages[$item->id]['message'] = $item->message;
         }
 
-        return view('dashboard.Page',compact('Name','Page','Tag', 'FormSubmitRoute'));
+        return view('dashboard.Page',compact('Name','Page', 'FormSubmitRoute', 'UserMessages'));
     }
 
 

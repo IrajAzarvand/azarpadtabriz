@@ -490,8 +490,8 @@
                             <thead>
                             <tr>
                                 <th style="width: 5%;">ردیف</th>
-                                <th style="width: 25%;">تصویر</th>
-                                <th style="width:50%;">متن فارسی</th>
+                                <th style="width: 25%;">نام</th>
+                                <th style="width:50%;">متن پیام</th>
                                 <th style="width: 20%;">عملیات</th>
                             </tr>
                             </thead>
@@ -499,25 +499,21 @@
 
 
 
-{{--                            @foreach($Gallery as $id=>$item)--}}
-{{--                                <tr>--}}
-{{--                                    <td>{{$id}}</td>--}}
-{{--                                    <td>--}}
-{{--                                        @isset($item['image'])--}}
-{{--                                            <img width="40%"  src="{{$item['image'][0]}}" alt="">--}}
-{{--                                        @endisset--}}
-{{--                                    </td>--}}
-{{--                                    <td>{{$item['content']}}</td>--}}
-{{--                                    <td>     <!-- General tools such as edit or delete-->--}}
-{{--                                        <div class="tools">--}}
+                            @foreach($UserMessages as $id=>$item)
+                                <tr>
+                                    <td>{{$id}}</td>
+                                    <td>{{$item['name']}}</td>
+                                    <td>{{$item['message']}}</td>
+                                    <td>     <!-- General tools such as edit or delete-->
+                                        <div class="tools">
 
-{{--                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','index','gallery',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>--}}
-{{--                                            <a href="{{route('removeGallery',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>--}}
+                                            <a href="{{route('showMessages',[$id])}}"><button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
+                                            <a href="{{route('removeGallery',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
-{{--                                        </div></td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
+                                        </div></td>
+                                </tr>
+                            @endforeach
                             </tbody>
 
                         </table>
@@ -686,7 +682,9 @@
             <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header">
+                    @unless(Request::segment(2)=='messages')
                     <h3 class="card-title">ویرایش آیتم {{$selectedItemId}}</h3>
+                    @endunless
                 </div><div class="card-body">
                     @isset($selectedItem['itemImage'])
                     @if(is_array($selectedItem['itemImage']))

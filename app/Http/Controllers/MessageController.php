@@ -37,9 +37,20 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Message $message)
+    public function show($id)
     {
-        //
+        $Name='صفحات';
+        $Page='ویرایش آیتم';
+        $FormSubmitRoute='messages';
+        $selectedItemId=$id;
+        $selected=Message::where('id',$selectedItemId)->first();
+        foreach (SiteLang() as $locale => $specs) {
+            $selectedItem[$locale] = nl2br(e('name= ' . $selected->name  . "\r\n" . 'email= ' . $selected->email . "\r\n" .  'subject= ' . $selected->subject . "\r\n" . 'message= ' . $selected->message));
+        }
+
+
+        return view('dashboard.Page',compact('Name','Page','selectedItemId','FormSubmitRoute','selectedItem'));
+
     }
 
     /**

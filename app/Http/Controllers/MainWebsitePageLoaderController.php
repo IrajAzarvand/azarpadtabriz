@@ -255,10 +255,11 @@ class MainWebsitePageLoaderController extends Controller
     {
         $selectedBlog=blog::with('contents','comments')->find($blogId);
         $blogTags=[];
-        foreach ($selectedBlog->tags as $tag) {
-            $blogTags[]=Tag::find($tag)->contents->where('element_id', $tag)->where('locale', app()->getLocale())->pluck('element_content')[0];
+        if($selectedBlog->tags) {
+            foreach ($selectedBlog->tags as $tag) {
+                $blogTags[] = Tag::find($tag)->contents->where('element_id', $tag)->where('locale', app()->getLocale())->pluck('element_content')[0];
+            }
         }
-
         $blogContents['title']=$selectedBlog->contents()->where('element_title', 'title_'.app()->getLocale())->pluck('element_content')[0];
         $blogContents['content']=$selectedBlog->contents()->where('element_title', 'content_'.app()->getLocale())->pluck('element_content')[0];
         $blogContents['date'] =persian()->to_date(Carbon::parse($selectedBlog->created_at->format('Y/m/d'))->format('Y/m/d'), 'Y/m/d');

@@ -84,6 +84,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     //===== messages
     Route::get('/messages', [DashboardPageLoader::class, 'messages'])->name('messages');
+    Route::get('/messages/show/{id}', [MessageController::class, 'show'])->name('showMessages');
 
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
