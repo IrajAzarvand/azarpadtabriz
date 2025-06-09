@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BlogCommentsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CatalogController;
@@ -90,8 +91,9 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-    //===== usageGreenhouse
+    //===== applications
     Route::get('/Applications', [DashboardPageLoader::class, 'applications'])->name('applicationsPage');
+    Route::get('/ApplicationsSave', [ApplicationController::class, 'applications'])->name('applicationsSave');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== contactUs

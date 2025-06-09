@@ -262,7 +262,7 @@ class DashboardPageLoader extends Controller
         //usagePowerPlantPage نیروگاه ها
         $Name='صفحات';
         $Page='کاربردها';
-        $FormSubmitRoute='productIntroductionSave';
+        $FormSubmitRoute='applicationsSave';
 
         return view('dashboard.Page',compact('Name','Page','FormSubmitRoute'));
     }
