@@ -508,7 +508,7 @@
                                         <div class="tools">
 
                                             <a href="{{route('showMessages',[$id])}}"><button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
-                                            <a href="{{route('removeGallery',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+                                            <a href="{{route('removeMessage',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 
                                         </div></td>

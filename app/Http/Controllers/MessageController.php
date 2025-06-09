@@ -72,8 +72,10 @@ class MessageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Message $message)
+    public function destroy($id)
     {
-        //
+        $selected_item=Message::find($id);
+        $selected_item->delete();
+        return redirect()->back();
     }
 }
