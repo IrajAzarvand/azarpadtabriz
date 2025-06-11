@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\LocaleContents;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
@@ -28,7 +29,61 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newApplication=new Application;
+        $newApplication->save();
+//        save file to product introduction folder and add row to DB
+        $uploaded = $request->file('file');
+        if($uploaded){
+
+            $uploaded[0]->storeAs('Main_images\applications\\'.$newApplication->id.'\\', $uploaded[0]->getClientOriginalName());
+        }
+
+
+        //devide the text into (header and content), then save to DB
+        $Contents = [];
+        // add new slider texts to locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $Contents[0]=null;
+            $Contents[1]=null;
+            $Contents[2]=null;
+            if($request->input('content_' . $locale)) {
+                $Contents = explode("\n", $request->input('content_' . $locale), 3);
+            }
+
+            $newApplication->contents()->saveMany([
+                new LocaleContents([
+                    'page' => 'applications',
+                    'section' => 'applications',
+                    'element_title' => 'title1_' . $locale,
+                    'element_id' => $newApplication->id,
+                    'locale' => $locale,
+                    'element_content' => $Contents[0],
+                ]),
+
+                  new LocaleContents([
+                    'page' => 'applications',
+                    'section' => 'applications',
+                    'element_title' => 'title2_' . $locale,
+                    'element_id' => $newApplication->id,
+                    'locale' => $locale,
+                    'element_content' => $Contents[1],
+                ]),
+
+                  new LocaleContents([
+                    'page' => 'applications',
+                    'section' => 'applications',
+                    'element_title' => 'content_' . $locale,
+                    'element_id' => $newApplication->id,
+                    'locale' => $locale,
+                    'element_content' => $Contents[2],
+                ]),
+
+
+            ]);
+
+        }
+
+        return redirect()->back();
     }
 
     /**

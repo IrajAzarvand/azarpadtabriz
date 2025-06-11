@@ -93,7 +93,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     //===== applications
     Route::get('/Applications', [DashboardPageLoader::class, 'applications'])->name('applicationsPage');
-    Route::get('/ApplicationsSave', [ApplicationController::class, 'applications'])->name('applicationsSave');
+    Route::post('/ApplicationsSave', [ApplicationController::class, 'store'])->name('applicationsSave');
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     //===== contactUs
