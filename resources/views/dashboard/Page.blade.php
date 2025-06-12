@@ -712,7 +712,7 @@
                                     <td>     <!-- General tools such as edit or delete-->
                                         <div class="tools">
 
-                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','index','ProductIntroduction',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
+                                            <a href="{{route('editSelectedItem',['ویرایش آیتم','application','application',$id])}}"><button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button></a>
                                             <a href="{{route('removeApplication',[$id])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 
 

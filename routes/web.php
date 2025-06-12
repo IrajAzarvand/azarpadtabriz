@@ -95,6 +95,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/Applications', [DashboardPageLoader::class, 'applications'])->name('applicationsPage');
     Route::post('/ApplicationsSave', [ApplicationController::class, 'store'])->name('applicationsSave');
     Route::get('/Application/{id}/delete', [ApplicationController::class, 'destroy'])->name('removeApplication');
+    Route::post('/Application/update', [ApplicationController::class, 'update'])->name('ApplicationItemUpdate');
 
     // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 

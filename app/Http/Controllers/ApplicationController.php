@@ -111,7 +111,67 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, Application $application)
     {
-        //
+        $selectedItem = Application::with('contents')->find($request->input('editedItemId'));
+
+        // Edit texts in locale contents
+        foreach (SiteLang() as $locale => $specs) {
+            $Contents[0]=null;
+            $Contents[1]=null;
+            $Contents[2]=null;
+
+            if($request->input('content_' . $locale)) {
+                $Contents = explode("\n", $request->input('content_' . $locale), 3);
+            }
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'applications',
+                    'section' => 'applications',
+                    'element_title' => 'title1_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $Contents[0],
+                ]
+            );
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'applications',
+                    'section' => 'applications',
+                    'element_title' => 'title2_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $Contents[1],
+                ]
+            );
+
+            $selectedItem->contents()->updateOrCreate(
+                [
+                    'page' => 'applications',
+                    'section' => 'applications',
+                    'element_title' => 'content_' . $locale,
+                    'element_id' => $selectedItem->id,
+                    'locale' => $locale,
+                ],
+                [
+                    'element_content' => $Contents[2],
+                ]
+            );
+
+            //replace file if user select another one
+            $uploaded = $request->file('file');
+            if ($uploaded) {
+                $this->removeImage($request->input('editedItemId'));
+                $uploaded[0]->storeAs('Main_images\Applications\\', $uploaded[0]->getClientOriginalName());
+                $selectedItem->image = $uploaded[0]->getClientOriginalName();
+                $selectedItem->save();
+            }
+
+        }
+        return redirect()->route('applicationsPage');
+
     }
 
     /**
