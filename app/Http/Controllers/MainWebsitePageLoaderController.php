@@ -77,6 +77,7 @@ class MainWebsitePageLoaderController extends Controller
     //Main Website
     public function IndexPage()
     {
+
 //  ============================================      Slider Section
         $sliders=Slider::with('contents')->get();
 

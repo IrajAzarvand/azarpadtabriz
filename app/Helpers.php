@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Application;
 use App\Models\LocaleContents;
 function SiteLang()
 {
@@ -497,4 +498,20 @@ class persian_date
 function persian(): persian_date
 {
     return new persian_date();
+}
+
+//get application menu items depending on lang that user selected and show in main website menu items
+function applicationMenus()
+{
+    $applicationMenus=[];
+    $applications = Application::with('contents')->get();
+
+    foreach ($applications as $application) {
+
+
+        foreach (SiteLang() as $locale => $specs) {
+            $applicationMenus[ $application->id][$locale]=$application->contents->where('locale', $locale)->where('element_id', $application->id)->where('element_title', 'title1_'.$locale)->pluck('element_content')[0];
+        }
+    }
+    return $applicationMenus;
 }

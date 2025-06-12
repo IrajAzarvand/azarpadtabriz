@@ -90,15 +90,11 @@
                                     <span>{{Dictionary()['Applications'][app()->getLocale()] }}</span>
                                 </a>
                                 <ul class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
-                                    <li class="dd-effect">
-                                        <a href="portfolio-categories.html">{{Dictionary()['Greenhouse'][app()->getLocale()] }}</a>
-                                    </li>
-                                    <li class="dd-effect">
-                                        <a href="portfolio-categories.html">{{Dictionary()['PoultryFarms'][app()->getLocale()] }}</a>
-                                    </li>
-                                    <li class="dd-effect">
-                                        <a href="portfolio-categories.html">{{Dictionary()['PowerPlants'][app()->getLocale()] }}</a>
-                                    </li>
+                                    @foreach(applicationMenus() as $appmenu)
+                                        <li class="dd-effect">
+                                            <a href="portfolio-categories.html">{{$appmenu[app()->getLocale()] }}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
 
