@@ -167,3 +167,6 @@ Route::get('{filename}', [MainWebsitePageLoaderController::class, 'download_cata
 Route::get('contactus/message', [MainWebsitePageLoaderController::class, 'CU'])->name('CU');
 Route::post('contactus/message/save', [MessageController::class, 'store'])->name('CUSave');
 
+//=======================================================================
+//application page
+Route::get('application/{id}', [MainWebsitePageLoaderController::class, 'showApplication'])->name('showApplication');

@@ -90,9 +90,9 @@
                                     <span>{{Dictionary()['Applications'][app()->getLocale()] }}</span>
                                 </a>
                                 <ul class="brk-nav__sub-menu brk-nav-drop-down font__family-montserrat">
-                                    @foreach(applicationMenus() as $appmenu)
+                                    @foreach(applicationMenus() as $id=>$appmenu)
                                         <li class="dd-effect">
-                                            <a href="portfolio-categories.html">{{$appmenu[app()->getLocale()] }}</a>
+                                            <a href="{{route('showApplication',[$id])}}">{{$appmenu[app()->getLocale()] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>

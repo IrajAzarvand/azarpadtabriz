@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\Application;
 use App\Models\blog;
 use App\Models\BlogComments;
 use App\Models\Gallery;
@@ -31,6 +32,7 @@ class MainWebsitePageLoaderController extends Controller
     public $galleries_path='storage/Main_images/Gallery/';
     public $catalogs_path='storage/Main_images/Catalog/';
     public $blogs_path='storage/Main_images/Blog/';
+    public $applications_path='storage/Main_images/Applications/';
 
 
 
@@ -277,6 +279,22 @@ class MainWebsitePageLoaderController extends Controller
 
     }
 
+
+    public function showApplication(int $id): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        $selectedApplication=Application::with('contents')->find($id);
+//        dd($selectedApplication);
+        $ApplicationContent=[];
+            foreach (SiteLang() as $locale => $specs) {
+                $ApplicationContent['title'][$locale] = $selectedApplication->contents->where('locale', $locale)->where('element_title', 'title2_'.$locale)->pluck('element_content')[0];
+                $ApplicationContent['content'][$locale] = $selectedApplication->contents->where('locale', $locale)->where('element_title', 'content_'.$locale)->pluck('element_content')[0];
+            }
+
+            if($selectedApplication->image) {
+                $ApplicationContent['image'] = $this->applications_path . $selectedApplication->image;
+            }
+        return view('application',compact('ApplicationContent'));
+    }
 
 
 }
