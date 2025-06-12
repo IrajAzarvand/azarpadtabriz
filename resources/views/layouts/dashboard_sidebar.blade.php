@@ -142,7 +142,7 @@
                    </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('applicationsPage') }}" target="_blank" class="nav-link @if(last(request()->segments())== 'Applications'){{ 'active' }} @endif">
+                        <a href="{{ route('applicationsPage') }}" class="nav-link @if(last(request()->segments())== 'Applications'){{ 'active' }} @endif">
                             <i class="nav-icon fa fa-braille"></i>
                             <p>
                                 کاربردها
@@ -151,7 +151,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('messages') }}" target="_blank" class="nav-link @if(last(request()->segments())== 'messages'){{ 'active' }} @endif">
+                        <a href="{{ route('messages') }}" class="nav-link @if(last(request()->segments())== 'messages'){{ 'active' }} @endif">
                             <i class="nav-icon fa fa-envelope-open-o"></i>
                             <p>
                                 پیام ها

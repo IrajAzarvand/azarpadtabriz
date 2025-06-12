@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
+    public $applications_path='storage/Main_images/Applications/';
+
     /**
      * Display a listing of the resource.
      */
@@ -30,14 +32,16 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
         $newApplication=new Application;
-        $newApplication->save();
+
 //        save file to product introduction folder and add row to DB
         $uploaded = $request->file('file');
         if($uploaded){
 
-            $uploaded[0]->storeAs('Main_images\applications\\'.$newApplication->id.'\\', $uploaded[0]->getClientOriginalName());
+            $uploaded[0]->storeAs('Main_images\Applications\\', $uploaded[0]->getClientOriginalName());
+            $newApplication->image= $uploaded[0]->getClientOriginalName();
         }
 
+        $newApplication->save();
 
         //devide the text into (header and content), then save to DB
         $Contents = [];
@@ -113,8 +117,34 @@ class ApplicationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Application $application)
+    public function destroy(int $application)
     {
-        //
+        $selected_item=Application::with('contents')->find($application);
+        try {
+
+            unlink($this->applications_path . $selected_item->image);
+        }
+        catch (\Throwable $e)
+        {
+
+        }
+        $selected_item->contents()->delete();
+        $selected_item->delete();
+        return redirect()->back();
+    }
+
+    public function removeImage(int $application): true|\Illuminate\Http\RedirectResponse
+    {
+        $selected_item=Application::with('contents')->find($application);
+        try {
+
+            unlink($this->applications_path . $selected_item->image);
+
+        }
+        catch (\Throwable $e)
+        {
+            return true;
+        }
+        return redirect()->back();
     }
 }

@@ -38,7 +38,7 @@ class ProductIntroductionController extends Controller
         if($uploaded){
 
         $uploaded[0]->storeAs('Main_images\ProductIntroduction\\', $uploaded[0]->getClientOriginalName());
-            $newProductIntroduction->image= $uploaded[0]->getClientOriginalName();
+        $newProductIntroduction->image= $uploaded[0]->getClientOriginalName();
         }
         $newProductIntroduction->save();
 

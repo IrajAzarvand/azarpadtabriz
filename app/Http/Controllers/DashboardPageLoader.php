@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aboutUs;
+use App\Models\Application;
 use App\Models\blog;
 use App\Models\Gallery;
 use App\Models\Message;
@@ -264,7 +265,14 @@ class DashboardPageLoader extends Controller
         $Page='کاربردها';
         $FormSubmitRoute='applicationsSave';
 
-        return view('dashboard.Page',compact('Name','Page','FormSubmitRoute'));
+        $applications=Application::with('contents')->get();
+        $application = [];
+        foreach ($applications as $key => $item) {
+            $application[$item->id]['content'] = $item->contents()->where('locale', 'FA')->where('element_title', 'title1_FA')->pluck('element_content')[0];
+            $application[$item->id]['image'] =asset($this->applications_path. $item->image);
+        }
+
+        return view('dashboard.Page',compact('Name','Page','application', 'FormSubmitRoute'));
     }
 
     public function contactUsPage(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
